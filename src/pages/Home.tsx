@@ -11,7 +11,13 @@ import { SearchPizzaParams } from "../redux/items/types";
 // qs
 import qs from "qs";
 // Components
-import { Categories, Sort, PizzaBlock, PizzaSkeleton, Pagination } from "../components";
+import {
+  Categories,
+  Sort,
+  PizzaBlock,
+  PizzaSkeleton,
+  Pagination,
+} from "../components";
 
 const sortTypesList: any = {
   0: ["rating", "desc"],

@@ -34,8 +34,8 @@
     align-items: center;
     cursor: pointer;
     @include noselect();
-    @media (max-width: 600px){
-        margin-top: 20px;
+    @media (max-width: 600px) {
+      margin-top: 20px;
     }
 
     span {
@@ -344,14 +344,31 @@
   }
 
   &--empty {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 60px auto;
-    width: 560px;
+    max-width: 560px;
     text-align: center;
+    @media (max-width: 700px) {
+      margin: 0px auto;
+    }
 
     h2 {
+      line-height: 45px;
       font-size: 36px;
       font-weight: 900;
       margin-bottom: 30px;
+      @media (max-width: 700px) {
+        font-size: 30px;
+        line-height: 35px;
+      }
+      @media (max-width: 500px) {
+        font-size: 25px;
+        line-height: 30px;
+      }
     }
 
     p {
@@ -359,6 +376,12 @@
       line-height: 145.4%;
       letter-spacing: 0.01em;
       color: #777777;
+      @media (max-width: 700px) {
+        font-size: 16px;
+      }
+      @media (max-width: 500px) {
+        font-size: 14px;
+      }
     }
 
     icon {
@@ -370,14 +393,30 @@
       display: block;
       width: 300px;
       margin: 45px auto 60px;
+      @media (max-width: 700px) {
+        margin: 35px auto 40px;
+        width: 200px;
+      }
+      @media (max-width: 500px) {
+        margin: 25px auto 30px;
+        width: 100px;
+      }
     }
 
     .button--black {
-      padding: 12px 0 14px;
-      width: 230px;
+      padding: 12px 15px;
+      max-width: 230px;
       margin: 0 auto;
       font-weight: 600;
       font-size: 18px;
+      @media (max-width: 700px) {
+        max-width: 200px;
+        font-size: 16px;
+      }
+      @media (max-width: 500px) {
+        max-width: 150px;
+        font-size: 14px;
+      }
     }
   }
 }
