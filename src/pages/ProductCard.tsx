@@ -42,7 +42,7 @@ const ProductCard: React.FC = () => {
           <h3>Описание:</h3>
           <p className="product-card__description">{pizza?.description}</p>
           <h4 className="product-card__price">от {pizza?.price} ₽</h4>
-          <Link to="/react_project_3/">
+          <Link to="/react_project_3">
             <button className="button button--outline button--add">
               <span>Назад</span>
             </button>
