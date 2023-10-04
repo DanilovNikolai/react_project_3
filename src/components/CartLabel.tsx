@@ -22,9 +22,9 @@ const CartLabel = () => {
 
   return (
     <>
-      {pathname !== "/cart" && (
+      {pathname !== "/react_project_3/cart" && (
         <div className="header__cart">
-          <Link to="/cart" className="button button--cart">
+          <Link to="/react_project_3/cart" className="button button--cart">
             <span>{totalPrice} ₽</span>
             <div className="button__delimiter"></div>
             <svg
