@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_project_3/static/css/main.4d675567.css",
+    "main.css": "/react_project_3/static/css/main.2e9f3dfd.css",
     "main.js": "/react_project_3/static/js/main.80cbfad7.js",
     "Cart.js": "/react_project_3/static/js/Cart.ae47aaaf.chunk.js",
     "ProductCard.js": "/react_project_3/static/js/ProductCard.4a5b4e93.chunk.js",
@@ -8,14 +8,14 @@
     "static/media/empty-cart.png": "/react_project_3/static/media/empty-cart.db905d1f4b063162f25b.png",
     "static/media/pizza-logo.svg": "/react_project_3/static/media/pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg",
     "index.html": "/react_project_3/index.html",
-    "main.4d675567.css.map": "/react_project_3/static/css/main.4d675567.css.map",
+    "main.2e9f3dfd.css.map": "/react_project_3/static/css/main.2e9f3dfd.css.map",
     "main.80cbfad7.js.map": "/react_project_3/static/js/main.80cbfad7.js.map",
     "Cart.ae47aaaf.chunk.js.map": "/react_project_3/static/js/Cart.ae47aaaf.chunk.js.map",
     "ProductCard.4a5b4e93.chunk.js.map": "/react_project_3/static/js/ProductCard.4a5b4e93.chunk.js.map",
     "NotFound.c1dc60f9.chunk.js.map": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d675567.css",
+    "static/css/main.2e9f3dfd.css",
     "static/js/main.80cbfad7.js"
   ]
 }
