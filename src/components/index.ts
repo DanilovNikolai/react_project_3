@@ -1,6 +1,6 @@
 // Reexport
 
-export { default as PizzaSkeleton } from "./skeletons/PizzaSkeleton";
+export { default as PizzaSkeleton } from "./PizzaSkeleton";
 export { default as Pagination } from "./Pagination";
 export { default as Search } from "./Search";
 export { default as NotFoundBlock } from "./NotFoundBlock";

@@ -1,15 +1,16 @@
 import ContentLoader from "react-content-loader";
+import styles from "./PizzaSkeleton.module.scss";
 
 const PizzaSkeleton: React.FC<{ key: number }> = (props) => {
   return (
     <ContentLoader
-      speed={2}
+      speed={1}
       width={280}
       height={465}
       viewBox="0 0 280 465"
-      backgroundColor="#f3f3f3"
-      foregroundColor="#ecebeb"
-      className="pizza-skeleton"
+      backgroundColor="#f5f5f5"
+      foregroundColor="#f9e1ae"
+      className={styles.root}
       {...props}
     >
       <circle cx="137" cy="114" r="112" />
