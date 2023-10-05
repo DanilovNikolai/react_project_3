@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { setCategoryId } from "../redux/filter/slice";
+import { setCategoryId } from "../../redux/filter/slice";
 
 const categories: string[] = [
   "Все",

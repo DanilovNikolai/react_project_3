@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 // Redux Toolkit
 import { useDispatch } from "react-redux";
-import { setSortId } from "../redux/filter/slice";
+import { setSortId } from "../../redux/filter/slice";
 
 const popupList: string[] = [
   "популярности ↓",

@@ -29,9 +29,9 @@ const ProductCard: React.FC = () => {
     fetchPizza();
   }, []);
 
-  if (!pizza) {
-    return <div className="container">Загрузка...</div>;
-  }
+  // if (!pizza) {
+  //   return <div className="container">Загрузка...</div>;
+  // }
 
   return (
     <div className="container">

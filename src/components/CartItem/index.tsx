@@ -1,5 +1,5 @@
-import { addItem, minusItem, removeItem } from "../redux/cart/slice";
-import { useAppDispatch } from "../redux/store";
+import { addItem, minusItem, removeItem } from "../../redux/cart/slice";
+import { useAppDispatch } from "../../redux/store";
 
 type CartItemProps = {
   id: string;

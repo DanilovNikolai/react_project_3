@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectCart } from "../redux/cart/selectors";
+import { selectCart } from "../../redux/cart/selectors";
 
 const CartLabel = () => {
   const { items, totalPrice } = useSelector(selectCart);

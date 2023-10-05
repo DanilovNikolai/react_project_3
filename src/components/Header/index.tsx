@@ -1,7 +1,7 @@
-import pizzaLogoHeader from "../assets/img/pizza-logo.svg";
+import pizzaLogoHeader from "../../assets/img/pizza-logo.svg";
 import { Link, useLocation } from "react-router-dom";
-import Search from "./Search";
-import CartLabel from "./CartLabel";
+import Search from "../Search";
+import CartLabel from "../CartLabel";
 
 const Header: React.FC = () => {
   const { pathname } = useLocation();

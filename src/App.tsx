@@ -4,7 +4,7 @@ import { Suspense, lazy } from "react";
 import "./scss/app.scss";
 
 import Home from "./pages/Home";
-
+import Loader from "./components/UI/Loader";
 import MainLayout from "./layouts/MainLayout";
 
 const Cart = lazy(() => import(/*webpackChunkName: "Cart" */ "./pages/Cart"));
@@ -23,7 +23,7 @@ function App() {
         <Route
           path="cart"
           element={
-            <Suspense fallback={<div>Загрузка...</div>}>
+            <Suspense fallback={<Loader />}>
               <Cart />
             </Suspense>
           }
@@ -31,7 +31,7 @@ function App() {
         <Route
           path="pizza/:id"
           element={
-            <Suspense fallback={<div>Загрузка...</div>}>
+            <Suspense fallback={<Loader />}>
               <ProductCard />
             </Suspense>
           }
@@ -39,7 +39,7 @@ function App() {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Загрузка...</div>}>
+            <Suspense fallback={<Loader />}>
               <NotFound />
             </Suspense>
           }
