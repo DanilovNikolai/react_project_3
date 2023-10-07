@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { setCategoryId } from "../../redux/filter/slice";
+import { setCategoryId, setCurrentPage } from "../../redux/filter/slice";
 
 const categories: string[] = [
   "Все",
@@ -17,6 +17,7 @@ const Categories: React.FC<{ categoryId: number }> = React.memo(
 
     const handleChangeCategory = useCallback((idx: number): void => {
       dispatch(setCategoryId(idx));
+      dispatch(setCurrentPage(1));
     }, []);
 
     return (

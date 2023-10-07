@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { setSortId } from "../../redux/filter/slice";
 
 const popupList: string[] = [
-  "популярности ↓",
   "популярности ↑",
+  "популярности ↓",
   "цене ↓",
   "цене ↑",
   "алфавиту ↓",

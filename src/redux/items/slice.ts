@@ -16,7 +16,6 @@ export const fetchPizzas = createAsyncThunk<Pizza[], Record<string, string>>(
     const { data } = await axios.get<Pizza[]>(
       `https://64f8cba7824680fd21800fd6.mockapi.io/pizzas?page=${currentPage}&limit=${itemsPerPage}&${category}&${sort}&${search}`
     );
-
     return data;
   }
 );
@@ -27,6 +26,7 @@ export const itemsSlice = createSlice({
   reducers: {
     setItems(state, action: PayloadAction<Pizza[]>) {
       state.items = action.payload;
+      // state.items = [...state.items, ...action.payload];
     },
   },
 

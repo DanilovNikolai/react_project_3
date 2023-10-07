@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+
 // Redux Toolkit
 import { useSelector } from "react-redux";
 import { setFilters } from "../redux/filter/slice";
@@ -8,8 +9,10 @@ import { fetchPizzas } from "../redux/items/slice";
 import { useAppDispatch } from "../redux/store";
 import { selectItems } from "../redux/items/selectors";
 import { SearchPizzaParams } from "../redux/items/types";
+
 // qs
 import qs from "qs";
+
 // Components
 import {
   Categories,
@@ -32,6 +35,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const isSearch = useRef(false);
   const isMounted = useRef(false);
+  // const [fetching, setFetching] = useState(true);
 
   // Redux Toolkit
   const { items, status } = useSelector(selectItems);
@@ -74,13 +78,32 @@ const Home: React.FC = () => {
   // Если был первый рендер, то запрашиваем items с бэк-энда
   useEffect(() => {
     window.scrollTo(0, 0);
-
     if (!isSearch.current) {
       handleFetchItems();
     }
 
     isSearch.current = false;
   }, [categoryId, sortId, searchValue, currentPage]);
+
+  // useEffect(() => {
+  //   if (fetching) {
+  //     handleFetchItems();
+  //     dispatch(setItems(items));
+  //     dispatch(setCurrentPage(currentPage + 1));
+  //     console.log(items);
+  //     console.log(currentPage);
+
+  //     setFetching(false);
+  //   }
+  // }, [fetching]);
+
+  // Динамический скролл
+  // useEffect(() => {
+  //   document.addEventListener("scroll", scrollHandler);
+  //   return () => {
+  //     document.removeEventListener("scroll", scrollHandler);
+  //   };
+  // }, []);
 
   // Фнукция с запросом items с бэк-энда
   async function handleFetchItems() {
@@ -102,6 +125,18 @@ const Home: React.FC = () => {
 
     window.scrollTo(0, 0);
   }
+
+  // const scrollHandler = (e: any): void => {
+  //   if (
+  //     e.target.documentElement.scrollHeight -
+  //       (e.target.documentElement.scrollTop + window.innerHeight) <
+  //       100 &&
+  //     items.length < totalCount
+  //   ) {
+  //     console.log("scroll");
+  //     setFetching(true);
+  //   }
+  // };
 
   return (
     <>
