@@ -14,7 +14,7 @@ const Cart: React.FC = () => {
   );
 
   function handleClickClear() {
-    if (window.confirm("Are you sure You want to remove all items?")) {
+    if (window.confirm("Вы точно уверены, что хотите очистить корзину?")) {
       dispatch(clearItems());
     }
   }
