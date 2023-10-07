@@ -14,10 +14,6 @@
   @media (max-width: 750px) {
     margin-bottom: 35px;
   }
-  @media (max-width: 420px) {
-    width: 240px;
-    margin-bottom: 25px;
-  }
 
   &__image {
     cursor: pointer;
@@ -90,8 +86,5 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
-    @media (max-width: 400px) {
-      font-size: 18px;
-    }
   }
 }
