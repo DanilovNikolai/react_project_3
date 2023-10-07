@@ -25,5 +25,5 @@ export enum Status {
 
 export interface ItemsSliceState {
   items: Pizza[];
-  status: Status;
+  status?: Status;
 }

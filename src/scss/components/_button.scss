@@ -129,8 +129,10 @@
   }
 
   &--add {
+    max-width: 200px;
+    margin: 5px;
     svg {
-      margin-right: 2px;
+      margin-right: 6px;
     }
 
     span {
