@@ -7,9 +7,9 @@ import { useState } from "react";
 const pizzaTypes: string[] = ["тонкое", "традиционное"];
 
 export type AddButtonProps = {
-  id: string,
+  id: string;
   title: string;
-  price: number;
+  price: number[];
   imageUrl: string;
   sizes: number[];
 };
@@ -30,7 +30,7 @@ const AddButton: React.FC<AddButtonProps> = ({
     const item: CartItem = {
       id,
       title,
-      price,
+      price: price[sizeType],
       imageUrl,
       size: sizes[sizeType],
       type: pizzaTypes[activeType],

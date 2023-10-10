@@ -11,7 +11,7 @@ const ProductCard: React.FC = () => {
     id: string;
     imageUrl: string;
     title: string;
-    price: number;
+    price: number[];
     description: string;
     sizes: number[];
     types: number[];

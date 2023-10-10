@@ -9,6 +9,7 @@ import { fetchPizzas } from "../redux/items/slice";
 import { useAppDispatch } from "../redux/store";
 import { selectItems } from "../redux/items/selectors";
 import { SearchPizzaParams } from "../redux/items/types";
+import { Pizza } from "../redux/items/types";
 
 // qs
 import qs from "qs";
@@ -162,7 +163,7 @@ const Home: React.FC = () => {
               ? [...new Array(8)].map((_, index) => (
                   <PizzaSkeleton key={index} />
                 ))
-              : items.map((item: any) => (
+              : items.map((item: Pizza) => (
                   <PizzaBlock {...item} key={item.id} />
                 ))}
           </div>

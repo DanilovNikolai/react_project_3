@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddButton from "../UI/AddButton";
 
@@ -7,7 +7,7 @@ const pizzaTypes: string[] = ["тонкое", "традиционное"];
 type PizzaBlockProps = {
   id: string;
   title: string;
-  price: number;
+  price: number[];
   imageUrl: string;
   sizes: number[];
   types: number[];
@@ -24,6 +24,16 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
 }) => {
   const [activeType, setActiveType] = useState<number>(0);
   const [sizeType, setSizeType] = useState<number>(0);
+  const [priceValue, setPriceValue] = useState<number>(0);
+
+  useEffect(() => {
+    setPriceValue(price[0]);
+  }, []);
+
+  const handlePriceAndSize = (index: number): void => {
+    setSizeType(index);
+    setPriceValue(price[index]);
+  };
 
   return (
     <div className="pizza-block-wrapper">
@@ -49,7 +59,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
               <li
                 key={size}
                 className={sizeType === index ? "active" : ""}
-                onClick={() => setSizeType(index)}
+                onClick={() => handlePriceAndSize(index)}
               >
                 {size} см.
               </li>
@@ -57,7 +67,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">от {price} ₽</div>
+          <div className="pizza-block__price">{priceValue} ₽</div>
           <AddButton
             title={title}
             price={price}
