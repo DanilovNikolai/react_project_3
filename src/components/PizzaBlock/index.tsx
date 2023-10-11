@@ -74,6 +74,8 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
             imageUrl={imageUrl}
             sizes={sizes}
             id={id}
+            activeType={activeType}
+            sizeType={sizeType}
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 // TypeScript
-export type CartItem = {
+export type CartItemProps = {
   id: string;
   title: string;
   price: number;
@@ -12,5 +12,5 @@ export type CartItem = {
 // TypeScript
 export interface CartSliceState {
   totalPrice: number;
-  items: CartItem[];
+  items: CartItemProps[];
 }

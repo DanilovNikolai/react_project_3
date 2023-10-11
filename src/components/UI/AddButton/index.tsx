@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cart/slice";
-import { CartItem } from "../../../redux/cart/types";
+import { CartItemProps } from "../../../redux/cart/types";
 import { selectCartItemById } from "../../../redux/cart/selectors";
-import { useState } from "react";
 
 const pizzaTypes: string[] = ["тонкое", "традиционное"];
 
@@ -12,6 +11,8 @@ export type AddButtonProps = {
   price: number[];
   imageUrl: string;
   sizes: number[];
+  sizeType: number;
+  activeType: number;
 };
 
 const AddButton: React.FC<AddButtonProps> = ({
@@ -20,14 +21,19 @@ const AddButton: React.FC<AddButtonProps> = ({
   price,
   imageUrl,
   sizes,
+  sizeType,
+  activeType,
 }) => {
   const dispatch = useDispatch();
-  const foundItem = useSelector(selectCartItemById(id));
-  const [activeType] = useState<number>(0);
-  const [sizeType] = useState<number>(0);
+  let foundItem = useSelector(selectCartItemById(id));
+  console.log('id:', id);
+  console.log('размер:', sizeType);
+  console.log('тип:', activeType);
+  
+  
 
   const handleAddItem = () => {
-    const item: CartItem = {
+    const item: CartItemProps = {
       id,
       title,
       price: price[sizeType],
@@ -36,6 +42,7 @@ const AddButton: React.FC<AddButtonProps> = ({
       type: pizzaTypes[activeType],
       count: 0,
     };
+    console.log(item.id);
     dispatch(addItem(item));
   };
 
@@ -57,7 +64,9 @@ const AddButton: React.FC<AddButtonProps> = ({
         />
       </svg>
       <span>Добавить</span>
-      {foundItem && <i>{foundItem?.count}</i>}
+      {foundItem && (
+        <i key={id}>{foundItem?.reduce((sum, item) => sum + item.count, 0)}</i>
+      )}
     </button>
   );
 };

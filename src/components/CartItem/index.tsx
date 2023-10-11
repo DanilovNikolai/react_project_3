@@ -1,4 +1,4 @@
-import { addItem, minusItem, removeItem } from "../../redux/cart/slice";
+import { minusItem, plusItem, removeItem } from "../../redux/cart/slice";
 import { useAppDispatch } from "../../redux/store";
 
 type CartItemProps = {
@@ -24,7 +24,7 @@ const CartItem: React.FC<CartItemProps> = ({
 
   function handleClickPlus() {
     dispatch(
-      addItem({
+      plusItem({
         id,
       } as CartItemProps)
     );
@@ -40,7 +40,7 @@ const CartItem: React.FC<CartItemProps> = ({
 
   function handleClickRemove() {
     if (window.confirm("Are you sure You want to remove this item?")) {
-      dispatch(removeItem(id));
+      dispatch(removeItem({ id, type, size }));
     }
   }
 

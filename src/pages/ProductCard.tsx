@@ -15,6 +15,8 @@ const ProductCard: React.FC = () => {
     description: string;
     sizes: number[];
     types: number[];
+    sizeType: number;
+    activeType: number;
   }>();
   const [activeType, setActiveType] = useState<number>(0);
   const [sizeType, setSizeType] = useState<number>(0);
@@ -72,7 +74,7 @@ const ProductCard: React.FC = () => {
           <h3>Описание:</h3>
           <p className="product-card__description">{pizza?.description}</p>
           <div className="product-card__bottom">
-            <h4 className="product-card__price">от {pizza?.price} ₽</h4>
+            <h4 className="product-card__price">Цена: {pizza?.price[sizeType]} ₽</h4>
             <AddButton {...pizza} />
           </div>
           <Link to="/react_project_3">
