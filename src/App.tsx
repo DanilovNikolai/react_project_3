@@ -14,6 +14,9 @@ const ProductCard = lazy(
 const NotFound = lazy(
   () => import(/*webpackChunkName: "NotFound" */ "./pages/NotFound")
 );
+const About = lazy(
+  () => import(/*webpackChunkName: "About" */ "./pages/About")
+);
 
 function App() {
   return (
@@ -33,6 +36,14 @@ function App() {
           element={
             <Suspense fallback={<Loader />}>
               <ProductCard />
+            </Suspense>
+          }
+        />
+        <Route
+          path="about"
+          element={
+            <Suspense fallback={<Loader />}>
+              <About />
             </Suspense>
           }
         />

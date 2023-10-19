@@ -3,23 +3,14 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "../scss/app.scss";
 import AddButton from "../components/UI/AddButton";
+import { Pizza } from "../redux/items/types";
 
 const pizzaTypes: string[] = ["тонкое", "традиционное"];
 
 const ProductCard: React.FC = () => {
-  const [pizza, setPizza] = useState<{
-    id: string;
-    imageUrl: string;
-    title: string;
-    price: number[];
-    description: string;
-    sizes: number[];
-    types: number[];
-    sizeType: number;
-    activeType: number;
-  }>();
+  const [pizza, setPizza] = useState<Pizza>(null);
   const [activeType, setActiveType] = useState<number>(0);
-  const [sizeType, setSizeType] = useState<number>(0);
+  const [activeSize, setActiveSize] = useState<number>(0);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -61,8 +52,8 @@ const ProductCard: React.FC = () => {
               {pizza?.sizes.map((size: number, index: number) => (
                 <li
                   key={size}
-                  className={sizeType === index ? "active" : ""}
-                  onClick={() => setSizeType(index)}
+                  className={activeSize === index ? "active" : ""}
+                  onClick={() => setActiveSize(index)}
                 >
                   {size} см.
                 </li>
@@ -74,8 +65,17 @@ const ProductCard: React.FC = () => {
           <h3>Описание:</h3>
           <p className="product-card__description">{pizza?.description}</p>
           <div className="product-card__bottom">
-            <h4 className="product-card__price">Цена: {pizza?.price[sizeType]} ₽</h4>
-            <AddButton {...pizza} />
+            <h4 className="product-card__price">
+              Цена: {pizza?.price[activeSize]} ₽
+            </h4>
+            <AddButton
+              id={pizza?.id}
+              title={pizza?.title}
+              size={pizza?.sizes[activeSize]}
+              type={pizzaTypes[activeType]}
+              imageUrl={pizza?.imageUrl}
+              price={pizza?.price[activeSize]}
+            />
           </div>
           <Link to="/react_project_3">
             <button className="button button--outline button--add">

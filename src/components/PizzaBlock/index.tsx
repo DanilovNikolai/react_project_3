@@ -23,7 +23,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   types,
 }) => {
   const [activeType, setActiveType] = useState<number>(0);
-  const [sizeType, setSizeType] = useState<number>(0);
+  const [activeSize, setActiveSize] = useState<number>(0);
   const [priceValue, setPriceValue] = useState<number>(0);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   }, []);
 
   const handlePriceAndSize = (index: number): void => {
-    setSizeType(index);
+    setActiveSize(index);
     setPriceValue(price[index]);
   };
 
@@ -58,7 +58,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
             {sizes.map((size, index) => (
               <li
                 key={size}
-                className={sizeType === index ? "active" : ""}
+                className={activeSize === index ? "active" : ""}
                 onClick={() => handlePriceAndSize(index)}
               >
                 {size} см.
@@ -69,13 +69,12 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
         <div className="pizza-block__bottom">
           <div className="pizza-block__price">{priceValue} ₽</div>
           <AddButton
-            title={title}
-            price={price}
-            imageUrl={imageUrl}
-            sizes={sizes}
             id={id}
-            activeType={activeType}
-            sizeType={sizeType}
+            title={title}
+            price={price[activeSize]}
+            imageUrl={imageUrl}
+            size={sizes[activeSize]}
+            type={pizzaTypes[activeType]}
           />
         </div>
       </div>

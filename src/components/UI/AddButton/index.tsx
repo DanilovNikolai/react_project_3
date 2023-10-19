@@ -3,16 +3,13 @@ import { addItem } from "../../../redux/cart/slice";
 import { CartItemProps } from "../../../redux/cart/types";
 import { selectCartItemById } from "../../../redux/cart/selectors";
 
-const pizzaTypes: string[] = ["тонкое", "традиционное"];
-
 export type AddButtonProps = {
   id: string;
   title: string;
-  price: number[];
+  price: number;
   imageUrl: string;
-  sizes: number[];
-  sizeType: number;
-  activeType: number;
+  type: string;
+  size: number;
 };
 
 const AddButton: React.FC<AddButtonProps> = ({
@@ -20,26 +17,24 @@ const AddButton: React.FC<AddButtonProps> = ({
   title,
   price,
   imageUrl,
-  sizes,
-  sizeType,
-  activeType,
+  size,
+  type,
 }) => {
   const dispatch = useDispatch();
   let foundItem = useSelector(selectCartItemById(id));
   console.log('id:', id);
-  console.log('размер:', sizeType);
-  console.log('тип:', activeType);
-  
-  
+  console.log('размер:', size);
+  console.log('тип:', type);
+  console.log('цена:', price);
 
   const handleAddItem = () => {
     const item: CartItemProps = {
       id,
       title,
-      price: price[sizeType],
+      price,
       imageUrl,
-      size: sizes[sizeType],
-      type: pizzaTypes[activeType],
+      size,
+      type,
       count: 0,
     };
     console.log(item.id);

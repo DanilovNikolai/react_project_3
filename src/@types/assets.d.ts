@@ -11,3 +11,8 @@ declare module "*.scss" {
   const content: any;
   export default content;
 }
+
+declare module "mapbox-gl/dist/mapbox-gl.js" {
+  const content: any;
+  export default content;
+}
