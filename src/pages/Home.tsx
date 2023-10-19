@@ -43,7 +43,7 @@ const Home: React.FC = () => {
   const { categoryId, sortId, itemsPerPage, currentPage, searchValue } =
     useSelector(selectFilter);
   const dispatch = useAppDispatch(); // <-- useDispatch заменили на типизируемый useAppDispatch
-  
+
   // При первом рендере проверяем, есть ли в URL строка с параметрами. Если есть, то сохраняем их в Redux Toolkit
   useEffect(() => {
     if (window.location.search) {
