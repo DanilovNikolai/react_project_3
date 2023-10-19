@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/react_project_3/static/css/main.c64070ea.css",
-    "main.js": "/react_project_3/static/js/main.69f3c678.js",
+    "main.css": "/react_project_3/static/css/main.c8d451da.css",
+    "main.js": "/react_project_3/static/js/main.dc723ec6.js",
     "Cart.js": "/react_project_3/static/js/Cart.bd430c03.chunk.js",
     "ProductCard.js": "/react_project_3/static/js/ProductCard.db5996f8.chunk.js",
     "NotFound.js": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js",
-    "About.css": "/react_project_3/static/css/About.fa553522.chunk.css",
+    "About.css": "/react_project_3/static/css/About.9554f7c2.chunk.css",
     "About.js": "/react_project_3/static/js/About.ba882f2b.chunk.js",
     "static/js/483.75de5923.chunk.js": "/react_project_3/static/js/483.75de5923.chunk.js",
     "static/js/965.54893cd6.chunk.js": "/react_project_3/static/js/965.54893cd6.chunk.js",
@@ -17,18 +17,18 @@
     "static/media/footer_phone.svg": "/react_project_3/static/media/footer_phone.4fc768f8b54a3a81aa5de2b5f4530732.svg",
     "static/media/footer_telegram.svg": "/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
-    "main.c64070ea.css.map": "/react_project_3/static/css/main.c64070ea.css.map",
-    "main.69f3c678.js.map": "/react_project_3/static/js/main.69f3c678.js.map",
+    "main.c8d451da.css.map": "/react_project_3/static/css/main.c8d451da.css.map",
+    "main.dc723ec6.js.map": "/react_project_3/static/js/main.dc723ec6.js.map",
     "Cart.bd430c03.chunk.js.map": "/react_project_3/static/js/Cart.bd430c03.chunk.js.map",
     "ProductCard.db5996f8.chunk.js.map": "/react_project_3/static/js/ProductCard.db5996f8.chunk.js.map",
     "NotFound.c1dc60f9.chunk.js.map": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js.map",
-    "About.fa553522.chunk.css.map": "/react_project_3/static/css/About.fa553522.chunk.css.map",
+    "About.9554f7c2.chunk.css.map": "/react_project_3/static/css/About.9554f7c2.chunk.css.map",
     "About.ba882f2b.chunk.js.map": "/react_project_3/static/js/About.ba882f2b.chunk.js.map",
     "483.75de5923.chunk.js.map": "/react_project_3/static/js/483.75de5923.chunk.js.map",
     "965.54893cd6.chunk.js.map": "/react_project_3/static/js/965.54893cd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c64070ea.css",
-    "static/js/main.69f3c678.js"
+    "static/css/main.c8d451da.css",
+    "static/js/main.dc723ec6.js"
   ]
 }
