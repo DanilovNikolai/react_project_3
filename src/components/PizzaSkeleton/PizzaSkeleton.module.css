@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 90px;
+}
+@media (max-width: 750px) {
+  .root {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .root {
+    padding: 0px 30px 0px 30px;
+    margin-top: -45px;
+    margin-bottom: -25px;
+  }
+}/*# sourceMappingURL=PizzaSkeleton.module.css.map */

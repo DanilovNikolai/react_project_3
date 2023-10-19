@@ -1,0 +1,65 @@
+.aboutContainer {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  margin: 5px 0px;
+}
+@media (max-width: 900px) {
+  .aboutContainer {
+    flex-direction: column;
+  }
+}
+
+.aboutColumn {
+  max-height: 400px;
+  width: 100%;
+  padding: 20px;
+  flex: 0 1 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+.logo img {
+  display: block;
+  margin-right: 15px;
+}
+.logo h1 {
+  color: #181818;
+  font-size: 24px;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.logo p {
+  color: #7b7b7b;
+}
+@media (max-width: 500px) {
+  .logo p {
+    font-size: 14px;
+  }
+}
+
+.marker {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border: 1px solid red;
+  background-color: #ffdf8c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6); /* Optional shadow effect */
+}
+
+.popup {
+  color: rgb(196, 151, 16);
+  font-size: 12px;
+}/*# sourceMappingURL=AboutBlock.module.css.map */

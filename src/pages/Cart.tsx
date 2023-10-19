@@ -6,6 +6,13 @@ import { selectCart } from "../redux/cart/selectors";
 import CartEmpty from "../components/CartEmpty";
 import { CartItemProps } from "../redux/cart/types";
 
+// Stripe
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripe = loadStripe(
+  "pk_test_51O2zWiBhVdtjeDVTvHu127iOs4AxovXtzgFOTYFzzjN8kK2BIg0GtZ7EwIUhSGguXsfeOA4LtxrDgwHNDY5lTUxZ002qykvVpI"
+);
+
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector(selectCart);
@@ -18,6 +25,29 @@ const Cart: React.FC = () => {
     if (window.confirm("Вы точно уверены, что хотите очистить корзину?")) {
       dispatch(clearItems());
     }
+  }
+
+  function handlePayClick() {
+    stripe.then((stripe: any): void => {
+      const lineItems = items.map((item) => ({
+        price: item.priceId,
+        quantity: item.count,
+      }));
+
+      stripe
+        .redirectToCheckout({
+          lineItems: lineItems,
+          mode: "payment",
+          successUrl: "https://danilovnikolai.github.io/react_project_3",
+          cancelUrl: "https://danilovnikolai.github.io/react_project_3",
+        })
+        .then((response) => {
+          console.log(response.error);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
   }
 
   if (items.length === 0) {
@@ -137,9 +167,9 @@ const Cart: React.FC = () => {
               </svg>
               <span>Вернуться назад</span>
             </Link>
-            <div className="button pay-btn">
+            <button onClick={handlePayClick} className="button pay-btn">
               <span>Оплатить сейчас</span>
-            </div>
+            </button>
           </div>
         </div>
       </div>

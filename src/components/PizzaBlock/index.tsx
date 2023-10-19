@@ -12,6 +12,7 @@ type PizzaBlockProps = {
   sizes: number[];
   types: number[];
   rating: number;
+  priceId: string[];
 };
 
 const PizzaBlock: React.FC<PizzaBlockProps> = ({
@@ -21,6 +22,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   imageUrl,
   sizes,
   types,
+  priceId,
 }) => {
   const [activeType, setActiveType] = useState<number>(0);
   const [activeSize, setActiveSize] = useState<number>(0);
@@ -75,6 +77,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
             imageUrl={imageUrl}
             size={sizes[activeSize]}
             type={pizzaTypes[activeType]}
+            priceId={priceId[activeSize]}
           />
         </div>
       </div>

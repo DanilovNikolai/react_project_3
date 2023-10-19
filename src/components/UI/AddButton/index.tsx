@@ -10,6 +10,7 @@ export type AddButtonProps = {
   imageUrl: string;
   type: string;
   size: number;
+  priceId: string;
 };
 
 const AddButton: React.FC<AddButtonProps> = ({
@@ -19,13 +20,10 @@ const AddButton: React.FC<AddButtonProps> = ({
   imageUrl,
   size,
   type,
+  priceId,
 }) => {
   const dispatch = useDispatch();
   let foundItem = useSelector(selectCartItemById(id));
-  console.log('id:', id);
-  console.log('размер:', size);
-  console.log('тип:', type);
-  console.log('цена:', price);
 
   const handleAddItem = () => {
     const item: CartItemProps = {
@@ -35,6 +33,7 @@ const AddButton: React.FC<AddButtonProps> = ({
       imageUrl,
       size,
       type,
+      priceId,
       count: 0,
     };
     console.log(item.id);

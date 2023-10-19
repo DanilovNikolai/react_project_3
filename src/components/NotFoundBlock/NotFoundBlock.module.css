@@ -1,0 +1,26 @@
+.root {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 700px) {
+  .root {
+    padding: 50px;
+  }
+}
+.root div {
+  font-size: 78px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .root div {
+    font-size: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .root div {
+    font-size: 24px;
+  }
+}/*# sourceMappingURL=NotFoundBlock.module.css.map */

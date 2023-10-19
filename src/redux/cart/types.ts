@@ -7,6 +7,7 @@ export type CartItemProps = {
   size: number;
   type: string;
   count: number;
+  priceId: string;
 };
 
 // TypeScript

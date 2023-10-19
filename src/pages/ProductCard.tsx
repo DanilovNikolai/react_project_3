@@ -75,6 +75,7 @@ const ProductCard: React.FC = () => {
               type={pizzaTypes[activeType]}
               imageUrl={pizza?.imageUrl}
               price={pizza?.price[activeSize]}
+              priceId={pizza?.priceId[activeSize]}
             />
           </div>
           <Link to="/react_project_3">

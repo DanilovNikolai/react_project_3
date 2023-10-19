@@ -7,6 +7,7 @@ export type Pizza = {
   types: number[];
   rating: number;
   description: string;
+  priceId: string[];
 };
 
 export type SearchPizzaParams = {
