@@ -8,29 +8,44 @@
     "price": [375, 450, 535],
     "category": 0,
     "rating": 4,
-    "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус, перец душистый"
+    "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус, перец душистый",
+    "priceId": [
+      "price_1O31SxBhVdtjeDVT0Vo4g2ri",
+      "price_1O31UEBhVdtjeDVTbj1Xxqbz",
+      "price_1O31VOBhVdtjeDVTURM4LYaJ"
+    ]
   },
   {
     "id": "1",
     "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
     "title": "Сырная",
-    "types": [0],
+    "types": [1],
     "sizes": [25, 30, 40],
     "price": [290, 355, 455],
     "category": 3,
     "rating": 6,
-    "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо"
+    "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
+    "priceId": [
+      "price_1O31XLBhVdtjeDVTI5khw98h",
+      "price_1O31ZiBhVdtjeDVTBLhs7pKZ",
+      "price_1O31aKBhVdtjeDVTq4PE5hkz"
+    ]
   },
   {
     "id": "2",
     "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
     "title": "Цыпленок барбекю",
-    "types": [0],
+    "types": [1],
     "sizes": [25, 30, 40],
     "price": [295, 355, 445],
     "category": 4,
     "rating": 4,
-    "description": "Цыпленок, бекон, соус барбекю, красный лук, моцарелла, фирменный томатный соус"
+    "description": "Цыпленок, бекон, соус барбекю, красный лук, моцарелла, фирменный томатный соус",
+    "priceId": [
+      "price_1O31cnBhVdtjeDVTfb2OuNcu",
+      "price_1O31dkBhVdtjeDVT7v6pkB6d",
+      "price_1O31eqBhVdtjeDVTKbSreq1e"
+    ]
   },
   {
     "id": "3",
@@ -41,7 +56,12 @@
     "price": [275, 350, 470],
     "category": 1,
     "rating": 2,
-    "description": "Цыпленок, моцарелла, фирменный кисло-сладкий соус, фирменный томатный соус"
+    "description": "Цыпленок, моцарелла, фирменный кисло-сладкий соус, фирменный томатный соус",
+    "priceId": [
+      "price_1O31gkBhVdtjeDVTUOznmJJZ",
+      "price_1O31hbBhVdtjeDVTYprIyiXP",
+      "price_1O31iRBhVdtjeDVTfoXYpnz5"
+    ]
   },
   {
     "id": "4",
@@ -52,18 +72,27 @@
     "price": [415, 485, 565],
     "category": 3,
     "rating": 8,
-    "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус чизбургер, моцарелла, фирменный томатный соус"
+    "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус чизбургер, моцарелла, фирменный томатный соус",
+    "priceId": [
+      "price_1O31jxBhVdtjeDVTmLZxm5P0",
+      "price_1O31knBhVdtjeDVTsi1yTj1G",
+      "price_1O31laBhVdtjeDVTOA54emAu"
+    ]
   },
   {
     "id": "5",
     "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
     "title": "Крэйзи пепперони",
-    "types": [0],
+    "types": [1],
     "sizes": [30, 40],
     "price": [350, 450],
     "category": 4,
     "rating": 2,
-    "description": "Пикантная пепперони, увеличенная порция моцареллы, фирменный томатный соус, красный лук, чеснок"
+    "description": "Пикантная пепперони, увеличенная порция моцареллы, фирменный томатный соус, красный лук, чеснок",
+    "priceId": [
+      "price_1O31mvBhVdtjeDVTqjsDBFdc",
+      "price_1O31neBhVdtjeDVTwr2c2C7G"
+    ]
   },
   {
     "id": "6",
@@ -74,7 +103,12 @@
     "price": [380, 460, 550],
     "category": 1,
     "rating": 9,
-    "description": "Пикантная пепперони, увеличенная порция моцареллы, фирменный томатный соус"
+    "description": "Пикантная пепперони, увеличенная порция моцареллы, фирменный томатный соус",
+    "priceId": [
+      "price_1O31pPBhVdtjeDVTncqvCROT",
+      "price_1O31q7BhVdtjeDVTvGHpTMrr",
+      "price_1O31qnBhVdtjeDVTjBkigPZH"
+    ]
   },
   {
     "id": "7",
@@ -85,7 +119,12 @@
     "price": [360, 450, 550],
     "category": 2,
     "rating": 10,
-    "description": "Увеличенная порция моцареллы, томаты, итальянские травы, фирменный томатный соус"
+    "description": "Увеличенная порция моцареллы, томаты, итальянские травы, фирменный томатный соус",
+    "priceId": [
+      "price_1O31rzBhVdtjeDVTyua4fdzJ",
+      "price_1O31sfBhVdtjeDVTcvLv0YD5",
+      "price_1O31tFBhVdtjeDVTNVeT0Xre"
+    ]
   },
   {
     "id": "8",
@@ -96,7 +135,12 @@
     "price": [355, 435, 535],
     "category": 5,
     "rating": 10,
-    "description": "Увеличенная порция моцареллы, ветчина, пикантная пепперони, кубики брынзы, томаты, шампиньоны, итальянские травы, фирменный томатный соус"
+    "description": "Увеличенная порция моцареллы, ветчина, пикантная пепперони, кубики брынзы, томаты, шампиньоны, итальянские травы, фирменный томатный соус",
+    "priceId": [
+      "price_1O31ucBhVdtjeDVTsSLLCjQ0",
+      "price_1O31vbBhVdtjeDVTe4GnnXEG",
+      "price_1O31wEBhVdtjeDVTCXo2xnEe"
+    ]
   },
   {
     "id": "9",
@@ -107,7 +151,12 @@
     "price": [380, 440, 530],
     "category": 2,
     "rating": 7,
-    "description": "Шампиньоны, томаты, сладкий перец, красный лук, кубики брынзы, моцарелла, фирменный томатный соус, итальянские травы"
+    "description": "Шампиньоны, томаты, сладкий перец, красный лук, кубики брынзы, моцарелла, фирменный томатный соус, итальянские травы",
+    "priceId": [
+      "price_1O31xeBhVdtjeDVTpfYZnpjy",
+      "price_1O31ySBhVdtjeDVTzb0sTzfE",
+      "price_1O322dBhVdtjeDVTjHyCRgjB"
+    ]
   },
   {
     "id": "10",
@@ -118,7 +167,11 @@
     "price": [480, 540],
     "category": 2,
     "rating": 8,
-    "description": "Цыпленок, соус песто, кубики брынзы, томаты, моцарелла, фирменный соус альфредо"
+    "description": "Цыпленок, соус песто, кубики брынзы, томаты, моцарелла, фирменный соус альфредо",
+    "priceId": [
+      "price_1O32FIBhVdtjeDVTgZ7TF2i7",
+      "price_1O32G5BhVdtjeDVT9saDJoJt"
+    ]
   },
   {
     "id": "11",
@@ -129,7 +182,11 @@
     "price": [360, 440],
     "category": 1,
     "rating": 9,
-    "description": "Цыпленок, ветчина, пикантная пепперони, острая чоризо, моцарелла, фирменный томатный соус"
+    "description": "Цыпленок, ветчина, пикантная пепперони, острая чоризо, моцарелла, фирменный томатный соус",
+    "priceId": [
+      "price_1O32IjBhVdtjeDVTwNVCZhac",
+      "price_1O32JPBhVdtjeDVT7C0dNK5O"
+    ]
   },
   {
     "id": "12",
@@ -140,7 +197,11 @@
     "price": [380, 460],
     "category": 5,
     "rating": 8,
-    "description": "Фирменный соус альфредо, цыпленок, моцарелла, ананасы"
+    "description": "Фирменный соус альфредо, цыпленок, моцарелла, ананасы",
+    "priceId": [
+      "price_1O32LYBhVdtjeDVTxoq9pnss",
+      "price_1O32MGBhVdtjeDVTmITVNS4N"
+    ]
   },
   {
     "id": "13",
@@ -151,18 +212,27 @@
     "price": [460, 550],
     "category": 1,
     "rating": 3,
-    "description": "Цыпленок, ветчина, соус ранч, моцарелла, томаты, чеснок"
+    "description": "Цыпленок, ветчина, соус ранч, моцарелла, томаты, чеснок",
+    "priceId": [
+      "price_1O32ONBhVdtjeDVT5QiDvkpW",
+      "price_1O32PJBhVdtjeDVTtvgNAQev"
+    ]
   },
   {
     "id": "14",
     "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/50555f951a6d4fd4ac0088c099eb3769_366x366.webp",
     "title": "Четыре сыра",
-    "types": [0, 1],
+    "types": [1],
     "sizes": [25, 30, 40],
     "price": [380, 415, 510],
     "category": 3,
     "rating": 8,
-    "description": "Сыр блю чиз, смесь сыров чеддер и пармезан, моцарелла, фирменный соус альфредо"
+    "description": "Сыр блю чиз, смесь сыров чеддер и пармезан, моцарелла, фирменный соус альфредо",
+    "priceId": [
+      "price_1O32R8BhVdtjeDVTPZhQgv49",
+      "price_1O32RmBhVdtjeDVTKU9rn59t",
+      "price_1O32SMBhVdtjeDVTb9dJI6Od"
+    ]
   },
   {
     "id": "15",
@@ -173,18 +243,26 @@
     "price": [410, 505],
     "category": 5,
     "rating": 9,
-    "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус бургер, моцарелла, фирменный томатный соус"
+    "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус бургер, моцарелла, фирменный томатный соус",
+    "priceId": [
+      "price_1O32UHBhVdtjeDVTSw5Bmu9U",
+      "price_1O32UzBhVdtjeDVTuuLpuoFQ"
+    ]
   },
   {
     "id": "16",
     "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/cea570842b754c52b786c231c65bd2e2_366x366.webp",
     "title": "Ветчина и сыр",
-    "types": [0, 1],
+    "types": [1],
     "sizes": [25, 30],
     "price": [385, 475],
     "category": 5,
     "rating": 6,
-    "description": "Ветчина, моцарелла, фирменный соус альфредо"
+    "description": "Ветчина, моцарелла, фирменный соус альфредо",
+    "priceId": [
+      "price_1O32YRBhVdtjeDVTS9iMTf1t",
+      "price_1O32Z9BhVdtjeDVTVOP4OU3R"
+    ]
   },
   {
     "id": "17",
@@ -195,7 +273,12 @@
     "price": [330, 400, 480],
     "category": 4,
     "rating": 6,
-    "description": "Фирменный томатный соус, моцарелла, острая чоризо, сладкий перец"
+    "description": "Фирменный томатный соус, моцарелла, острая чоризо, сладкий перец",
+    "priceId": [
+      "price_1O32k1BhVdtjeDVT6qmXDBkI",
+      "price_1O32khBhVdtjeDVT2l2vGAF7",
+      "price_1O32lHBhVdtjeDVTWzTdt7VG"
+    ]
   },
   {
     "id": "18",
@@ -206,29 +289,42 @@
     "price": [480, 580],
     "category": 5,
     "rating": 9,
-    "description": "Мортаделла, трюфельный соус, шампиньоны, красный лук, моцарелла, фирменный соус альфредо, чеснок"
+    "description": "Мортаделла, трюфельный соус, шампиньоны, красный лук, моцарелла, фирменный соус альфредо, чеснок",
+    "priceId": [
+      "price_1O32mLBhVdtjeDVT989hRZzk",
+      "price_1O32muBhVdtjeDVTOu9ZC806"
+    ]
   },
   {
     "id": "19",
-    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/32a725c9e28c49b3b491115e440b5a23_366x366.webp",
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/32a726c9e28c49b3b491115e440b5a23_584x584.webp",
     "title": "Микс",
-    "types": [0, 1],
+    "types": [1],
     "sizes": [25, 30, 40],
     "price": [370, 450, 550],
     "category": 5,
     "rating": 6,
-    "description": "Пицца четвертинками с ветчиной, цыпленком, томатами, брынзой, моцареллой, фирменным соусом альфредо"
+    "description": "Пицца четвертинками с ветчиной, цыпленком, томатами, брынзой, моцареллой, фирменным соусом альфредо",
+    "priceId": [
+      "price_1O32nfBhVdtjeDVTjf1dKC1m",
+      "price_1O32oCBhVdtjeDVT0c8Gwit4",
+      "price_1O32oiBhVdtjeDVTQUSEogwe"
+    ]
   },
   {
     "id": "20",
     "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/f8bcc0d18f5a4817a720a159f0f8c37c_366x366.webp",
     "title": "Жюльен",
-    "types": [0, 1],
+    "types": [1],
     "sizes": [30, 40],
     "price": [480, 580],
     "category": 3,
     "rating": 7,
-    "description": "Цыпленок, шампиньоны, сливочный соус с грибами, красный лук, чеснок, моцарелла, смесь сыров чеддер и пармезан, фирменный соус альфредо"
+    "description": "Цыпленок, шампиньоны, сливочный соус с грибами, красный лук, чеснок, моцарелла, смесь сыров чеддер и пармезан, фирменный соус альфредо",
+    "priceId": [
+      "price_1O32paBhVdtjeDVTpzFTIQZU",
+      "price_1O32qBBhVdtjeDVTomZBTPjx"
+    ]
   },
   {
     "id": "21",
@@ -239,17 +335,26 @@
     "price": [360, 440, 540],
     "category": 4,
     "rating": 4,
-    "description": "Острая чоризо, соус барбекю, томаты, красный лук, моцарелла, фирменный томатный соус"
+    "description": "Острая чоризо, соус барбекю, томаты, красный лук, моцарелла, фирменный томатный соус",
+    "priceId": [
+      "price_1O32r0BhVdtjeDVTFh84y7sw",
+      "price_1O32rfBhVdtjeDVTsrKNHB2O",
+      "price_1O32sIBhVdtjeDVT4DUxNBT9"
+    ]
   },
   {
     "id": "22",
     "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/03c840b1ab6f4ccb84f5dc167e146598_366x366.webp",
     "title": "Диабло",
-    "types": [0, 1],
+    "types": [1],
     "sizes": [30, 40],
     "price": [470, 565],
     "category": 4,
     "rating": 10,
-    "description": "Острая чоризо, острый перец халапеньо, соус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла, фирменный томатный соус"
+    "description": "Острая чоризо, острый перец халапеньо, соус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла, фирменный томатный соус",
+    "priceId": [
+      "price_1O32t3BhVdtjeDVTCGmT9Ylu",
+      "price_1O32taBhVdtjeDVTjQc1kWNI"
+    ]
   }
 ]
