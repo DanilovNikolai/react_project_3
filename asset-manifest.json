@@ -1,21 +1,34 @@
 {
   "files": {
-    "main.css": "/react_project_3/static/css/main.77cf80f3.css",
-    "main.js": "/react_project_3/static/js/main.975f8aa5.js",
+    "main.css": "/react_project_3/static/css/main.c64070ea.css",
+    "main.js": "/react_project_3/static/js/main.69f3c678.js",
     "Cart.js": "/react_project_3/static/js/Cart.bd430c03.chunk.js",
-    "ProductCard.js": "/react_project_3/static/js/ProductCard.cc19c3de.chunk.js",
+    "ProductCard.js": "/react_project_3/static/js/ProductCard.db5996f8.chunk.js",
     "NotFound.js": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js",
+    "About.css": "/react_project_3/static/css/About.fa553522.chunk.css",
+    "About.js": "/react_project_3/static/js/About.ba882f2b.chunk.js",
+    "static/js/483.75de5923.chunk.js": "/react_project_3/static/js/483.75de5923.chunk.js",
+    "static/js/965.54893cd6.chunk.js": "/react_project_3/static/js/965.54893cd6.chunk.js",
     "static/media/empty-cart.png": "/react_project_3/static/media/empty-cart.db905d1f4b063162f25b.png",
-    "static/media/pizza-logo.svg": "/react_project_3/static/media/pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg",
+    "static/media/footer_email.svg": "/react_project_3/static/media/footer_email.b7f872c96d41832d4c207a7d149b2c9d.svg",
+    "static/media/pizza-logo3.svg": "/react_project_3/static/media/pizza-logo3.6391c773512b4c83689d39f355dcb19a.svg",
+    "static/media/footer_instagram.svg": "/react_project_3/static/media/footer_instagram.baf233de167e84d5328c3f295fccefa5.svg",
     "index.html": "/react_project_3/index.html",
-    "main.77cf80f3.css.map": "/react_project_3/static/css/main.77cf80f3.css.map",
-    "main.975f8aa5.js.map": "/react_project_3/static/js/main.975f8aa5.js.map",
+    "static/media/footer_phone.svg": "/react_project_3/static/media/footer_phone.4fc768f8b54a3a81aa5de2b5f4530732.svg",
+    "static/media/footer_telegram.svg": "/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
+    "static/media/footer_location.svg": "/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
+    "main.c64070ea.css.map": "/react_project_3/static/css/main.c64070ea.css.map",
+    "main.69f3c678.js.map": "/react_project_3/static/js/main.69f3c678.js.map",
     "Cart.bd430c03.chunk.js.map": "/react_project_3/static/js/Cart.bd430c03.chunk.js.map",
-    "ProductCard.cc19c3de.chunk.js.map": "/react_project_3/static/js/ProductCard.cc19c3de.chunk.js.map",
-    "NotFound.c1dc60f9.chunk.js.map": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js.map"
+    "ProductCard.db5996f8.chunk.js.map": "/react_project_3/static/js/ProductCard.db5996f8.chunk.js.map",
+    "NotFound.c1dc60f9.chunk.js.map": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js.map",
+    "About.fa553522.chunk.css.map": "/react_project_3/static/css/About.fa553522.chunk.css.map",
+    "About.ba882f2b.chunk.js.map": "/react_project_3/static/js/About.ba882f2b.chunk.js.map",
+    "483.75de5923.chunk.js.map": "/react_project_3/static/js/483.75de5923.chunk.js.map",
+    "965.54893cd6.chunk.js.map": "/react_project_3/static/js/965.54893cd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77cf80f3.css",
-    "static/js/main.975f8aa5.js"
+    "static/css/main.c64070ea.css",
+    "static/js/main.69f3c678.js"
   ]
 }
