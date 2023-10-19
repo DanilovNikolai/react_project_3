@@ -34,3 +34,15 @@
     }
   }
 }
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  a {
+    font-size: 18px;
+    margin: 5px;
+    color: $orange;
+    font-weight: 700;
+  }
+
+}

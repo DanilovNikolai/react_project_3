@@ -11,7 +11,11 @@ const Footer: React.FC = () => {
           <h1>Dudu Pizza</h1>
         </div>
       </div>
-      <Link to="about">Контакты</Link>
+      <div className={styles.menuList}>
+        <Link to="about">Контакты</Link>
+        <Link to="/react_project_3">О нас</Link>
+        <Link to="/react_project_3">Вакансии</Link>
+      </div>
     </div>
   );
 };

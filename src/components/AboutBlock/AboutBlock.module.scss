@@ -5,6 +5,9 @@
   align-items: start;
   justify-content: space-around;
   margin: 5px 0px;
+  @media (max-width: 900px){
+      flex-direction: column;
+  }
 }
 
 .aboutColumn {
