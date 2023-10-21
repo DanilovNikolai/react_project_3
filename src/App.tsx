@@ -18,7 +18,7 @@ const About = lazy(
   () => import(/*webpackChunkName: "About" */ "./pages/About")
 );
 const SuccessPayment = lazy(
-  () => import(/*webpackChunkName: "About" */ "./pages/About")
+  () => import(/*webpackChunkName: "SuccessPayment" */ "./pages/SuccessPayment")
 );
 
 function App() {
