@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react_project_3/static/css/main.c8d451da.css",
-    "main.js": "/react_project_3/static/js/main.7e067d97.js",
-    "Cart.js": "/react_project_3/static/js/Cart.c91980bc.chunk.js",
+    "main.js": "/react_project_3/static/js/main.db4bd488.js",
+    "Cart.js": "/react_project_3/static/js/Cart.4dda3e84.chunk.js",
     "ProductCard.js": "/react_project_3/static/js/ProductCard.1a3f9709.chunk.js",
     "NotFound.js": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js",
     "About.css": "/react_project_3/static/css/About.9554f7c2.chunk.css",
     "About.js": "/react_project_3/static/js/About.ba882f2b.chunk.js",
-    "SuccessPayment.css": "/react_project_3/static/css/SuccessPayment.31d6cfe0.chunk.css",
-    "SuccessPayment.js": "/react_project_3/static/js/SuccessPayment.dfe755e1.chunk.js",
+    "SuccessPayment.css": "/react_project_3/static/css/SuccessPayment.e98593ad.chunk.css",
+    "SuccessPayment.js": "/react_project_3/static/js/SuccessPayment.6a230683.chunk.js",
     "static/js/483.75de5923.chunk.js": "/react_project_3/static/js/483.75de5923.chunk.js",
     "static/js/965.54893cd6.chunk.js": "/react_project_3/static/js/965.54893cd6.chunk.js",
     "static/media/empty-cart.png": "/react_project_3/static/media/empty-cart.db905d1f4b063162f25b.png",
@@ -21,18 +21,19 @@
     "static/media/footer_telegram.svg": "/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
     "main.c8d451da.css.map": "/react_project_3/static/css/main.c8d451da.css.map",
-    "main.7e067d97.js.map": "/react_project_3/static/js/main.7e067d97.js.map",
-    "Cart.c91980bc.chunk.js.map": "/react_project_3/static/js/Cart.c91980bc.chunk.js.map",
+    "main.db4bd488.js.map": "/react_project_3/static/js/main.db4bd488.js.map",
+    "Cart.4dda3e84.chunk.js.map": "/react_project_3/static/js/Cart.4dda3e84.chunk.js.map",
     "ProductCard.1a3f9709.chunk.js.map": "/react_project_3/static/js/ProductCard.1a3f9709.chunk.js.map",
     "NotFound.c1dc60f9.chunk.js.map": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js.map",
     "About.9554f7c2.chunk.css.map": "/react_project_3/static/css/About.9554f7c2.chunk.css.map",
     "About.ba882f2b.chunk.js.map": "/react_project_3/static/js/About.ba882f2b.chunk.js.map",
-    "SuccessPayment.dfe755e1.chunk.js.map": "/react_project_3/static/js/SuccessPayment.dfe755e1.chunk.js.map",
+    "SuccessPayment.e98593ad.chunk.css.map": "/react_project_3/static/css/SuccessPayment.e98593ad.chunk.css.map",
+    "SuccessPayment.6a230683.chunk.js.map": "/react_project_3/static/js/SuccessPayment.6a230683.chunk.js.map",
     "483.75de5923.chunk.js.map": "/react_project_3/static/js/483.75de5923.chunk.js.map",
     "965.54893cd6.chunk.js.map": "/react_project_3/static/js/965.54893cd6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8d451da.css",
-    "static/js/main.7e067d97.js"
+    "static/js/main.db4bd488.js"
   ]
 }
