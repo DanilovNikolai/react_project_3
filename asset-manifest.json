@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react_project_3/static/css/main.c8d451da.css",
-    "main.js": "/react_project_3/static/js/main.7b1404a5.js",
-    "Cart.js": "/react_project_3/static/js/Cart.d564139c.chunk.js",
+    "main.js": "/react_project_3/static/js/main.349de893.js",
+    "Cart.js": "/react_project_3/static/js/Cart.c91980bc.chunk.js",
     "ProductCard.js": "/react_project_3/static/js/ProductCard.1a3f9709.chunk.js",
     "NotFound.js": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js",
     "About.css": "/react_project_3/static/css/About.9554f7c2.chunk.css",
@@ -18,8 +18,8 @@
     "static/media/footer_telegram.svg": "/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
     "main.c8d451da.css.map": "/react_project_3/static/css/main.c8d451da.css.map",
-    "main.7b1404a5.js.map": "/react_project_3/static/js/main.7b1404a5.js.map",
-    "Cart.d564139c.chunk.js.map": "/react_project_3/static/js/Cart.d564139c.chunk.js.map",
+    "main.349de893.js.map": "/react_project_3/static/js/main.349de893.js.map",
+    "Cart.c91980bc.chunk.js.map": "/react_project_3/static/js/Cart.c91980bc.chunk.js.map",
     "ProductCard.1a3f9709.chunk.js.map": "/react_project_3/static/js/ProductCard.1a3f9709.chunk.js.map",
     "NotFound.c1dc60f9.chunk.js.map": "/react_project_3/static/js/NotFound.c1dc60f9.chunk.js.map",
     "About.9554f7c2.chunk.css.map": "/react_project_3/static/css/About.9554f7c2.chunk.css.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.c8d451da.css",
-    "static/js/main.7b1404a5.js"
+    "static/js/main.349de893.js"
   ]
 }
