@@ -38,7 +38,8 @@ const Cart: React.FC = () => {
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "https://danilovnikolai.github.io/react_project_3",
+          successUrl:
+            "https://danilovnikolai.github.io/react_project_3/success_payment",
           cancelUrl: "https://danilovnikolai.github.io/react_project_3",
         })
         .then((response) => {
