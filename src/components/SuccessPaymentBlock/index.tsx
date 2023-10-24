@@ -5,19 +5,23 @@ import { Link } from "react-router-dom";
 import getRandomOrder from "../../utils/getRandomOrderNumber";
 
 const SuccessPaymentBlock = () => {
+  const randomOrder = getRandomOrder(1, 100);
+
   return (
-    <h1 className={styles.root}>
-      <div>{smileFace}</div>
+    <h2 className={styles.root}>
+      <div>
+        <img src={smileFace} alt="smile_face" />
+      </div>
       <div>Ура! Оплата прошла успешно!</div>
-      <div>Номер вашего заказа #{getRandomOrder(1, 100)}</div>
+      <div>Номер вашего заказа <span>#{randomOrder}</span></div>
       <div>Ваш заказ уже начинают готовить!</div>
-      <div>Приятного аппетита!</div>
+      <div><span>Приятного аппетита!</span></div>
       <Link to="/react_project_3">
         <button className="button button--outline button--add">
           <span>Назад к покупкам</span>
         </button>
       </Link>
-    </h1>
+    </h2>
   );
 };
 

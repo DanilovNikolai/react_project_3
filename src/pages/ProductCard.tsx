@@ -1,8 +1,17 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
+// axios
+import axios from "axios";
+
+// styles
 import "../scss/app.scss";
+
+// components
 import AddButton from "../components/UI/AddButton";
+import BackButton from "../components/UI/BackButton";
+
+// Redux Toolkit
 import { Pizza } from "../redux/items/types";
 
 const pizzaTypes: string[] = ["тонкое", "традиционное"];
@@ -78,11 +87,7 @@ const ProductCard: React.FC = () => {
               priceId={pizza?.priceId[activeSize]}
             />
           </div>
-          <Link to="/react_project_3">
-            <button className="button button--outline button--add">
-              <span>Назад</span>
-            </button>
-          </Link>
+          <BackButton />
         </div>
       </div>
     </div>

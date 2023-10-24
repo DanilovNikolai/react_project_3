@@ -1,4 +1,7 @@
 import { useState } from "react";
+import BackButton from "../UI/BackButton";
+
+// Mapbox
 import Map, { Marker, NavigationControl, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -65,74 +68,77 @@ const AboutBlock: React.FC = () => {
   console.log(selectedMarkers);
 
   return (
-    <div className={styles.aboutContainer}>
-      <div className={styles.aboutColumn}>
-        <Map
-          mapboxAccessToken="pk.eyJ1IjoiZGFuZGVsMW9uIiwiYSI6ImNsbm96c2J5aTBpaWUyam9jMjQ1ZjBvbG8ifQ.fJBIAFF65UCvaFHqc-FXXw"
-          initialViewState={{
-            longitude: 37.5716530669932,
-            latitude: 55.82848542453838,
-            zoom: 13,
-          }}
-          mapStyle="mapbox://styles/mapbox/streets-v12"
-          style={{ width: "100%", height: "400px" }}
-        >
-          {markersData.map((marker, index) => {
-            return (
-              <Marker
-                key={index}
-                longitude={marker.longitude}
-                latitude={marker.latitude}
-                anchor="bottom"
-              >
-                <div
-                  className={styles.marker}
-                  onClick={() => handleMarkerClick(index)}
+    <>
+      <div className={styles.aboutContainer}>
+        <div className={styles.aboutColumn}>
+          <Map
+            mapboxAccessToken="pk.eyJ1IjoiZGFuZGVsMW9uIiwiYSI6ImNsbm96c2J5aTBpaWUyam9jMjQ1ZjBvbG8ifQ.fJBIAFF65UCvaFHqc-FXXw"
+            initialViewState={{
+              longitude: 37.5716530669932,
+              latitude: 55.82848542453838,
+              zoom: 13,
+            }}
+            mapStyle="mapbox://styles/mapbox/streets-v12"
+            style={{ width: "100%", height: "400px" }}
+          >
+            {markersData.map((marker, index) => {
+              return (
+                <Marker
+                  key={index}
+                  longitude={marker.longitude}
+                  latitude={marker.latitude}
+                  anchor="bottom"
                 >
-                  <img src={markerImage} alt="marker" />
-                </div>
-                {selectedMarkers[index] && (
-                  <Popup
-                    longitude={marker.longitude}
-                    latitude={marker.latitude}
-                    anchor="top"
-                    onClose={() => handleMarkerClick(index)}
-                    className={styles.popup}
+                  <div
+                    className={styles.marker}
+                    onClick={() => handleMarkerClick(index)}
                   >
-                    {marker?.location}
-                  </Popup>
-                )}
-              </Marker>
-            );
-          })}
-          <NavigationControl />
-        </Map>
+                    <img src={markerImage} alt="marker" />
+                  </div>
+                  {selectedMarkers[index] && (
+                    <Popup
+                      longitude={marker.longitude}
+                      latitude={marker.latitude}
+                      anchor="top"
+                      onClose={() => handleMarkerClick(index)}
+                      className={styles.popup}
+                    >
+                      {marker?.location}
+                    </Popup>
+                  )}
+                </Marker>
+              );
+            })}
+            <NavigationControl />
+          </Map>
+        </div>
+        <div className={styles.aboutColumn}>
+          <div className={styles.logo}>
+            <img width="25" src={phoneLogoFooter} alt="Phone logo" />
+            <a href="tel:+7(777)7777">
+              <p>+ 7 (777) 77 77</p>
+            </a>
+          </div>
+          <div className={styles.logo}>
+            <img width="25" src={emailLogoFooter} alt="Email logo" />
+            <p>dudu_pizza@mail.ru</p>
+          </div>
+          <div className={styles.logo}>
+            <img width="25" src={locationLogoFooter} alt="Location logo" />
+            <p>Москва, ул. Дегунинская, д.10к1</p>
+          </div>
+          <div className={styles.logo}>
+            <img width="25" src={instagramLogoFooter} alt="Instagram logo" />
+            <p>@dudu.pizzagram</p>
+          </div>
+          <div className={styles.logo}>
+            <img width="25" src={telegramLogoFooter} alt="Telegram logo" />
+            <p>@dudu.pizza</p>
+          </div>
+        </div>
       </div>
-      <div className={styles.aboutColumn}>
-        <div className={styles.logo}>
-          <img width="25" src={phoneLogoFooter} alt="Phone logo" />
-          <a href="tel:+7(777)7777">
-            <p>+ 7 (777) 77 77</p>
-          </a>
-        </div>
-        <div className={styles.logo}>
-          <img width="25" src={emailLogoFooter} alt="Email logo" />
-          <p>dudu_pizza@mail.ru</p>
-        </div>
-        <div className={styles.logo}>
-          <img width="25" src={locationLogoFooter} alt="Location logo" />
-          <p>Москва, ул. Дегунинская, д.10к1</p>
-        </div>
-        <div className={styles.logo}>
-          <img width="25" src={instagramLogoFooter} alt="Instagram logo" />
-          <p>@dudu.pizzagram</p>
-        </div>
-        <div className={styles.logo}>
-          <img width="25" src={telegramLogoFooter} alt="Telegram logo" />
-          <p>@dudu.pizza</p>
-        </div>
-      </div>
-    </div>
+      <BackButton />
+    </>
   );
 };
 

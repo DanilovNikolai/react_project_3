@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../components/CartItem";
+import CartEmpty from "../components/CartEmpty";
+import BackButton from "../components/UI/BackButton";
+
+// Redux Toolkit
+import { useSelector, useDispatch } from "react-redux";
 import { clearItems } from "../redux/cart/slice";
 import { selectCart } from "../redux/cart/selectors";
-import CartEmpty from "../components/CartEmpty";
 import { CartItemProps } from "../redux/cart/types";
 
 // Stripe
@@ -28,7 +30,7 @@ const Cart: React.FC = () => {
   }
 
   function handlePayClick() {
-    stripe.then((stripe: any): void => {
+    stripe.then((stripe): void => {
       const lineItems = items.map((item) => ({
         price: item.priceId,
         quantity: item.count,
@@ -47,6 +49,9 @@ const Cart: React.FC = () => {
         })
         .catch((error) => {
           console.log(error);
+        })
+        .finally(() => {
+          localStorage.removeItem("cart");
         });
     });
   }
@@ -147,27 +152,7 @@ const Cart: React.FC = () => {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <Link
-              to="/react_project_3"
-              className="button button--outline button--add go-back-btn"
-            >
-              <svg
-                width="8"
-                height="14"
-                viewBox="0 0 8 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 13L1 6.93015L6.86175 1"
-                  stroke="#D3D3D3"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
-              <span>Вернуться назад</span>
-            </Link>
+              <BackButton/>
             <button onClick={handlePayClick} className="button pay-btn">
               <span>Оплатить сейчас</span>
             </button>
