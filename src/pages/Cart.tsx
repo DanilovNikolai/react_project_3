@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+// components
 import CartItem from "../components/CartItem";
 import CartEmpty from "../components/CartEmpty";
 import BackButton from "../components/UI/BackButton";
@@ -16,6 +19,7 @@ const stripe = loadStripe(
 );
 
 const Cart: React.FC = () => {
+  const [isProcessing, setIsProcessing] = useState(false);
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector(selectCart);
   const totalCount = items.reduce(
@@ -30,6 +34,8 @@ const Cart: React.FC = () => {
   }
 
   function handlePayClick() {
+    setIsProcessing(true);
+
     stripe.then((stripe): void => {
       const lineItems = items.map((item) => ({
         price: item.priceId,
@@ -52,6 +58,7 @@ const Cart: React.FC = () => {
         })
         .finally(() => {
           localStorage.removeItem("cart");
+          setIsProcessing(false);
         });
     });
   }
@@ -152,9 +159,12 @@ const Cart: React.FC = () => {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-              <BackButton/>
-            <button onClick={handlePayClick} className="button pay-btn">
-              <span>Оплатить сейчас</span>
+            <BackButton />
+            <button
+              onClick={handlePayClick}
+              className={`button pay-btn ${isProcessing ? "processing" : ""}`}
+            >
+              <span>{isProcessing ? "Подождите..." : "Оплатить сейчас"}</span>
             </button>
           </div>
         </div>
