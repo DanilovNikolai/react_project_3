@@ -33,33 +33,29 @@ const Cart: React.FC = () => {
     }
   }
 
-  function handlePayClick() {
+  async function handlePayClick() {
     setIsProcessing(true);
-    localStorage.removeItem("cart");
 
-    stripe.then((stripe): void => {
+    try {
+      const stripeInstance = await stripe;
+
       const lineItems = items.map((item) => ({
         price: item.priceId,
         quantity: item.count,
       }));
 
-      stripe
-        .redirectToCheckout({
-          lineItems: lineItems,
-          mode: "payment",
-          successUrl: "https://danilovnikolai.github.io/react_project_3",
-          cancelUrl: "https://danilovnikolai.github.io/react_project_3",
-        })
-        .then((response) => {
-          console.log(response.error);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setIsProcessing(false);
-        });
-    });
+      const response = await stripeInstance.redirectToCheckout({
+        lineItems: lineItems,
+        mode: "payment",
+        successUrl: "http://localhost:3000/react_project_3/success_payment",
+        cancelUrl: "http://localhost:3000/react_project_3",
+      });
+
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+      setIsProcessing(false);
+    }
   }
 
   if (items.length === 0) {
