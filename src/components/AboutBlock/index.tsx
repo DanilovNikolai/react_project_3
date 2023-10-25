@@ -65,8 +65,6 @@ const AboutBlock: React.FC = () => {
     setSelectedMarkers(newSelectedMarkers);
   };
 
-  console.log(selectedMarkers);
-
   return (
     <>
       <div className={styles.aboutContainer}>

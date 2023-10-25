@@ -14,7 +14,7 @@ import BackButton from "../components/UI/BackButton";
 // Redux Toolkit
 import { Pizza } from "../redux/items/types";
 
-const pizzaTypes: string[] = ["тонкое", "традиционное"];
+const pizzaTypes: string[] = ["традиционное", "тонкое"];
 
 const ProductCard: React.FC = () => {
   const [pizza, setPizza] = useState<Pizza>(null);

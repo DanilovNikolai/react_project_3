@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddButton from "../UI/AddButton";
 
-const pizzaTypes: string[] = ["тонкое", "традиционное"];
+const pizzaTypes: string[] = ["традиционное", "тонкое"];
 
 type PizzaBlockProps = {
   id: string;

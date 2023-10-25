@@ -11,7 +11,8 @@ const Pagination: React.FC<PaginationProps> = ({
   currentPage,
 }) => {
   const dispatch = useDispatch();
-  const pageCount = Math.ceil(10 / itemsPerPage);
+
+  const pageCount = Math.ceil(23 / itemsPerPage);
 
   return (
     <>
