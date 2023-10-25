@@ -35,6 +35,7 @@ const Cart: React.FC = () => {
 
   function handlePayClick() {
     setIsProcessing(true);
+    localStorage.removeItem("cart");
 
     stripe.then((stripe): void => {
       const lineItems = items.map((item) => ({
@@ -46,8 +47,7 @@ const Cart: React.FC = () => {
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl:
-            "https://danilovnikolai.github.io/react_project_3/success_payment",
+          successUrl: "https://danilovnikolai.github.io/react_project_3",
           cancelUrl: "https://danilovnikolai.github.io/react_project_3",
         })
         .then((response) => {
@@ -57,7 +57,6 @@ const Cart: React.FC = () => {
           console.log(error);
         })
         .finally(() => {
-          localStorage.removeItem("cart");
           setIsProcessing(false);
         });
     });
