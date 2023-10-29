@@ -1,10 +1,9 @@
 import { useState } from "react";
-import BackButton from "../UI/BackButton";
-
+// components
+import BackButton from "../../components/UI/BackButton";
 // Mapbox
 import Map, { Marker, NavigationControl, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-
 // icons
 import phoneLogoFooter from "../../assets/img/footer_phone.svg";
 import emailLogoFooter from "../../assets/img/footer_email.svg";
@@ -12,9 +11,10 @@ import locationLogoFooter from "../../assets/img/footer_location.svg";
 import instagramLogoFooter from "../../assets/img/footer_instagram.svg";
 import telegramLogoFooter from "../../assets/img/footer_telegram.svg";
 import markerImage from "../../assets/img/pizza-marker.png";
-
 // styles
 import styles from "./AboutBlock.module.scss";
+// react-router
+import { Link } from "react-router-dom";
 
 const markersData = [
   {
@@ -135,7 +135,9 @@ const AboutBlock: React.FC = () => {
           </div>
         </div>
       </div>
-      <BackButton />
+      <Link to="/react_project_3">
+        <BackButton />
+      </Link>
     </>
   );
 };

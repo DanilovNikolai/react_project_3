@@ -1,12 +1,13 @@
-@import "../variables.scss";
+@import "../../scss/variables.scss";
+@import "../../scss/libs/normalize";
 
-.pizza-block-wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.pizza-block {
+.main {
   width: 280px;
   margin: 0 auto;
   text-align: center;
@@ -15,7 +16,7 @@
     margin-bottom: 35px;
   }
 
-  &__image {
+  .image {
     cursor: pointer;
     width: 260px;
     &:hover {
@@ -59,7 +60,7 @@
     }
   }
 
-  &__title {
+  .title {
     cursor: pointer;
     font-size: 20px;
     font-weight: 900;
@@ -72,52 +73,14 @@
     }
   }
 
-  &__selector {
-    display: flex;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    flex-direction: column;
-    padding: 6px;
-
-    ul {
-      display: flex;
-      flex: 1;
-
-      &:first-of-type {
-        margin-bottom: 6px;
-      }
-
-      li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px;
-        flex: 1;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 16px;
-        @media (max-width: 500px) {
-          font-size: 15px;
-        }
-        @include noselect();
-        &.active {
-          background: #ffffff;
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
-          border-radius: 5px;
-          cursor: auto;
-        }
-      }
-    }
-  }
-
-  &__bottom {
+  .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
   }
 
-  &__price {
+  .price {
     font-weight: bold;
     font-size: 22px;
     line-height: 27px;

@@ -1,29 +1,35 @@
-@import "../variables.scss";
+@import "../../scss/_variables";
+@import "../../scss/libs/normalize";
 
 .categories {
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 1420px) {
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    @media (max-width: 500px) {
+    @media (max-width: 750px) {
       justify-content: center;
       align-items: center;
     }
 
     li {
       background-color: #f9f9f9;
-      margin-top: 5px;
+      margin: 5px 3px;
       padding: 13px 30px;
       border-radius: 30px;
-      margin-right: 10px;
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       @include noselect();
-      @media (max-width: 950px) {
+      @media (max-width: 1100px) {
         font-size: 14px;
         padding: 10px 20px;
-        margin: 5px 5px;
       }
       @media (max-width: 600px) {
         font-size: 13px;

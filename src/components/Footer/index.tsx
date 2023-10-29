@@ -1,5 +1,8 @@
+// styles
 import styles from "./Footer.module.scss";
+// react-router
 import { Link } from "react-router-dom";
+// icons
 import pizzaLogoFooter from "../../assets/img/pizza-logo3.svg";
 
 const Footer: React.FC = () => {

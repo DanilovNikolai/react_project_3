@@ -164,7 +164,7 @@ const Home: React.FC = () => {
                   <PizzaSkeleton key={index} />
                 ))
               : items.map((item: Pizza) => (
-                  <PizzaBlock {...item} key={item.id} />
+                  <PizzaBlock {...item} pizza={item} key={item.id} />
                 ))}
           </div>
         )}

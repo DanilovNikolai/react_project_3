@@ -1,7 +1,10 @@
+// redux toolkit
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cart/slice";
 import { CartItemProps } from "../../../redux/cart/types";
 import { selectCartItemById } from "../../../redux/cart/selectors";
+// styles
+import styles from "./AddButton.module.scss";
 
 export type AddButtonProps = {
   id: string;
@@ -41,10 +44,7 @@ const AddButton: React.FC<AddButtonProps> = ({
   };
 
   return (
-    <button
-      onClick={handleAddItem}
-      className="button button--outline button--add"
-    >
+    <button onClick={handleAddItem} className={styles.addButton}>
       <svg
         width="12"
         height="12"

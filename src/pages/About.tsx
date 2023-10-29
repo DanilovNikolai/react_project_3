@@ -1,3 +1,4 @@
+// components
 import AboutBlock from "../components/AboutBlock";
 
 const About: React.FC = () => {

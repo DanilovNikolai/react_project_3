@@ -1,9 +1,14 @@
-import emptyCartImg from "../../assets/img/empty-cart.png";
 import { Link } from "react-router-dom";
+// icons
+import emptyCartImg from "../../assets/img/empty-cart.png";
+// styles
+import styles from "./CartEmpty.module.scss";
+// components
+import BackButton from "../UI/BackButton";
 
 const CartEmpty: React.FC = () => {
   return (
-    <div className="cart cart--empty">
+    <div className={styles.cartEmpty}>
       <h2>
         Корзина пустая <br />
         <span>😕</span>
@@ -14,8 +19,8 @@ const CartEmpty: React.FC = () => {
         Чтобы заказать пиццу, перейдите на главную страницу.
       </p>
       <img src={emptyCartImg} alt="Empty cart" />
-      <Link to="/react_project_3" className="button button--black">
-        <span>Вернуться назад</span>
+      <Link to="/react_project_3">
+        <BackButton />
       </Link>
     </div>
   );

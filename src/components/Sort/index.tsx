@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 // Redux Toolkit
 import { useDispatch } from "react-redux";
 import { setSortId } from "../../redux/filter/slice";
+// styles
+import styles from "./Sort.module.scss";
 
 const popupList: string[] = [
   "популярности ↓",
@@ -34,8 +36,8 @@ const Sort: React.FC<{ sortId: number }> = React.memo(({ sortId }) => {
   }
 
   return (
-    <div ref={sortRef} className="sort">
-      <div className="sort__label">
+    <div ref={sortRef} className={styles.sort}>
+      <div className={styles.label}>
         <svg
           width="10"
           height="6"
@@ -54,12 +56,12 @@ const Sort: React.FC<{ sortId: number }> = React.memo(({ sortId }) => {
         </span>
       </div>
       {isVisible && (
-        <div className="sort__popup">
+        <div className={styles.popup}>
           <ul>
             {popupList.map((item, index) => (
               <li
                 key={index}
-                className={sortId === index ? "active" : ""}
+                className={sortId === index ? styles.active : ""}
                 onClick={() => onClickPopupList(index)}
               >
                 {item}

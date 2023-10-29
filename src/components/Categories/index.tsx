@@ -1,6 +1,9 @@
 import React, { useCallback } from "react";
+// redux toolkit
 import { useDispatch } from "react-redux";
 import { setCategoryId, setCurrentPage } from "../../redux/filter/slice";
+// styles
+import styles from "./Categories.module.scss";
 
 const categories: string[] = [
   "Все",
@@ -21,12 +24,12 @@ const Categories: React.FC<{ categoryId: number }> = React.memo(
     }, []);
 
     return (
-      <div className="categories">
+      <div className={styles.categories}>
         <ul>
           {categories.map((categoryName, index) => (
             <li
               key={index}
-              className={categoryId === index ? "active" : ""}
+              className={categoryId === index ? styles.active : ""}
               onClick={() => handleChangeCategory(index)}
             >
               {categoryName}

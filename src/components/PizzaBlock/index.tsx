@@ -1,6 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+// react-router
 import { Link } from "react-router-dom";
+// components
 import AddButton from "../UI/AddButton";
+import PizzaSelector from "../UI/PizzaSelector";
+// styles
+import styles from "./PizzaBlock.module.scss";
+// types
+import { Pizza } from "../../redux/items/types";
 
 const pizzaTypes: string[] = ["традиционное", "тонкое"];
 
@@ -13,6 +20,7 @@ type PizzaBlockProps = {
   types: number[];
   rating: number;
   priceId: string[];
+  pizza: Pizza;
 };
 
 const PizzaBlock: React.FC<PizzaBlockProps> = ({
@@ -21,55 +29,29 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   price,
   imageUrl,
   sizes,
-  types,
   priceId,
+  pizza,
 }) => {
   const [activeType, setActiveType] = useState<number>(0);
   const [activeSize, setActiveSize] = useState<number>(0);
-  const [priceValue, setPriceValue] = useState<number>(0);
-
-  useEffect(() => {
-    setPriceValue(price[0]);
-  }, []);
-
-  const handlePriceAndSize = (index: number): void => {
-    setActiveSize(index);
-    setPriceValue(price[index]);
-  };
 
   return (
-    <div className="pizza-block-wrapper">
-      <div className="pizza-block">
+    <div className={styles.wrapper}>
+      <div className={styles.main}>
         <Link to={`/react_project_3/pizza/${id}`}>
-          <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
-          <h4 className="pizza-block__title">{title}</h4>
+          <img className={styles.image} src={imageUrl} alt="Pizza" />
+          <h4 className={styles.title}>{title}</h4>
         </Link>
-        <div className="pizza-block__selector">
-          <ul>
-            {types.map((type) => (
-              <li
-                key={type}
-                className={activeType === type ? "active" : ""}
-                onClick={() => setActiveType(type)}
-              >
-                {pizzaTypes[type]}
-              </li>
-            ))}
-          </ul>
-          <ul>
-            {sizes.map((size, index) => (
-              <li
-                key={size}
-                className={activeSize === index ? "active" : ""}
-                onClick={() => handlePriceAndSize(index)}
-              >
-                {size} см.
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="pizza-block__bottom">
-          <div className="pizza-block__price">{priceValue} ₽</div>
+        <PizzaSelector
+          pizza={pizza}
+          activeType={activeType}
+          setActiveType={setActiveType}
+          activeSize={activeSize}
+          setActiveSize={setActiveSize}
+          pizzaTypes={pizzaTypes}
+        />
+        <div className={styles.bottom}>
+          <div className={styles.price}>{pizza?.price[activeSize]} ₽</div>
           <AddButton
             id={id}
             title={title}

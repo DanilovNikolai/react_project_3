@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// styles
+import styles from "./BackButton.module.scss";
 
-const BackButton: React.FC = () => {
+const BlackButton: React.FC = () => {
   return (
-    <Link
-      to="/react_project_3"
-      className="button button--outline button--add go-back-btn"
-    >
+    <button className={styles.root}>
       <svg
         width="8"
         height="14"
@@ -23,8 +21,8 @@ const BackButton: React.FC = () => {
         ></path>
       </svg>
       <span>Вернуться назад</span>
-    </Link>
+    </button>
   );
 };
 
-export default BackButton;
+export default BlackButton;

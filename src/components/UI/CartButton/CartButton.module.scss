@@ -1,0 +1,77 @@
+@import "../../../scss/variables";
+@import "../../../scss/libs/normalize";
+
+.cartButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-wrap: nowrap;
+  background-color: $orange;
+  border-radius: 30px;
+  padding: 6px 15px;
+  margin: 5px;
+  min-width: 110px;
+  cursor: pointer;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
+  border: 1px solid transparent;
+  @include noselect();
+  @media (max-width: 800px) {
+    padding: 6px 10px;
+    min-width: 100px;
+    max-height: 35px;
+  }
+  @media (max-width: 600px) {
+    padding: 3px 7px;
+  }
+
+  &,
+  span {
+    color: #fff;
+    font-size: 16px;
+    @media (max-width: 1060px) {
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      font-size: 12px;
+    }
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+  }
+
+  i,
+  span,
+  path,
+  svg {
+    transition: all $duration ease-in-out;
+  }
+
+  &:hover {
+    background-color: darken($orange, 8%);
+  }
+
+  &:active {
+    background-color: darken($orange, 12%);
+    transform: translateY(1px);
+  }
+}
+
+.delimiter {
+  width: 2px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-left: 10px;
+  margin-right: 10px;
+  @media (max-width: 1060px) {
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  @media (max-width: 600px) {
+    height: 12px;
+  }
+}

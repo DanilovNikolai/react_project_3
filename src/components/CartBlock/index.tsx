@@ -1,32 +1,34 @@
-import { useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
+// components
+import CartItem from "../../components/CartItem";
+import CartEmpty from "../../components/CartEmpty";
+import BackButton from "../../components/UI/BackButton";
+import PayButton from "../../components/UI/PayButton";
+import ClearCartButton from "../UI/ClearCartButton";
+// Redux Toolkit
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/cart/selectors";
+import { CartItemProps } from "../../redux/cart/types";
+// styles
+import styles from "./CartBlock.module.scss";
 
-const CartLabel = () => {
+const CartBlock: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const totalCount = items.reduce(
-    (sum: number, item: any) => item.count + sum,
+    (sum: number, item: { count: number }) => item.count + sum,
     0
   );
-  const { pathname } = useLocation();
-  const isMounted = useRef(false);
 
-  useEffect(() => {
-    if (isMounted.current) {
-      const json = JSON.stringify(items);
-      localStorage.setItem("cart", json);
-    }
-    isMounted.current = true;
-  }, [items]);
+  if (items.length === 0) {
+    return <CartEmpty />;
+  }
 
   return (
-    <>
-      {pathname !== "/react_project_3/cart" && (
-        <div className="header__cart">
-          <Link to="/react_project_3/cart" className="button button--cart">
-            <span>{totalPrice} ₽</span>
-            <div className="button__delimiter"></div>
+    <div className={styles.container}>
+      <div className={styles.cart}>
+        <div className={styles.top}>
+          <h2 className={styles.title}>
             <svg
               width="18"
               height="18"
@@ -40,28 +42,51 @@ const CartLabel = () => {
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-              />
+              ></path>
               <path
                 d="M14.3333 16.3333C15.0697 16.3333 15.6667 15.7364 15.6667 15C15.6667 14.2636 15.0697 13.6667 14.3333 13.6667C13.597 13.6667 13 14.2636 13 15C13 15.7364 13.597 16.3333 14.3333 16.3333Z"
                 stroke="white"
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-              />
+              ></path>
               <path
                 d="M4.78002 4.99999H16.3334L15.2134 10.5933C15.1524 10.9003 14.9854 11.176 14.7417 11.3722C14.4979 11.5684 14.1929 11.6727 13.88 11.6667H6.83335C6.50781 11.6694 6.1925 11.553 5.94689 11.3393C5.70128 11.1256 5.54233 10.8295 5.50002 10.5067L4.48669 2.82666C4.44466 2.50615 4.28764 2.21182 4.04482 1.99844C3.80201 1.78505 3.48994 1.66715 3.16669 1.66666H1.66669"
                 stroke="white"
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-              />
+              ></path>
             </svg>
-            <span>{totalCount}</span>
-          </Link>
+            Корзина
+          </h2>
+          <ClearCartButton />
         </div>
-      )}
-    </>
+        <div className={styles.body}>
+          {items &&
+            items.map((item: CartItemProps, index) => (
+              <CartItem key={item.id + index} {...item} />
+            ))}
+        </div>
+        <div className={styles.bottom}>
+          <div className={styles.details}>
+            <span>
+              Всего: <b>{totalCount} шт.</b>{" "}
+            </span>
+            <span>
+              Сумма заказа: <b>{totalPrice} ₽</b>{" "}
+            </span>
+          </div>
+          <div className={styles.buttons}>
+            <Link to="/react_project_3">
+              <BackButton />
+            </Link>
+            <PayButton items={items} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default CartLabel;
+export default CartBlock;

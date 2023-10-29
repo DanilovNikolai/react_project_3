@@ -1,4 +1,6 @@
+// content-loader
 import ContentLoader from "react-content-loader";
+// styles
 import styles from "./PizzaSkeleton.module.scss";
 
 const PizzaSkeleton: React.FC<{ key: number }> = (props) => {

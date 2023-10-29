@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-
 // styles
 import styles from "./SuccessPaymentBlock.module.scss";
-
 // icons
 import smileFace from "../../assets/img/cart_happy_face_emoji_emotion_smile_icon.svg";
-
 // utils
 import getRandomOrder from "../../utils/getRandomOrderNumber";
-
 // redux toolkit
 import { useDispatch } from "react-redux";
 import { clearItems } from "../../redux/cart/slice";
 
-const SuccessPaymentBlock = () => {
+const SuccessPaymentBlock: React.FC = () => {
   const randomOrder = getRandomOrder(1, 100);
   const dispatch = useDispatch();
   const { pathname } = useLocation();

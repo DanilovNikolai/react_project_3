@@ -1,3 +1,84 @@
-.root {
-  
+@import "../../../scss/variables.scss";
+@import "../../../scss/libs/normalize";
+
+.addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-wrap: nowrap;
+  border-radius: 30px;
+  padding: 8px 15px;
+  min-width: 110px;
+  cursor: pointer;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
+  border: 1px solid transparent;
+  @include noselect();
+  max-width: 200px;
+  margin: 10px;
+  background-color: #fff;
+  border-color: $orange;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    i {
+      background-color: #fff;
+      color: $orange;
+    }
+  }
+
+  i {
+    display: inline-block;
+    border-radius: 30px;
+    background-color: $orange;
+    color: #fff;
+    font-weight: 600;
+    width: 22px;
+    height: 22px;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 22px;
+    position: relative;
+    margin: 0px 5px;
+  }
+
+  &,
+  span {
+    color: $orange;
+  }
+
+  svg {
+    margin-right: 8px;
+    path {
+      fill: $orange;
+    }
+  }
+
+  &:hover {
+    background-color: $orange;
+
+    &,
+    span {
+      color: #fff;
+    }
+
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &:active {
+    background-color: darken($orange, 8%);
+    transform: translateY(1px);
+  }
 }

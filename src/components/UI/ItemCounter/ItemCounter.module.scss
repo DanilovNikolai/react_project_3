@@ -1,0 +1,85 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/libs/normalize";
+
+.itemCounter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 200px;
+  @media (max-width: 1100px) {
+    min-width: 150px;
+  }
+  @media (max-width: 800px) {
+    min-width: 120px;
+  }
+  @media (max-width: 600px) {
+    min-width: 100px;
+  }
+
+  b {
+    font-size: 22px;
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.counterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
+  border: 2px solid transparent;
+  @include noselect();
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background-color: #fff;
+  border-color: $orange;
+  @media (max-width: 1000px){
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+  @media (max-width: 600px){
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+  }
+
+  &:hover {
+    background-color: $orange;
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.minus {
+  svg {
+    path:first-of-type {
+      display: none;
+    }
+  }
+  &:disabled {
+    opacity: 0.2;
+    &:hover {
+      background: white;
+      svg path {
+        fill: #fe5f1e;
+      }
+    }
+    &:active {
+      transform: none;
+    }
+  }
+}

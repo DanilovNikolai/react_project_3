@@ -12,6 +12,6 @@ export type CartItemProps = {
 
 // TypeScript
 export interface CartSliceState {
-  totalPrice: number;
+  totalPrice?: number;
   items: CartItemProps[];
 }

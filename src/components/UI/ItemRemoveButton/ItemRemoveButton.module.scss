@@ -1,0 +1,57 @@
+@import "../../../scss/variables";
+@import "../../../scss/libs/normalize";
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  margin: 0px 5px;
+  cursor: pointer;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
+  border: 2px solid transparent;
+  @include noselect();
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-color: darken($color: $gray-line, $amount: 20);
+  background-color: #fff;
+  @media (max-width: 1000px) {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+  @media (max-width: 600px) {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+  }
+
+  svg {
+    width: 50%;
+    height: 50%;
+    @media (max-width: 1000px) {
+      width: 60%;
+      height: 60%;
+    }
+    line {
+      stroke: darken($color: $gray-line, $amount: 30);
+    }
+  }
+
+  &:hover {
+    background-color: darken($color: $gray-line, $amount: 20);
+    border-color: darken($color: $gray-line, $amount: 30);
+
+    svg {
+      line {
+        stroke: #fff;
+      }
+    }
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
