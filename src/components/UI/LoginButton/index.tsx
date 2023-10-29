@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 // styles
 import styles from "./LoginButton.module.scss";
 
-const LoginButton: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+interface LoginButtonProps {
+  onModalToggle: () => void;
+  isLoggedIn: boolean;
+  isModalActive: boolean;
+}
 
-  const handleLogin = () => {};
-  console.log(setIsLoggedIn);
-
+const LoginButton: React.FC<LoginButtonProps> = ({
+  onModalToggle,
+  isLoggedIn,
+}) => {
   return (
-    <button onClick={handleLogin} className={styles.loginButton}>
+    <button onClick={onModalToggle} className={styles.loginButton}>
       <span>{isLoggedIn ? "Выйти" : "Войти"}</span>
     </button>
   );

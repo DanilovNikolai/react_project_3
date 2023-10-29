@@ -1,10 +1,11 @@
+import { useState } from "react";
 // icons
 import pizzaLogoHeader from "../../assets/img/pizza-logo3.svg";
 // react-router-dom
 import { Link, useLocation } from "react-router-dom";
 // components
+import LoginModal from "../LoginModal";
 import Search from "../Search";
-// components
 import CartButton from "../UI/CartButton";
 import LoginButton from "../UI/LoginButton";
 // styles
@@ -12,6 +13,12 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   const { pathname } = useLocation();
+  const [isLoggedIn] = useState<boolean>(false);
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
+
+  function handleModalActive(): void {
+    setIsModalActive(!isModalActive);
+  }
 
   return (
     <div className={styles.header}>
@@ -34,13 +41,20 @@ const Header: React.FC = () => {
             pathname !== "/react_project_3/about" &&
             !pathname.includes("/react_project_3/pizza") && <Search />}
           <div className={styles.buttons}>
-            <LoginButton />
+            <LoginButton
+              onModalToggle={handleModalActive}
+              isLoggedIn={isLoggedIn}
+              isModalActive={isModalActive}
+            />
             <Link to="/react_project_3/cart">
               <CartButton />
             </Link>
           </div>
         </div>
       </div>
+      {isModalActive ? (
+        <LoginModal onCloseModal={handleModalActive} isActive={isModalActive} />
+      ) : null}
     </div>
   );
 };
