@@ -53,9 +53,11 @@ const Header: React.FC = () => {
                 username={username}
               />
             )}
-            <Link to="/react_project_3/cart">
-              <CartButton />
-            </Link>
+            {!isAuth && (
+              <Link to="/react_project_3/cart">
+                <CartButton />
+              </Link>
+            )}
           </div>
         </div>
       </div>

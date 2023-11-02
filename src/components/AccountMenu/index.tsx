@@ -1,15 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+// styles
 import styles from "./AccountMenu.module.scss";
+// redux toolkit
 import { useDispatch } from "react-redux";
 import { removeUser } from "redux/user/slice";
+// components
+import CartButton from "components/UI/CartButton";
+// react-router-dom
+import { Link } from "react-router-dom";
 
 interface PersonalAccountProps {
-  username: string;
+  username: string | null | undefined;
 }
 
 const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
+  const AccountRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleAccountClick = (event: MouseEvent) => {
+      if (
+        AccountRef.current &&
+        !event.composedPath().includes(AccountRef.current)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleAccountClick);
+
+    return () => document.removeEventListener("click", handleAccountClick);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -20,7 +41,7 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} ref={AccountRef}>
       <div className={styles.userTitle} onClick={toggleMenu}>
         <svg
           height="20px"
@@ -60,6 +81,11 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
           <p className={styles.bonus}>
             Мои бонусы: <span>0</span>
           </p>
+          <Link to="cart">
+            <p className={styles.cart}>
+              <CartButton />
+            </p>
+          </Link>
           <ul className={styles.list}>
             <li>Личный кабинет</li>
             <li>История заказов</li>

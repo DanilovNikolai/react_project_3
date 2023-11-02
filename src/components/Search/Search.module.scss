@@ -6,6 +6,7 @@
   border: 1px solid rgba($color: #000000, $alpha: 0.1);
   border-radius: 5px;
   margin-right: 25px;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
   @media (max-width: 1200px) {
     max-height: 30px;
     font-size: 14px;
@@ -13,7 +14,7 @@
   @media (max-width: 1060px) {
     max-height: 26px;
     font-size: 12px;
-    margin: 0;
+    margin-right: 0px;
   }
   @media (max-width: 700px) {
     margin-right: 20px;
@@ -36,10 +37,8 @@
     padding: 2px 5px;
   }
   &:focus {
-    border: 1px solid rgba($color: #000000, $alpha: 0.3);
     border-radius: 5px;
     width: 500px;
-    min-height: 26px;
     @media (max-width: 1350px) {
       width: 400px;
     }

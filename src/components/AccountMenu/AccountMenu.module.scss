@@ -21,6 +21,9 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @media (max-width: 700px) {
+      padding: 0px 7px;
+    }
 
     span {
       padding: 3px;
@@ -37,22 +40,45 @@
   font-weight: 700;
   border-bottom-left-radius: 10px;
   background-color: #fff;
+
+  p {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .bonus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 7px 15px;
-    border-bottom: 1px solid rgba($color: $orange, $alpha: 0.3);
-    color: $orange;
+    background-color: $orange;
+    border-top: 1px solid rgba($color: #fff, $alpha: 0.5);
+    color: #fff;
+    @media (max-width: 700px) {
+      font-size: 14px;
+    }
+
     span {
-      color: $orange;
+      margin: 0px 5px;
+      color: #fff;
     }
   }
 
   .list {
     padding: 7px 15px;
     li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       padding: 3px;
-      color: #000;
+      color: $orange;
       border-bottom: 1px solid rgba($color: $orange, $alpha: 0.3);
+      @media (max-width: 700px) {
+        font-size: 14px;
+      }
 
       &:last-child {
         border-bottom: none;
