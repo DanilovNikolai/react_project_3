@@ -5,24 +5,29 @@ import pizzaLogoHeader from "../../assets/img/pizza-logo3.svg";
 import { Link, useLocation } from "react-router-dom";
 // components
 import LoginModal from "../LoginModal";
+import RegModal from "../RegModal";
 import Search from "../Search";
 import CartButton from "../UI/CartButton";
 import LoginButton from "../UI/LoginButton";
+import AccountMenu from "components/AccountMenu";
 // styles
 import styles from "./Header.module.scss";
+import { useAuth } from "hooks/useAuth";
 
 const Header: React.FC = () => {
   const { pathname } = useLocation();
-  const [isLoggedIn] = useState<boolean>(false);
-  const [isModalActive, setIsModalActive] = useState<boolean>(false);
-
-  function handleModalActive(): void {
-    setIsModalActive(!isModalActive);
-  }
+  const { isAuth, username, email } = useAuth();
+  const [isLoginModalActive, setLoginModalActive] = useState<boolean>(false);
+  const [isRegModalActive, setRegModalActive] = useState<boolean>(false);
 
   return (
     <div className={styles.header}>
-      <div className={styles.container}>
+      {isAuth ? <AccountMenu username={username} /> : ""}
+      <div
+        className={
+          !isAuth ? styles.container : `${styles.container} ${styles.topOffset}`
+        }
+      >
         <Link to="/react_project_3/">
           <div className={styles.logo}>
             <img width="50" src={pizzaLogoHeader} alt="Pizza_logo" />
@@ -41,19 +46,32 @@ const Header: React.FC = () => {
             pathname !== "/react_project_3/about" &&
             !pathname.includes("/react_project_3/pizza") && <Search />}
           <div className={styles.buttons}>
-            <LoginButton
-              onModalToggle={handleModalActive}
-              isLoggedIn={isLoggedIn}
-              isModalActive={isModalActive}
-            />
+            {!isAuth && (
+              <LoginButton
+                setLoginModalActive={setLoginModalActive}
+                isAuth={isAuth}
+                username={username}
+              />
+            )}
             <Link to="/react_project_3/cart">
               <CartButton />
             </Link>
           </div>
         </div>
       </div>
-      {isModalActive ? (
-        <LoginModal onCloseModal={handleModalActive} isActive={isModalActive} />
+      {isLoginModalActive && !isAuth ? (
+        <LoginModal
+          setLoginModalActive={setLoginModalActive}
+          setRegModalActive={setRegModalActive}
+          username={username}
+        />
+      ) : null}
+      {isRegModalActive ? (
+        <RegModal
+          setRegModalActive={setRegModalActive}
+          isAuth={isAuth}
+          email={email}
+        />
       ) : null}
     </div>
   );

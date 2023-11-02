@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import { Store } from "redux";
 import filter from "./filter/slice";
 import cart from "./cart/slice";
 import items from "./items/slice";
+import user from "./user/slice";
 import { useDispatch } from "react-redux";
 
 export const store = configureStore({
@@ -10,6 +10,7 @@ export const store = configureStore({
     items,
     filter,
     cart,
+    user,
   },
 });
 

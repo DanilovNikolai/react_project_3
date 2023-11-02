@@ -14,11 +14,15 @@
   display: flex;
 
   .modal {
-    max-width: 400px;
+    max-width: 340px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 7px;
     background-color: #f9f9f9;
+    @media (max-width: 600px) {
+      max-width: 280px;
+      padding: 15px;
+    }
 
     .registrationForm {
       display: flex;
@@ -30,7 +34,7 @@
         margin-bottom: 30px;
         font-weight: 600;
         color: $orange;
-        margin: 5px;
+        margin-bottom: 15px;
       }
 
       label {
@@ -42,6 +46,14 @@
       p {
         color: darken($color: $gray-line, $amount: 50);
         margin: 5px;
+
+        span {
+          text-decoration: underline;
+          padding: 0px 2px;
+          font-weight: 700;
+          cursor: pointer;
+          color: $orange;
+        }
       }
 
       input[type="text"],
@@ -73,6 +85,10 @@
         &:hover {
           background-color: darken($color: $orange, $amount: 10%);
         }
+        &:active {
+          background-color: darken($color: $gray-line, $amount: 50);
+          transform: translateY(2px);
+        }
       }
 
       .registerBlock {
@@ -85,9 +101,10 @@
         }
       }
 
-      .erroMessage {
-        color: #d9534f;
-        margin-top: 10px;
+      .error {
+        width: 90%;
+        color: red;
+        margin: 20px 0px;
       }
     }
   }

@@ -2,6 +2,7 @@
 @import "../../scss/libs/normalize";
 
 .header {
+  position: relative;
   border-bottom: 1px solid $gray-line;
   padding: 30px 10px;
   @media (max-width: 1060px) {
@@ -19,6 +20,10 @@
     justify-content: space-between;
     @media (max-width: 700px) {
       flex-direction: column;
+    }
+
+    &.topOffset {
+      margin-top: 30px;
     }
 
     .logo {
