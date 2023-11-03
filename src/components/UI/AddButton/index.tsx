@@ -39,7 +39,6 @@ const AddButton: React.FC<AddButtonProps> = ({
       priceId,
       count: 0,
     };
-    console.log(item.id);
     dispatch(addItem(item));
   };
 
