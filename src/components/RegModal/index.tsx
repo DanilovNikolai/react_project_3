@@ -4,7 +4,6 @@ import styles from "./RegModal.module.scss";
 // redux toolkit
 import { useDispatch } from "react-redux";
 import { setUser } from "redux/user/slice";
-// import { selectUser } from "redux/user/selectors";
 // firebase
 import {
   getAuth,
@@ -29,8 +28,6 @@ const RegModal: React.FC<RegModalProps> = ({
   const [emailValid, setEmailValid] = useState<boolean>(false);
   const [passwordValid, setPasswordValid] = useState<boolean>(false);
   const [nameValid, setNameValid] = useState<boolean>(false);
-  // const [userData, setUserData] = useState(null);
-  // const userInfo = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const handleRegButton = (e: React.FormEvent) => {
@@ -59,7 +56,6 @@ const RegModal: React.FC<RegModalProps> = ({
                 id: user.uid,
               })
             );
-            // setUserData(user);
           }
         })
         .catch(console.error);
@@ -99,7 +95,7 @@ const RegModal: React.FC<RegModalProps> = ({
         ) : (
           <form className={styles.registrationForm} onClick={handleRegButton}>
             <h2>Регистрация</h2>
-            <div>
+            <div className={styles.inputBody}>
               <label htmlFor="name">Имя:</label>
               <input
                 type="text"
@@ -111,14 +107,30 @@ const RegModal: React.FC<RegModalProps> = ({
                     ? styles.tooltipTop
                     : `${styles.tooltipTop} ${styles.invalidInput}`
                 }
-                title={
-                  nameValid
-                    ? "Valid Name"
-                    : "Name must have at least 4 characters and contain only letters, '_', '.', or '-'"
-                }
               />
+              {!nameValid && (
+                <div className={styles.tooltip}>
+                  <div className={styles.tooltipMessage}>
+                    <svg
+                      height="52"
+                      viewBox="0 0 60.031 52"
+                      width="60.031"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <path
+                        d="M214.413,746a4.455,4.455,0,0,1-3.84-2.166,4.249,4.249,0,0,1,0-4.334l25.572-43.331a4.483,4.483,0,0,1,7.679,0L269.4,739.5a4.249,4.249,0,0,1,0,4.334,4.452,4.452,0,0,1-3.84,2.166H214.413ZM240,706a4,4,0,0,0-4,4v16a4,4,0,0,0,8,0V710A4,4,0,0,0,240,706Zm0,36a4,4,0,1,0-4-4A4,4,0,0,0,240,742Z"
+                        id="attention"
+                        transform="translate(-209.969 -694)"
+                      />
+                    </svg>
+                    Не менее 4 символов! Разрешены: латинские буквы, '_', '.',
+                    или '-'
+                  </div>
+                </div>
+              )}
             </div>
-            <div>
+            <div className={styles.inputBody}>
               <label htmlFor="email">Логин:</label>
               <input
                 type="email"
@@ -127,10 +139,30 @@ const RegModal: React.FC<RegModalProps> = ({
                 onChange={handleEmailChange}
                 id="email"
                 className={emailValid ? "" : styles.invalidInput}
-                title={emailValid ? "Valid Email" : "Invalid Email Format"}
               />
+              {!emailValid && (
+                <div className={styles.tooltip}>
+                  <div className={styles.tooltipMessage}>
+                    <svg
+                      height="52"
+                      viewBox="0 0 60.031 52"
+                      width="60.031"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <path
+                        d="M214.413,746a4.455,4.455,0,0,1-3.84-2.166,4.249,4.249,0,0,1,0-4.334l25.572-43.331a4.483,4.483,0,0,1,7.679,0L269.4,739.5a4.249,4.249,0,0,1,0,4.334,4.452,4.452,0,0,1-3.84,2.166H214.413ZM240,706a4,4,0,0,0-4,4v16a4,4,0,0,0,8,0V710A4,4,0,0,0,240,706Zm0,36a4,4,0,1,0-4-4A4,4,0,0,0,240,742Z"
+                        id="attention"
+                        transform="translate(-209.969 -694)"
+                      />
+                    </svg>
+                    Почта должна иметь следующий формат: a@b.c Допустимы только
+                    латинские буквы!
+                  </div>
+                </div>
+              )}
             </div>
-            <div>
+            <div className={styles.inputBody}>
               <label htmlFor="password">Пароль:</label>
               <input
                 type="password"
@@ -139,12 +171,27 @@ const RegModal: React.FC<RegModalProps> = ({
                 onChange={handlePasswordChange}
                 id="password"
                 className={passwordValid ? "" : styles.invalidInput}
-                title={
-                  passwordValid
-                    ? "Valid Password"
-                    : "Password must be at least 6 characters long"
-                }
               />
+              {!passwordValid && (
+                <div className={styles.tooltip}>
+                  <div className={styles.tooltipMessage}>
+                    <svg
+                      height="52"
+                      viewBox="0 0 60.031 52"
+                      width="60.031"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <path
+                        d="M214.413,746a4.455,4.455,0,0,1-3.84-2.166,4.249,4.249,0,0,1,0-4.334l25.572-43.331a4.483,4.483,0,0,1,7.679,0L269.4,739.5a4.249,4.249,0,0,1,0,4.334,4.452,4.452,0,0,1-3.84,2.166H214.413ZM240,706a4,4,0,0,0-4,4v16a4,4,0,0,0,8,0V710A4,4,0,0,0,240,706Zm0,36a4,4,0,1,0-4-4A4,4,0,0,0,240,742Z"
+                        id="attention"
+                        transform="translate(-209.969 -694)"
+                      />
+                    </svg>
+                    Не менее 6 символов!
+                  </div>
+                </div>
+              )}
             </div>
             <button disabled={!(emailValid && passwordValid && nameValid)}>
               Зарегестрироваться

@@ -46,6 +46,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       h2 {
         font-size: 20px;
         margin-bottom: 30px;
@@ -54,84 +55,76 @@
         margin: 5px;
       }
 
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: 700;
-      }
+      .inputBody {
+        position: relative;
 
-      p {
-        color: darken($color: $gray-line, $amount: 50);
-        margin: 5px;
-      }
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
 
-      input[type="text"],
-      input[type="email"],
-      input[type="password"] {
-        width: 100%;
-        padding: 5px 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        transition: border-color 0.3s;
-        font-size: 16px;
+        p {
+          color: darken($color: $gray-line, $amount: 50);
+          margin: 5px;
+        }
 
-        /* Styling for the title (tooltip) attribute */
-        &[title] {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
           position: relative;
-          cursor: help; /* Change cursor to a question mark */
+          width: 100%;
+          padding: 5px 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          transition: border-color 0.3s;
+          font-size: 16px;
 
-          /* Styling for the tooltip itself */
-          &::after {
-            content: attr(title); /* Display the title attribute as content */
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8); /* Background color */
-            color: #fff; /* Text color */
-            border-radius: 3px; /* Rounded corners */
-            padding: 3px 6px; /* Padding around the text */
-            font-size: 12px; /* Text size */
-            white-space: nowrap; /* Prevent text from wrapping */
-            opacity: 0; /* Start with no opacity (hidden) */
-            pointer-events: none; /* Don't block mouse events */
-
-            /* Positioning and animation */
-            bottom: 100%; /* Position above the element */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center horizontally */
-            transition: opacity 0.3s; /* Smooth fade-in/out animation */
-
-            /* Hide the tooltip by default */
-            display: none;
+          &.invalidInput {
+            &:focus {
+              border-color: red;
+            }
           }
 
-          /* Show the tooltip when hovering */
-          &:hover::after {
-            opacity: 1; /* Show the tooltip */
-            display: block;
-          }
-
-          /* Positioning for tooltips that need to be above the element */
-          &.tooltipTop::after {
-            top: 100%; /* Position below the element */
-            bottom: auto;
-          }
-
-          /* Positioning for tooltips that need to be to the right of the element */
-          &.tooltipRight::after {
-            top: 50%; /* Center vertically */
-            left: 100%; /* Position to the right */
-            transform: translateY(-50%); /* Center vertically */
-          }
-        }
-
-        &.invalidInput {
           &:focus {
-            border-color: red;
+            border-color: green;
           }
         }
 
-        &:focus {
-          border-color: green;
+        .tooltip {
+          position: absolute;
+          top: 80px;
+          left: 0px;
+          display: none;
+          max-width: 320px;
+          padding: 5px 15px;
+          background-color: #fff;
+          border: 1px solid rgba($color: $gray-line, $alpha: 1);
+          box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+          border-radius: 5px;
+          z-index: 10;
+        }
+
+        .tooltipMessage {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          color: #000;
+          font-size: 12px;
+          font-weight: 600;
+
+          svg {
+            height: 20px;
+            margin-right: 10px;
+            path {
+              fill: $orange;
+            }
+          }
+        }
+
+        input:focus + .tooltip {
+          display: block;
         }
       }
 
@@ -154,16 +147,6 @@
         }
         &[disabled] {
           background-color: gray;
-        }
-      }
-
-      .registerBlock {
-        margin-top: 20px;
-        button {
-          background-color: darken($color: $gray-line, $amount: 30%);
-          &:hover {
-            background-color: darken($color: $gray-line, $amount: 45%);
-          }
         }
       }
 
