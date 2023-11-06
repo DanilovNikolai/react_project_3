@@ -28,6 +28,9 @@ const RegModal: React.FC<RegModalProps> = ({
   const [emailValid, setEmailValid] = useState<boolean>(false);
   const [passwordValid, setPasswordValid] = useState<boolean>(false);
   const [nameValid, setNameValid] = useState<boolean>(false);
+  // State variables for error messages
+  const [emailError, setEmailError] = useState<string>("");
+
   const dispatch = useDispatch();
 
   const handleRegButton = (e: React.FormEvent) => {
@@ -54,7 +57,17 @@ const RegModal: React.FC<RegModalProps> = ({
             dispatch(setUser(userData));
           }
         })
-        .catch((error) => console.error(error.message));
+        .catch((error) => {
+          if (error.code === "auth/email-already-in-use") {
+            setEmailError("Этот email уже используется!");
+            // } else if (error.code === "auth/weak-password") {
+            //   setPasswordError(
+            //     "The password is too weak. Please choose a stronger password."
+            //   );
+          } else {
+            console.error(error.message);
+          }
+        });
     }
   };
 
@@ -136,6 +149,11 @@ const RegModal: React.FC<RegModalProps> = ({
                 id="email"
                 className={emailValid ? "" : styles.invalidInput}
               />
+              {emailError ? (
+                <p className={styles.regError}>{emailError}</p>
+              ) : (
+                ""
+              )}
               {!emailValid && (
                 <div className={styles.tooltip}>
                   <div className={styles.tooltipMessage}>
@@ -190,7 +208,7 @@ const RegModal: React.FC<RegModalProps> = ({
               )}
             </div>
             <button disabled={!(emailValid && passwordValid && nameValid)}>
-              Зарегестрироваться
+              Зарегистрироваться
             </button>
           </form>
         )}

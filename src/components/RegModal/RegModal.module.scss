@@ -16,6 +16,7 @@
   .modal {
     max-width: 400px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -73,7 +74,7 @@
         input[type="email"],
         input[type="password"] {
           position: relative;
-          width: 100%;
+          max-width: 100%;
           padding: 5px 10px;
           margin-bottom: 20px;
           border: 1px solid #ccc;
@@ -90,6 +91,17 @@
           &:focus {
             border-color: green;
           }
+        }
+
+        .regError {
+          position: absolute;
+          font-size: 14px;
+          bottom: -100px;
+          z-index: 10;
+          color: red;
+          margin-top: 0;
+          max-width: 100%;
+          text-align: center;
         }
 
         .tooltip {
@@ -136,6 +148,7 @@
         padding: 5px 10px;
         font-size: 16px;
         cursor: pointer;
+        margin-top: 30px;
         transition: background-color 0.3s;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 
