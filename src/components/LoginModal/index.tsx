@@ -104,7 +104,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
           <button onClick={() => setLoginClicked(true)}>Войти</button>
           <div className={styles.registerBlock}>
             <p>
-              Или <span onClick={handleRegClick}>зарегестрируйтесь</span>
+              Или <span onClick={handleRegClick}>зарегистрируйтесь</span>
             </p>
           </div>
         </form>
