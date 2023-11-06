@@ -1,7 +1,7 @@
 import { userSliceState } from "redux/user/types";
 
 export const getUserDataFromLS = (): userSliceState => {
-  const userData = localStorage.getItem("user");
+  const userData = localStorage.getItem("currentUser");
   const user = userData ? JSON.parse(userData) : null;
 
   if (user) {

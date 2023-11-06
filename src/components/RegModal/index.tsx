@@ -37,28 +37,24 @@ const RegModal: React.FC<RegModalProps> = ({
 
     if (emailValid && passwordValid && nameValid) {
       createUserWithEmailAndPassword(auth, emailInput, passwordInput)
-        .then(({ user }) => {
+        .then(async ({ user }) => {
           if (user) {
-            dispatch(
-              setUser({
-                username: nameInput,
-                email: user.email,
-                token: (user as unknown as OAuthCredential).accessToken,
-                id: user.uid,
-              })
-            );
-            localStorage.setItem(
-              "user",
-              JSON.stringify({
-                username: nameInput,
-                email: user.email,
-                token: (user as unknown as OAuthCredential).accessToken,
-                id: user.uid,
-              })
-            );
+            const userData = {
+              username: nameInput,
+              email: user.email,
+              token: (user as unknown as OAuthCredential).accessToken,
+              id: user.uid,
+            };
+
+            const users = JSON.parse(localStorage.getItem("users") || "[]");
+            users.push(userData);
+            localStorage.setItem("users", JSON.stringify(users));
+            localStorage.setItem("currentUser", JSON.stringify(userData));
+
+            dispatch(setUser(userData));
           }
         })
-        .catch(console.error);
+        .catch((error) => console.error(error.message));
     }
   };
 

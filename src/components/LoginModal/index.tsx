@@ -20,7 +20,6 @@ interface LoginModalProps {
 const LoginModal: React.FC<LoginModalProps> = ({
   setLoginModalActive,
   setRegModalActive,
-  username,
 }) => {
   const [emailInput, setEmailInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
@@ -36,14 +35,31 @@ const LoginModal: React.FC<LoginModalProps> = ({
     signInWithEmailAndPassword(auth, emailInput, passwordInput)
       .then(({ user }) => {
         setError(null);
-        dispatch(
-          setUser({
-            username: username,
-            email: user.email,
-            token: (user as unknown as OAuthCredential).accessToken,
-            id: user.uid,
-          })
-        );
+
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
+        const userData = users.find((u: any) => u.email === emailInput);
+
+        if (userData) {
+          const currentUser = {
+            username: userData.username,
+            email: userData.email,
+            token: userData.accessToken,
+            id: userData.uid,
+          };
+
+          localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+          dispatch(
+            setUser({
+              username: currentUser.username,
+              email: user.email,
+              token: (user as unknown as OAuthCredential).accessToken,
+              id: user.uid,
+            })
+          );
+        } else {
+          setError("Неправильный логин или пароль. Попробуйте ещё раз.");
+        }
       })
       .catch((error) => {
         setError("Неправильный логин или пароль. Попробуйте ещё раз.");

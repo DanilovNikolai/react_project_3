@@ -37,6 +37,7 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   };
 
   const handleLogOff = () => {
+    localStorage.removeItem("currentUser");
     dispatch(removeUser());
   };
 
