@@ -28,7 +28,6 @@ const RegModal: React.FC<RegModalProps> = ({
   const [emailValid, setEmailValid] = useState<boolean>(false);
   const [passwordValid, setPasswordValid] = useState<boolean>(false);
   const [nameValid, setNameValid] = useState<boolean>(false);
-  // State variables for error messages
   const [emailError, setEmailError] = useState<string>("");
 
   const dispatch = useDispatch();
@@ -60,10 +59,6 @@ const RegModal: React.FC<RegModalProps> = ({
         .catch((error) => {
           if (error.code === "auth/email-already-in-use") {
             setEmailError("Этот email уже используется!");
-            // } else if (error.code === "auth/weak-password") {
-            //   setPasswordError(
-            //     "The password is too weak. Please choose a stronger password."
-            //   );
           } else {
             console.error(error.message);
           }
@@ -99,7 +94,7 @@ const RegModal: React.FC<RegModalProps> = ({
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         {isAuth ? (
           <div className={styles.success}>
-            Пользователь <span>{email}</span> успешно зарегестрирован!
+            Пользователь <span>{email}</span> успешно зарегистрирован!
           </div>
         ) : (
           <form className={styles.registrationForm} onClick={handleRegButton}>
