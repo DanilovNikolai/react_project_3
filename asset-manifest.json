@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_project_3/static/css/main.a460b1ca.css",
+    "main.css": "/react_project_3/static/css/main.d339531c.css",
     "main.js": "/react_project_3/static/js/main.c462a126.js",
     "Cart.css": "/react_project_3/static/css/Cart.1cf70887.chunk.css",
     "Cart.js": "/react_project_3/static/js/Cart.a1a0f83e.chunk.js",
@@ -22,7 +22,7 @@
     "static/media/footer_phone.svg": "/react_project_3/static/media/footer_phone.4fc768f8b54a3a81aa5de2b5f4530732.svg",
     "static/media/footer_telegram.svg": "/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
-    "main.a460b1ca.css.map": "/react_project_3/static/css/main.a460b1ca.css.map",
+    "main.d339531c.css.map": "/react_project_3/static/css/main.d339531c.css.map",
     "main.c462a126.js.map": "/react_project_3/static/js/main.c462a126.js.map",
     "Cart.1cf70887.chunk.css.map": "/react_project_3/static/css/Cart.1cf70887.chunk.css.map",
     "Cart.a1a0f83e.chunk.js.map": "/react_project_3/static/js/Cart.a1a0f83e.chunk.js.map",
@@ -37,7 +37,7 @@
     "965.ef2860ca.chunk.js.map": "/react_project_3/static/js/965.ef2860ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a460b1ca.css",
+    "static/css/main.d339531c.css",
     "static/js/main.c462a126.js"
   ]
 }
