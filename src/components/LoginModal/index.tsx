@@ -10,6 +10,8 @@ import {
   getAuth,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+// types
+import { userSliceState } from "redux/user/types";
 
 interface LoginModalProps {
   setLoginModalActive: (arg: boolean) => void;
@@ -37,14 +39,15 @@ const LoginModal: React.FC<LoginModalProps> = ({
         setError(null);
 
         const users = JSON.parse(localStorage.getItem("users") || "[]");
-        const userData = users.find((u: any) => u.email === emailInput);
+        const userData = users.find((user: any) => user.email === emailInput);
 
         if (userData) {
-          const currentUser = {
+          const currentUser: userSliceState = {
             username: userData.username,
             email: userData.email,
             token: userData.accessToken,
             id: userData.uid,
+            cart: [],
           };
 
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -55,6 +58,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
               email: user.email,
               token: (user as unknown as OAuthCredential).accessToken,
               id: user.uid,
+              cart: currentUser.cart,
             })
           );
         } else {

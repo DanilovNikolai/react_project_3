@@ -10,6 +10,8 @@ import {
   createUserWithEmailAndPassword,
   OAuthCredential,
 } from "firebase/auth";
+// types
+import { userSliceState } from "redux/user/types";
 
 interface RegModalProps {
   setRegModalActive: (arg: boolean) => void;
@@ -41,11 +43,12 @@ const RegModal: React.FC<RegModalProps> = ({
       createUserWithEmailAndPassword(auth, emailInput, passwordInput)
         .then(async ({ user }) => {
           if (user) {
-            const userData = {
+            const userData: userSliceState = {
               username: nameInput,
               email: user.email,
               token: (user as unknown as OAuthCredential).accessToken,
               id: user.uid,
+              cart: [],
             };
 
             const users = JSON.parse(localStorage.getItem("users") || "[]");
@@ -69,9 +72,7 @@ const RegModal: React.FC<RegModalProps> = ({
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nameValue = e.target.value;
     setNameInput(nameValue);
-    setNameValid(
-      nameValue.length >= 4 && /^[a-zA-Z_.-]+$/.test(nameValue) // Only letters, '_', '.', and '-'
-    );
+    setNameValid(nameValue.length >= 4 && /^[a-zA-Z_.-]+$/.test(nameValue));
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -2,12 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 // styles
 import styles from "./AccountMenu.module.scss";
 // redux toolkit
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "redux/user/slice";
+import { selectCart } from "redux/cart/selectors";
+import { selectUser } from "redux/user/selectors";
 // components
 import CartButton from "components/UI/CartButton";
 // react-router-dom
 import { Link } from "react-router-dom";
+// types
+import { userSliceState } from "redux/user/types";
 
 interface PersonalAccountProps {
   username: string | null | undefined;
@@ -17,6 +21,8 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const AccountRef = useRef<HTMLDivElement>(null);
+  const { items } = useSelector(selectCart);
+  const { id } = useSelector(selectUser);
 
   useEffect(() => {
     const handleAccountClick = (event: MouseEvent) => {
@@ -37,6 +43,22 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   };
 
   const handleLogOff = () => {
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    const foundUserIndex = users.findIndex(
+      (user: userSliceState) => user.id === id
+    );
+
+    if (foundUserIndex !== -1) {
+      const foundUser = users[foundUserIndex];
+
+      if (!foundUser.cart) {
+        foundUser.cart = [];
+      }
+
+      foundUser.cart = foundUser.cart.concat(items);
+      users[foundUserIndex] = foundUser;
+      localStorage.setItem("users", JSON.stringify(users));
+    }
     localStorage.removeItem("currentUser");
     dispatch(removeUser());
   };

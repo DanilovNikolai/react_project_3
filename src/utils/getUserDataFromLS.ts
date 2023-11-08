@@ -10,6 +10,7 @@ export const getUserDataFromLS = (): userSliceState => {
       email: user.email || "",
       token: user.token || "",
       id: user.id || "",
+      cart: user.cart || [],
     };
   }
 
@@ -18,5 +19,6 @@ export const getUserDataFromLS = (): userSliceState => {
     email: "",
     token: "",
     id: "",
+    cart: [],
   };
 };

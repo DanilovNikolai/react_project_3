@@ -3,4 +3,5 @@ export interface userSliceState {
   email: string;
   token: string;
   id: string;
+  cart: [];
 }
