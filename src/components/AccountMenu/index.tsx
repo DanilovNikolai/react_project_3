@@ -55,12 +55,13 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
         foundUser.cart = [];
       }
 
-      foundUser.cart = foundUser.cart.concat(items);
+      foundUser.cart = items;
       users[foundUserIndex] = foundUser;
       localStorage.setItem("users", JSON.stringify(users));
     }
-    localStorage.removeItem("currentUser");
     dispatch(removeUser());
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("cart");
   };
 
   return (

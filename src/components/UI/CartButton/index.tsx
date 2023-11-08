@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 // redux toolkit
 import { useSelector } from "react-redux";
@@ -13,15 +12,6 @@ const CartButton: React.FC = () => {
     0
   );
   const { pathname } = useLocation();
-  const isMounted = useRef(false);
-
-  useEffect(() => {
-    if (isMounted.current) {
-      const json = JSON.stringify(items);
-      localStorage.setItem("cart", json);
-    }
-    isMounted.current = true;
-  }, [items]);
 
   return (
     <>

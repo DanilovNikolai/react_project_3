@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 // types
 import { userSliceState } from "redux/user/types";
+import { setCart } from "redux/cart/slice";
 
 interface LoginModalProps {
   setLoginModalActive: (arg: boolean) => void;
@@ -39,7 +40,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
         setError(null);
 
         const users = JSON.parse(localStorage.getItem("users") || "[]");
-        const userData = users.find((user: any) => user.email === emailInput);
+        const userData = users.find(
+          (user: userSliceState) => user.email === emailInput
+        );
 
         if (userData) {
           const currentUser: userSliceState = {
@@ -47,7 +50,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             email: userData.email,
             token: userData.accessToken,
             id: userData.uid,
-            cart: [],
+            cart: userData.cart,
           };
 
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -61,6 +64,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
               cart: currentUser.cart,
             })
           );
+          dispatch(setCart(currentUser.cart));
         } else {
           setError("Неправильный логин или пароль. Попробуйте ещё раз.");
         }
