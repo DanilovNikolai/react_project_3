@@ -6,6 +6,8 @@ import styles from "./SuccessPaymentBlock.module.scss";
 import smileFace from "../../assets/img/cart_happy_face_emoji_emotion_smile_icon.svg";
 // utils
 import getRandomOrder from "../../utils/getRandomOrderNumber";
+// components
+import BackButton from "components/UI/BackButton";
 // redux toolkit
 import { useDispatch } from "react-redux";
 import { clearItems } from "../../redux/cart/slice";
@@ -18,7 +20,10 @@ const SuccessPaymentBlock: React.FC = () => {
   useEffect(() => {
     if (pathname === "/react_project_3/success_payment") {
       dispatch(clearItems());
-      localStorage.removeItem("cart");
+      const data = localStorage.getItem("currentUser");
+      const currentUser = JSON.parse(data);
+      currentUser.cart = [];
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
     }
   }, []);
 
@@ -36,9 +41,7 @@ const SuccessPaymentBlock: React.FC = () => {
         <span>Приятного аппетита!</span>
       </div>
       <Link to="/react_project_3">
-        <button className="button button--outline button--add">
-          <span>Назад к покупкам</span>
-        </button>
+        <BackButton />
       </Link>
     </h2>
   );

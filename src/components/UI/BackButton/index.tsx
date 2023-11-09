@@ -2,7 +2,7 @@ import React from "react";
 // styles
 import styles from "./BackButton.module.scss";
 
-const BlackButton: React.FC = () => {
+const BackButton: React.FC = () => {
   return (
     <button className={styles.root}>
       <svg
@@ -25,4 +25,4 @@ const BlackButton: React.FC = () => {
   );
 };
 
-export default BlackButton;
+export default BackButton;

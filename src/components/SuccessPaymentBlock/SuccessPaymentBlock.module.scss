@@ -1,4 +1,5 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
+@import "../../scss/libs/normalize";
 
 .root {
   padding: 10px;
@@ -9,29 +10,29 @@
   font-size: 30px;
   max-width: 800px;
   margin: 0 auto;
-  @media (max-width: 750px){
-      font-size: 24px;
+  @media (max-width: 750px) {
+    font-size: 24px;
   }
-  @media (max-width: 600px){
-      font-size: 20px;
+  @media (max-width: 600px) {
+    font-size: 20px;
   }
-  @media (max-width: 400px){
-      font-size: 16px;
+  @media (max-width: 400px) {
+    font-size: 16px;
   }
   div {
     margin: 5px auto;
-    @media (max-width: 400px){
+    @media (max-width: 400px) {
       margin: 2px auto;
-  }
+    }
   }
   img {
     max-width: 100px;
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       max-width: 70px;
-  }
-  @media (max-width: 400px){
-    max-width: 50px;
-}
+    }
+    @media (max-width: 400px) {
+      max-width: 50px;
+    }
   }
   span {
     margin: 0 auto;
@@ -40,6 +41,54 @@
     font-weight: 700;
   }
   button {
-    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+    border-radius: 30px;
+    min-width: 110px;
+    cursor: pointer;
+    transition: background-color $duration ease-in-out,
+      border-color $duration ease-in-out;
+    border: 1px solid transparent;
+    border-color: darken($color: $gray-line, $amount: 20);
+    background-color: darken($color: $gray-line, $amount: 2);
+    @include noselect();
+    padding: 5px 12px;
+    max-width: 230px;
+    margin: 20px auto;
+    font-size: 18px;
+
+    span {
+      color: darken($color: $gray-line, $amount: 30);
+      font-weight: 600;
+    }
+
+    svg {
+      margin-right: 12px;
+      path {
+        stroke: darken($color: $gray-line, $amount: 30);
+      }
+    }
+
+    &:hover {
+      background-color: darken($color: $gray-line, $amount: 20);
+      border-color: darken($color: $gray-line, $amount: 30);
+
+      span {
+        color: #fff;
+      }
+
+      svg {
+        path {
+          stroke: #fff;
+        }
+      }
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 }
