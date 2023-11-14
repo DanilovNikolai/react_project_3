@@ -3,14 +3,34 @@ import React from "react";
 import styles from "./ClearCartButton.module.scss";
 // redux toolkit
 import { clearItems } from "../../../redux/cart/slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "redux/user/selectors";
+// hooks
+import { useAuth } from "hooks/useAuth";
 
 const ClearCartButton: React.FC = () => {
+  const { email } = useSelector(selectUser);
+  const { isAuth } = useAuth();
   const dispatch = useDispatch();
 
   function handleClickClear() {
     if (window.confirm("Вы точно уверены, что хотите очистить корзину?")) {
       dispatch(clearItems());
+      if (isAuth) {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        currentUser.cart = [];
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        const users = JSON.parse(localStorage.getItem("users"));
+        const updatedUsers = users.map((user) => {
+          if (user?.email === email) {
+            user.cart = [];
+          }
+          return user;
+        });
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+      } else {
+        localStorage.removeItem("cart");
+      }
     }
   }
 

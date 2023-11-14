@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 // styles
 import styles from "./ItemCounter.module.scss";
 // redux toolkit
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CartItemProps } from "../../../redux/cart/types";
 import { minusItem, addItem } from "../../../redux/cart/slice";
+// utils
+import { saveUsersCartToLS } from "utils/saveUsersCartToLS";
+import { selectCart } from "redux/cart/selectors";
 
 interface ItemCounterProps {
   id: string;
@@ -15,6 +18,11 @@ interface ItemCounterProps {
 
 const ItemCounter: React.FC<ItemCounterProps> = ({ id, type, size, count }) => {
   const dispatch = useDispatch();
+  const { items } = useSelector(selectCart);
+
+  useEffect(() => {
+    saveUsersCartToLS(items);
+  }, [items]);
 
   function handleClickPlus() {
     dispatch(addItem({ id, type, size } as CartItemProps));

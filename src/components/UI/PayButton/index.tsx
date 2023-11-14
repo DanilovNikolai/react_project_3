@@ -27,8 +27,7 @@ const PayButton: React.FC<CartSliceState> = ({ items }) => {
       const response = await stripeInstance.redirectToCheckout({
         lineItems: lineItems,
         mode: "payment",
-        successUrl:
-          "https://danilovnikolai.github.io/react_project_3/success_payment",
+        successUrl: "http://localhost:3000/react_project_3/success_payment",
         cancelUrl: "https://danilovnikolai.github.io/react_project_3",
       });
 

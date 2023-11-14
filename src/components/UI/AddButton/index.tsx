@@ -1,10 +1,13 @@
+import { useEffect } from "react";
 // redux toolkit
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cart/slice";
 import { CartItemProps } from "../../../redux/cart/types";
-import { selectCartItemById } from "../../../redux/cart/selectors";
+import { selectCart, selectCartItemById } from "../../../redux/cart/selectors";
 // styles
 import styles from "./AddButton.module.scss";
+// utils
+import { saveUsersCartToLS } from "utils/saveUsersCartToLS";
 
 export type AddButtonProps = {
   id: string;
@@ -27,6 +30,11 @@ const AddButton: React.FC<AddButtonProps> = ({
 }) => {
   const dispatch = useDispatch();
   let foundItem = useSelector(selectCartItemById(id));
+  const { items } = useSelector(selectCart);
+
+  useEffect(() => {
+    saveUsersCartToLS(items);
+  }, [items]);
 
   const handleAddItem = () => {
     const item: CartItemProps = {

@@ -11,19 +11,38 @@ import BackButton from "components/UI/BackButton";
 // redux toolkit
 import { useDispatch } from "react-redux";
 import { clearItems } from "../../redux/cart/slice";
+// types
+import { userSliceState } from "redux/user/types";
+// hooks
+import { useAuth } from "hooks/useAuth";
 
 const SuccessPaymentBlock: React.FC = () => {
   const randomOrder = getRandomOrder(1, 100);
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+  const { isAuth } = useAuth();
 
   useEffect(() => {
     if (pathname === "/react_project_3/success_payment") {
       dispatch(clearItems());
-      const data = localStorage.getItem("currentUser");
-      const currentUser = JSON.parse(data);
-      currentUser.cart = [];
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      if (!isAuth) {
+        localStorage.removeItem("cart");
+      } else {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        currentUser.cart = [];
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+        const userEmail = currentUser.email;
+        const users = JSON.parse(localStorage.getItem("users"));
+        const updatedUsers = users.map((user: userSliceState) => {
+          if (user.email === userEmail) {
+            user.cart = [];
+          }
+          return user;
+        });
+
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+      }
     }
   }, []);
 

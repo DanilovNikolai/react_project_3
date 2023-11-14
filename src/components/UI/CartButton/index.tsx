@@ -1,17 +1,30 @@
+import { useEffect } from "react";
+// react-router-dom
 import { useLocation } from "react-router-dom";
 // redux toolkit
 import { useSelector } from "react-redux";
 import { selectCart } from "../../../redux/cart/selectors";
 // styles
 import styles from "./CartButton.module.scss";
+// custom hooks
+import { useAuth } from "hooks/useAuth";
 
 const CartButton: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
-  const totalCount = items.reduce(
+  const { isAuth } = useAuth();
+  const totalCount = items?.reduce(
     (sum: number, item: any) => item.count + sum,
     0
   );
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (!isAuth) {
+      localStorage.setItem("cart", JSON.stringify(items));
+    } else {
+      localStorage.removeItem("cart");
+    }
+  }, [items]);
 
   return (
     <>

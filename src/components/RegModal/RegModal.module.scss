@@ -43,6 +43,7 @@
     }
 
     .registrationForm {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -167,6 +168,52 @@
       .erroMessage {
         color: #d9534f;
         margin-top: 10px;
+      }
+    }
+
+    .cartTransferMessage {
+      max-width: 300px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        color: black;
+        font-weight: 700;
+        text-align: center;
+        &:last-of-type {
+          margin-top: 10px;
+        }
+      }
+      .buttons {
+        margin-top: 10px;
+        button {
+          margin: 10px 15px 10px 15px;
+          background-color: $orange;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 5px 10px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+          span {
+            color: #fff;
+          }
+        }
+      }
+
+      .regError {
+        position: absolute;
+        font-size: 14px;
+        bottom: -10px;
+        z-index: 10;
+        color: red;
+        margin-top: 0;
+        max-width: 100%;
+        text-align: center;
       }
     }
   }
