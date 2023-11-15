@@ -27,10 +27,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const [emailInput, setEmailInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
-  const [loginClicked, setLoginClicked] = useState(false);
   const dispatch = useDispatch();
 
-  const handleLoginButton = (e: React.FormEvent) => {
+  const handleLoginForm = (e: React.FormEvent) => {
     e.preventDefault();
 
     const auth = getAuth();
@@ -86,7 +85,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
       onClick={() => setLoginModalActive(false)}
     >
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <form className={styles.registrationForm} onClick={handleLoginButton}>
+        <form className={styles.registrationForm} onSubmit={handleLoginForm}>
           <h2>Уже есть аккаунт?</h2>
           <div>
             <label htmlFor="email">Логин:</label>
@@ -108,8 +107,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
               id="password"
             />
           </div>
-          {loginClicked && error && <div className={styles.error}>{error}</div>}
-          <button onClick={() => setLoginClicked(true)}>Войти</button>
+          {error && <div className={styles.error}>{error}</div>}
+          <button type="submit">Войти</button>
           <div className={styles.registerBlock}>
             <p>
               Или <span onClick={handleRegClick}>зарегистрируйтесь</span>
