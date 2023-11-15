@@ -69,7 +69,7 @@ const RegModal: React.FC<RegModalProps> = ({
       });
   };
 
-  const handleRegButton = (e: React.FormEvent) => {
+  const handleRegForm = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (emailValid && passwordValid && nameValid) {
@@ -115,7 +115,7 @@ const RegModal: React.FC<RegModalProps> = ({
             Пользователь <span>{email}</span> успешно зарегистрирован!
           </div>
         ) : (
-          <form className={styles.registrationForm} onClick={handleRegButton}>
+          <form className={styles.registrationForm} onClick={handleRegForm}>
             {!isMessageVisible ? (
               <>
                 <h2>Регистрация</h2>
