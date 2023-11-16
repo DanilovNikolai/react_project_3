@@ -115,7 +115,7 @@ const RegModal: React.FC<RegModalProps> = ({
             Пользователь <span>{email}</span> успешно зарегистрирован!
           </div>
         ) : (
-          <form className={styles.registrationForm} onClick={handleRegForm}>
+          <form className={styles.registrationForm} onSubmit={handleRegForm}>
             {!isMessageVisible ? (
               <>
                 <h2>Регистрация</h2>
@@ -222,7 +222,10 @@ const RegModal: React.FC<RegModalProps> = ({
                     </div>
                   )}
                 </div>
-                <button disabled={!(emailValid && passwordValid && nameValid)}>
+                <button
+                  type="submit"
+                  disabled={!(emailValid && passwordValid && nameValid)}
+                >
                   Зарегистрироваться
                 </button>
               </>
