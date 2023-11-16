@@ -73,7 +73,7 @@ const RegModal: React.FC<RegModalProps> = ({
     e.preventDefault();
 
     if (emailValid && passwordValid && nameValid) {
-      if (items.length === 0) {
+      if (items.length === 0 && !emailError) {
         handleUserCreate(JSON.parse(localStorage.getItem("cart")));
       } else {
         setMessageVisible(true);
@@ -116,7 +116,7 @@ const RegModal: React.FC<RegModalProps> = ({
           </div>
         ) : (
           <form className={styles.registrationForm} onSubmit={handleRegForm}>
-            {!isMessageVisible ? (
+            {!isMessageVisible && !emailError ? (
               <>
                 <h2>Регистрация</h2>
                 <div className={styles.inputBody}>
