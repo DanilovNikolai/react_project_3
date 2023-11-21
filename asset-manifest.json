@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DanilovNikolai/react_project_3/static/css/main.5a2cd983.css",
-    "main.js": "/DanilovNikolai/react_project_3/static/js/main.35dc745e.js",
+    "main.js": "/DanilovNikolai/react_project_3/static/js/main.21fa4c1c.js",
     "Cart.css": "/DanilovNikolai/react_project_3/static/css/Cart.1cf70887.chunk.css",
     "Cart.js": "/DanilovNikolai/react_project_3/static/js/Cart.88e47204.chunk.js",
     "ProductCard.css": "/DanilovNikolai/react_project_3/static/css/ProductCard.58343283.chunk.css",
@@ -23,7 +23,7 @@
     "static/media/footer_telegram.svg": "/DanilovNikolai/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/DanilovNikolai/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
     "main.5a2cd983.css.map": "/DanilovNikolai/react_project_3/static/css/main.5a2cd983.css.map",
-    "main.35dc745e.js.map": "/DanilovNikolai/react_project_3/static/js/main.35dc745e.js.map",
+    "main.21fa4c1c.js.map": "/DanilovNikolai/react_project_3/static/js/main.21fa4c1c.js.map",
     "Cart.1cf70887.chunk.css.map": "/DanilovNikolai/react_project_3/static/css/Cart.1cf70887.chunk.css.map",
     "Cart.88e47204.chunk.js.map": "/DanilovNikolai/react_project_3/static/js/Cart.88e47204.chunk.js.map",
     "ProductCard.58343283.chunk.css.map": "/DanilovNikolai/react_project_3/static/css/ProductCard.58343283.chunk.css.map",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.5a2cd983.css",
-    "static/js/main.35dc745e.js"
+    "static/js/main.21fa4c1c.js"
   ]
 }
