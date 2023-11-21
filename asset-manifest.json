@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_project_3/static/css/main.5a2cd983.css",
-    "main.js": "/react_project_3/static/js/main.156e75d6.js",
+    "main.js": "/react_project_3/static/js/main.40f3fc37.js",
     "Cart.css": "/react_project_3/static/css/Cart.1cf70887.chunk.css",
     "Cart.js": "/react_project_3/static/js/Cart.88e47204.chunk.js",
     "ProductCard.css": "/react_project_3/static/css/ProductCard.58343283.chunk.css",
@@ -17,13 +17,13 @@
     "static/media/footer_email.svg": "/react_project_3/static/media/footer_email.b7f872c96d41832d4c207a7d149b2c9d.svg",
     "static/media/cart_happy_face_emoji_emotion_smile_icon.svg": "/react_project_3/static/media/cart_happy_face_emoji_emotion_smile_icon.26154ae7e18e97d5885985982ac8ea1a.svg",
     "static/media/pizza-logo3.svg": "/react_project_3/static/media/pizza-logo3.6391c773512b4c83689d39f355dcb19a.svg",
-    "index.html": "/react_project_3/index.html",
     "static/media/footer_instagram.svg": "/react_project_3/static/media/footer_instagram.baf233de167e84d5328c3f295fccefa5.svg",
+    "index.html": "/react_project_3/index.html",
     "static/media/footer_phone.svg": "/react_project_3/static/media/footer_phone.4fc768f8b54a3a81aa5de2b5f4530732.svg",
     "static/media/footer_telegram.svg": "/react_project_3/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/react_project_3/static/media/footer_location.f8adf6d4f13e98e667f204d1e4aba172.svg",
     "main.5a2cd983.css.map": "/react_project_3/static/css/main.5a2cd983.css.map",
-    "main.156e75d6.js.map": "/react_project_3/static/js/main.156e75d6.js.map",
+    "main.40f3fc37.js.map": "/react_project_3/static/js/main.40f3fc37.js.map",
     "Cart.1cf70887.chunk.css.map": "/react_project_3/static/css/Cart.1cf70887.chunk.css.map",
     "Cart.88e47204.chunk.js.map": "/react_project_3/static/js/Cart.88e47204.chunk.js.map",
     "ProductCard.58343283.chunk.css.map": "/react_project_3/static/css/ProductCard.58343283.chunk.css.map",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.5a2cd983.css",
-    "static/js/main.156e75d6.js"
+    "static/js/main.40f3fc37.js"
   ]
 }
