@@ -28,7 +28,7 @@ const Header: React.FC = () => {
           !isAuth ? styles.container : `${styles.container} ${styles.topOffset}`
         }
       >
-        <Link to="/react_project_3/">
+        <Link to="/">
           <div className={styles.logo}>
             <img width="50" src={pizzaLogoHeader} alt="Pizza_logo" />
             <div>
@@ -42,9 +42,9 @@ const Header: React.FC = () => {
           </div>
         </Link>
         <div className={styles.main}>
-          {pathname !== "/react_project_3/cart" &&
-            pathname !== "/react_project_3/about" &&
-            !pathname.includes("/react_project_3/pizza") && <Search />}
+          {pathname !== "/cart" &&
+            pathname !== "/about" &&
+            !pathname.includes("/pizza") && <Search />}
           <div className={styles.buttons}>
             {!isAuth && (
               <LoginButton
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
               />
             )}
             {!isAuth && (
-              <Link to="/react_project_3/cart">
+              <Link to="/cart">
                 <CartButton />
               </Link>
             )}

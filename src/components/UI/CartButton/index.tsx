@@ -28,7 +28,7 @@ const CartButton: React.FC = () => {
 
   return (
     <>
-      {pathname !== "/react_project_3/cart" && (
+      {(pathname !== "/cart" || isAuth) && (
         <button className={styles.cartButton}>
           <span>{totalPrice} ₽</span>
           <div className={styles.delimiter}></div>

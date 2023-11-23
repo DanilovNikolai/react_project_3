@@ -23,7 +23,7 @@ const SuccessPaymentBlock: React.FC = () => {
   const { isAuth } = useAuth();
 
   useEffect(() => {
-    if (pathname === "/react_project_3/success_payment") {
+    if (pathname === "/success_payment") {
       dispatch(clearItems());
       if (!isAuth) {
         localStorage.removeItem("cart");
@@ -59,7 +59,7 @@ const SuccessPaymentBlock: React.FC = () => {
       <div>
         <span>Приятного аппетита!</span>
       </div>
-      <Link to="/react_project_3">
+      <Link to="/">
         <BackButton />
       </Link>
     </h2>

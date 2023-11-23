@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className={styles.menuList}>
-        <Link to="about">Контакты</Link>
-        <Link to="/react_project_3">О нас</Link>
-        <Link to="/react_project_3">Вакансии</Link>
+        <Link to="/about">Контакты</Link>
+        <Link to="/">О нас</Link>
+        <Link to="/">Вакансии</Link>
       </div>
     </div>
   );

@@ -82,7 +82,7 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
           <p className={styles.bonus}>
             Мои бонусы: <span>0</span>
           </p>
-          <Link to="cart">
+          <Link to="/cart">
             <p className={styles.cart}>
               <CartButton />
             </p>

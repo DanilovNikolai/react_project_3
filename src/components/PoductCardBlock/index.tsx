@@ -70,7 +70,7 @@ const ProductCardBlock: React.FC = () => {
           </div>
         </div>
       </div>
-      <Link to="/react_project_3">
+      <Link to="/">
         <BackButton />
       </Link>
     </div>

@@ -78,7 +78,7 @@ const CartBlock: React.FC = () => {
             </span>
           </div>
           <div className={styles.buttons}>
-            <Link to="/react_project_3">
+            <Link to="/">
               <BackButton />
             </Link>
             <PayButton items={items} />

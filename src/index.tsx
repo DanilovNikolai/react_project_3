@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 // Redux Toolkit
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
@@ -13,9 +13,9 @@ if (rootElem) {
 
   root.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }
