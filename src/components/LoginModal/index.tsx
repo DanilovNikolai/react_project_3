@@ -50,6 +50,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             token: userData.accessToken,
             id: userData.uid,
             cart: userData.cart,
+            bonus: userData.coins,
           };
 
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -61,6 +62,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
               token: (user as unknown as OAuthCredential).accessToken,
               id: user.uid,
               cart: currentUser.cart,
+              bonus: currentUser.bonus,
             })
           );
           dispatch(setCart(currentUser.cart));

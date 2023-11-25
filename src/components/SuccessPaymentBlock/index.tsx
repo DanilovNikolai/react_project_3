@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // styles
 import styles from "./SuccessPaymentBlock.module.scss";
 // icons
@@ -9,8 +9,9 @@ import getRandomOrder from "../../utils/getRandomOrderNumber";
 // components
 import BackButton from "components/UI/BackButton";
 // redux toolkit
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearItems } from "../../redux/cart/slice";
+import { selectCart } from "redux/cart/selectors";
 // types
 import { userSliceState } from "redux/user/types";
 // hooks
@@ -19,29 +20,44 @@ import { useAuth } from "hooks/useAuth";
 const SuccessPaymentBlock: React.FC = () => {
   const randomOrder = getRandomOrder(1, 100);
   const dispatch = useDispatch();
+  const { totalPrice } = useSelector(selectCart);
   const { pathname } = useLocation();
   const { isAuth } = useAuth();
+  const navigate = useNavigate();
+  const didMountRef = useRef(
+    localStorage.getItem("didMount") === "true" ? true : false
+  );
+  const [bonusForOrder, setBonusForOrder] = useState(0);
 
   useEffect(() => {
     if (pathname === "/success_payment") {
-      dispatch(clearItems());
-      if (!isAuth) {
-        localStorage.removeItem("cart");
+      if (didMountRef.current) {
+        localStorage.removeItem("didMount");
+        navigate("/");
       } else {
-        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        currentUser.cart = [];
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        dispatch(clearItems());
+        if (!isAuth) {
+          localStorage.removeItem("cart");
+        } else {
+          const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+          setBonusForOrder(Math.round(totalPrice / 100));
+          currentUser.coins += bonusForOrder;
+          currentUser.cart = [];
+          localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-        const userEmail = currentUser.email;
-        const users = JSON.parse(localStorage.getItem("users"));
-        const updatedUsers = users.map((user: userSliceState) => {
-          if (user.email === userEmail) {
-            user.cart = [];
-          }
-          return user;
-        });
+          const userEmail = currentUser.email;
+          const users = JSON.parse(localStorage.getItem("users"));
+          const updatedUsers = users.map((user: userSliceState) => {
+            if (user.email === userEmail) {
+              user.cart = [];
+            }
+            return user;
+          });
 
-        localStorage.setItem("users", JSON.stringify(updatedUsers));
+          localStorage.setItem("users", JSON.stringify(updatedUsers));
+        }
+        didMountRef.current = true;
+        localStorage.setItem("didMount", "true");
       }
     }
   }, []);
@@ -54,6 +70,9 @@ const SuccessPaymentBlock: React.FC = () => {
       <div>Ура! Оплата прошла успешно!</div>
       <div>
         Номер вашего заказа <span>#{randomOrder}</span>
+      </div>
+      <div>
+        Вы получили бонусов за заказ: <span>{bonusForOrder}</span>
       </div>
       <div>Ваш заказ уже начинают готовить!</div>
       <div>

@@ -4,4 +4,5 @@ export interface userSliceState {
   token: string;
   id: string;
   cart: [];
+  bonus: number;
 }

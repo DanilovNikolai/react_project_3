@@ -42,9 +42,7 @@ const Header: React.FC = () => {
           </div>
         </Link>
         <div className={styles.main}>
-          {pathname !== "/cart" &&
-            pathname !== "/about" &&
-            !pathname.includes("/pizza") && <Search />}
+          {pathname === "/" && <Search />}
           <div className={styles.buttons}>
             {!isAuth && (
               <LoginButton

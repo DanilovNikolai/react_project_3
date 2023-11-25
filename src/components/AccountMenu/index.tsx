@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 // styles
 import styles from "./AccountMenu.module.scss";
 // redux toolkit
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "redux/user/slice";
+import { selectUser } from "redux/user/selectors";
 // components
 import CartButton from "components/UI/CartButton";
 // react-router-dom
@@ -17,6 +18,7 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const AccountRef = useRef<HTMLDivElement>(null);
+  const { bonus } = useSelector(selectUser);
 
   useEffect(() => {
     const handleAccountClick = (event: MouseEvent) => {
@@ -80,7 +82,7 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
       {menuOpen && (
         <div className={styles.menu}>
           <p className={styles.bonus}>
-            Мои бонусы: <span>0</span>
+            Всего бонусов: <span>{bonus}</span>
           </p>
           <Link to="/cart">
             <p className={styles.cart}>

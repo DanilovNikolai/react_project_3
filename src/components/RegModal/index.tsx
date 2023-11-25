@@ -50,6 +50,7 @@ const RegModal: React.FC<RegModalProps> = ({
             token: (user as unknown as OAuthCredential).accessToken,
             id: user.uid,
             cart: cart,
+            bonus: 0,
           };
 
           const users = JSON.parse(localStorage.getItem("users") || "[]");
