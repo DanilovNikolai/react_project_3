@@ -45,29 +45,150 @@
     margin: 30px 0;
 
     .details {
+      font-size: 20px;
       display: flex;
       justify-content: space-between;
+
+      b {
+        color: $orange;
+        font-weight: 700;
+      }
+
+      div {
+        margin: 5px 0px;
+        @media (max-width: 1000px) {
+          font-size: 16px;
+        }
+        @media (max-width: 450px) {
+          margin-bottom: 5px;
+        }
+      }
+
       @media (max-width: 450px) {
         flex-direction: column;
         margin: 20px 0;
       }
 
-      span {
-        font-size: 22px;
+      .calculation {
+        max-width: 300px;
+        background-color: $gray-line;
+        padding: 10px 40px 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #d7d7d7;
         @media (max-width: 1000px) {
-          font-size: 14px;
-        }
-        @media (max-width: 450px) {
-          margin-bottom: 5px;
+          max-width: 250px;
+          padding: 10px 15px 10px 15px;
         }
 
-        &:last-of-type {
-          b {
-            color: $orange;
-            @media (max-width: 1000px) {
-              font-size: 20px;
+        .bonusApply {
+          form {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            input {
+              max-width: 50px;
+              padding: 5px 5px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              transition: border-color 0.3s;
+              font-size: 14px;
+
+              &:focus {
+                border-color: $orange;
+              }
+            }
+
+            button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 5px 10px;
+              margin-left: 10px;
+              background-color: $orange;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+              box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+
+              &:hover {
+                background-color: darken($color: $orange, $amount: 10%);
+              }
+              &:active {
+                background-color: darken($color: $orange, $amount: 50);
+                transform: translateY(2px);
+              }
+
+              &[disabled] {
+                background-color: gray;
+              }
+
+              span {
+                text-wrap: nowrap;
+                font-size: 14px;
+                color: #fff;
+              }
             }
           }
+        }
+
+        .bonusUsed {
+          position: relative;
+          .removeButton {
+            border-radius: 30px;
+            position: absolute;
+            top: 4px;
+            right: -28px;
+            cursor: pointer;
+            transition: background-color $duration ease-in-out,
+              border-color $duration ease-in-out;
+            border: 2px solid transparent;
+            @include noselect();
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            border-color: darken($color: $gray-line, $amount: 20);
+            background-color: #fff;
+            @media (max-width: 1000px) {
+              top: 2px;
+              right: 2px;
+            }
+            @media (max-width: 450px) {
+              top: 2px;
+              right: 12px;
+            }
+
+            svg {
+              width: 70%;
+              height: 70%;
+
+              line {
+                stroke: darken($color: $gray-line, $amount: 30);
+              }
+            }
+
+            &:hover {
+              background-color: darken($color: $gray-line, $amount: 10);
+              border-color: darken($color: $gray-line, $amount: 30);
+
+              svg {
+                line {
+                  stroke: #fff;
+                }
+              }
+            }
+
+            &:active {
+              transform: translateY(2px);
+            }
+          }
+        }
+
+        .finalPrice {
+          margin-top: 10px;
+          font-weight: 700;
         }
       }
     }

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./AccountMenu.module.scss";
 // redux toolkit
 import { useDispatch, useSelector } from "react-redux";
-import { removeUser } from "redux/user/slice";
+import { removeUser, setBonus } from "redux/user/slice";
 import { selectUser } from "redux/user/selectors";
 // components
 import CartButton from "components/UI/CartButton";
@@ -39,8 +39,15 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
   };
 
   const handleLogOff = () => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const currentUserBonus = currentUser.bonus;
+    const usedBonus = JSON.parse(localStorage.getItem("bonus"));
+
+    dispatch(setBonus(currentUserBonus + usedBonus));
     dispatch(removeUser());
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("didMount");
+    localStorage.removeItem("bonus");
   };
 
   return (

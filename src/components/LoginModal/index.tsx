@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./LoginModal.module.scss";
 // redux toolkit
 import { useDispatch } from "react-redux";
-import { setUser } from "../../redux/user/slice";
+import { setBonus, setUser } from "../../redux/user/slice";
 // firebase
 import {
   OAuthCredential,
@@ -50,7 +50,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             token: userData.accessToken,
             id: userData.uid,
             cart: userData.cart,
-            bonus: userData.coins,
+            bonus: userData.bonus,
           };
 
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -66,6 +66,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             })
           );
           dispatch(setCart(currentUser.cart));
+          dispatch(setBonus(currentUser.bonus));
         } else {
           setError("Неправильный логин или пароль. Попробуйте ещё раз.");
         }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // styles
 import styles from "./SuccessPaymentBlock.module.scss";
@@ -12,6 +12,7 @@ import BackButton from "components/UI/BackButton";
 import { useDispatch, useSelector } from "react-redux";
 import { clearItems } from "../../redux/cart/slice";
 import { selectCart } from "redux/cart/selectors";
+import { setBonus } from "redux/user/slice";
 // types
 import { userSliceState } from "redux/user/types";
 // hooks
@@ -27,7 +28,7 @@ const SuccessPaymentBlock: React.FC = () => {
   const didMountRef = useRef(
     localStorage.getItem("didMount") === "true" ? true : false
   );
-  const [bonusForOrder, setBonusForOrder] = useState(0);
+  const bonusForOrderRef = useRef(Math.round(totalPrice / 100));
 
   useEffect(() => {
     if (pathname === "/success_payment") {
@@ -40,20 +41,20 @@ const SuccessPaymentBlock: React.FC = () => {
           localStorage.removeItem("cart");
         } else {
           const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-          setBonusForOrder(Math.round(totalPrice / 100));
-          currentUser.coins += bonusForOrder;
+          currentUser.bonus += bonusForOrderRef.current;
           currentUser.cart = [];
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
+          localStorage.removeItem("bonus");
           const userEmail = currentUser.email;
           const users = JSON.parse(localStorage.getItem("users"));
           const updatedUsers = users.map((user: userSliceState) => {
             if (user.email === userEmail) {
+              user.bonus = currentUser.bonus;
+              dispatch(setBonus(currentUser.bonus));
               user.cart = [];
             }
             return user;
           });
-
           localStorage.setItem("users", JSON.stringify(updatedUsers));
         }
         didMountRef.current = true;
@@ -61,6 +62,10 @@ const SuccessPaymentBlock: React.FC = () => {
       }
     }
   }, []);
+
+  const handleRemoveDidMount = () => {
+    localStorage.removeItem("didMount");
+  };
 
   return (
     <h2 className={styles.root}>
@@ -71,15 +76,17 @@ const SuccessPaymentBlock: React.FC = () => {
       <div>
         Номер вашего заказа <span>#{randomOrder}</span>
       </div>
-      <div>
-        Вы получили бонусов за заказ: <span>{bonusForOrder}</span>
-      </div>
+      {isAuth && (
+        <div>
+          Вы получили бонусов за заказ: <span>{bonusForOrderRef.current}</span>
+        </div>
+      )}
       <div>Ваш заказ уже начинают готовить!</div>
       <div>
         <span>Приятного аппетита!</span>
       </div>
       <Link to="/">
-        <BackButton />
+        <BackButton onRemoveDidMount={handleRemoveDidMount} />
       </Link>
     </h2>
   );

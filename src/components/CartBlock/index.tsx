@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // components
 import CartItem from "../../components/CartItem";
@@ -7,18 +7,95 @@ import BackButton from "../../components/UI/BackButton";
 import PayButton from "../../components/UI/PayButton";
 import ClearCartButton from "../UI/ClearCartButton";
 // Redux Toolkit
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../redux/cart/selectors";
+import { selectUser } from "redux/user/selectors";
 import { CartItemProps } from "../../redux/cart/types";
+import { setBonus } from "redux/user/slice";
 // styles
 import styles from "./CartBlock.module.scss";
+// utils
+import { calcTotalPrice } from "utils/calcTotalPrice";
+// hooks
+import { useAuth } from "hooks/useAuth";
 
 const CartBlock: React.FC = () => {
+  const [bonusInput, setBonusInput] = useState("");
   const { items, totalPrice } = useSelector(selectCart);
+  const { bonus } = useSelector(selectUser);
+  const [isDisabledButton, setDisabledButton] = useState(false);
+  const [newTotalPrice, setNewTotalPrice] = useState(totalPrice);
+  const { isAuth } = useAuth();
   const totalCount = items.reduce(
     (sum: number, item: { count: number }) => item.count + sum,
     0
   );
+  const dispatch = useDispatch();
+  const parsedBonusInput = Number.parseInt(bonusInput, 10);
+
+  useEffect(() => {
+    JSON.parse(localStorage.getItem("bonus"))
+      ? setNewTotalPrice(totalPrice - JSON.parse(localStorage.getItem("bonus")))
+      : setNewTotalPrice(totalPrice);
+    calcTotalPrice(items, parsedBonusInput);
+  }, [newTotalPrice, totalPrice, items]);
+
+  useEffect(() => {
+    if (parsedBonusInput > bonus || bonusInput === "") {
+      setDisabledButton(true);
+    } else {
+      setDisabledButton(false);
+    }
+  }, [bonusInput]);
+
+  const handleBonusSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (
+      parsedBonusInput <= bonus &&
+      totalPrice - parsedBonusInput >= (totalPrice / 100) * 30
+    ) {
+      const newBonus = bonus - parsedBonusInput;
+      dispatch(setBonus(newBonus));
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      currentUser.bonus = newBonus;
+
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+      const bonusUsed = JSON.parse(localStorage.getItem("bonus"));
+
+      if (bonusUsed) {
+        localStorage.setItem(
+          "bonus",
+          JSON.stringify(bonusUsed + parsedBonusInput)
+        );
+      } else {
+        localStorage.setItem("bonus", JSON.stringify(parsedBonusInput));
+      }
+
+      setNewTotalPrice(totalPrice - JSON.parse(localStorage.getItem("bonus")));
+      setBonusInput("");
+      console.log(bonus);
+    }
+  };
+
+  const handleBonusRemoveButton = () => {
+    const bonusUsed = JSON.parse(localStorage.getItem("bonus"));
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const totalBonus = bonusUsed + currentUser.bonus;
+    dispatch(setBonus(totalBonus));
+    currentUser.bonus = totalBonus;
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    localStorage.removeItem("bonus");
+    setNewTotalPrice(totalPrice);
+  };
+
+  const handleBonusInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setBonusInput(value);
+    }
+  };
 
   if (items.length === 0) {
     return <CartEmpty />;
@@ -70,12 +147,81 @@ const CartBlock: React.FC = () => {
         </div>
         <div className={styles.bottom}>
           <div className={styles.details}>
-            <span>
+            <div className={styles.totalCount}>
               Всего: <b>{totalCount} шт.</b>{" "}
-            </span>
-            <span>
-              Сумма заказа: <b>{totalPrice} ₽</b>{" "}
-            </span>
+            </div>
+            <div className={styles.calculation}>
+              <div>
+                Сумма заказа: <b>{totalPrice} ₽</b>{" "}
+              </div>
+              {isAuth && (
+                <>
+                  <div className={styles.totalBonus}>
+                    Всего бонусов: <b>{bonus}</b>
+                  </div>
+                  <div className={styles.bonusApply}>
+                    <form onSubmit={handleBonusSubmit}>
+                      <input
+                        onChange={handleBonusInputChange}
+                        value={bonusInput}
+                        type="text"
+                        pattern="\d*"
+                        id="bonus"
+                        placeholder="0"
+                      />
+                      <button
+                        type="submit"
+                        disabled={isDisabledButton}
+                        className={styles.bonusButton}
+                      >
+                        <span>Применить бонусы</span>
+                      </button>
+                    </form>
+                  </div>
+                  {localStorage.getItem("bonus") && (
+                    <div className={styles.bonusUsed}>
+                      Применено <b>{totalPrice - newTotalPrice}</b> бонусов
+                      <button
+                        className={styles.removeButton}
+                        onClick={handleBonusRemoveButton}
+                      >
+                        <svg
+                          viewBox="0 0 256 256"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect fill="none" height="256" width="256" />
+                          <line
+                            fill="none"
+                            stroke="#c8c8c8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="24"
+                            x1="200"
+                            x2="56"
+                            y1="56"
+                            y2="200"
+                          />
+                          <line
+                            fill="none"
+                            stroke="#c8c8c8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="24"
+                            x1="200"
+                            x2="56"
+                            y1="200"
+                            y2="56"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+                  <div className={styles.finalPrice}>
+                    Итого: <b>{newTotalPrice} ₽</b>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
           <div className={styles.buttons}>
             <Link to="/">

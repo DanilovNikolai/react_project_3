@@ -2,9 +2,13 @@ import React from "react";
 // styles
 import styles from "./BackButton.module.scss";
 
-const BackButton: React.FC = () => {
+interface BackButtonProps {
+  onRemoveDidMount?: () => void;
+}
+
+const BackButton: React.FC<BackButtonProps> = ({ onRemoveDidMount }) => {
   return (
-    <button className={styles.root}>
+    <button className={styles.root} onClick={onRemoveDidMount}>
       <svg
         width="8"
         height="14"

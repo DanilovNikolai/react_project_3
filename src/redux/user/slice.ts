@@ -20,8 +20,11 @@ export const userSlice = createSlice({
       state.token = null;
       state.id = null;
     },
+    setBonus(state, action) {
+      state.bonus = action.payload;
+    },
   },
 });
 
-export const { setUser, removeUser } = userSlice.actions;
+export const { setUser, removeUser, setBonus } = userSlice.actions;
 export default userSlice.reducer;
