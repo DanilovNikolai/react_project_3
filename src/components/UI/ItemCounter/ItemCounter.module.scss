@@ -6,14 +6,14 @@
   align-items: center;
   justify-content: space-around;
   min-width: 200px;
-  @media (max-width: 1100px) {
+  @media (max-width: 1000px) {
     min-width: 150px;
   }
   @media (max-width: 800px) {
-    min-width: 120px;
+    min-width: 100px;
   }
   @media (max-width: 600px) {
-    min-width: 100px;
+    min-width: 80px;
   }
 
   b {
@@ -39,12 +39,13 @@
   min-width: 32px;
   background-color: #fff;
   border-color: $orange;
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     width: 25px;
     height: 25px;
     min-width: 25px;
   }
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
+    border-color: #fff;
     width: 22px;
     height: 22px;
     min-width: 22px;
