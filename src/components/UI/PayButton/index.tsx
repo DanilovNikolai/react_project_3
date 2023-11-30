@@ -28,7 +28,7 @@ const PayButton: React.FC<CartSliceState> = ({ items }) => {
         lineItems: lineItems,
         mode: "payment",
         successUrl:
-          "http://danilovnikolai.github.io/react_project_3#/success_payment",
+          "https://danilovnikolai.github.io/react_project_3#/success_payment",
         cancelUrl: "https://danilovnikolai.github.io/react_project_3#/",
       });
 

@@ -98,7 +98,9 @@ const AccountMenu: React.FC<PersonalAccountProps> = ({ username }) => {
           </Link>
           <ul className={styles.list}>
             <li>Личный кабинет</li>
-            <li>История заказов</li>
+            <Link to="/orders">
+              <li>История заказов</li>
+            </Link>
             <li onClick={handleLogOff}>Выйти</li>
           </ul>
         </div>

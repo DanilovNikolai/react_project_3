@@ -19,18 +19,25 @@ import { userSliceState } from "redux/user/types";
 import { useAuth } from "hooks/useAuth";
 
 const SuccessPaymentBlock: React.FC = () => {
-  const randomOrder = getRandomOrder(1, 100);
   const dispatch = useDispatch();
   const { totalPrice } = useSelector(selectCart);
   const { pathname } = useLocation();
   const { isAuth } = useAuth();
   const navigate = useNavigate();
+  const numberOfOrderRef = useRef(getRandomOrder(1, 100));
   const didMountRef = useRef(
     localStorage.getItem("didMount") === "true" ? true : false
   );
   const bonusForOrderRef = useRef(Math.round(totalPrice / 100));
 
   useEffect(() => {
+    const now = new Date();
+    const date = now.toLocaleDateString("en-GB");
+    const time = now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
     if (pathname === "/success_payment") {
       if (didMountRef.current) {
         localStorage.removeItem("didMount");
@@ -42,21 +49,34 @@ const SuccessPaymentBlock: React.FC = () => {
         } else {
           const currentUser = JSON.parse(localStorage.getItem("currentUser"));
           currentUser.bonus += bonusForOrderRef.current;
+          const userOrder = {
+            date,
+            time,
+            numberOfOrder: numberOfOrderRef.current,
+            totalPrice: totalPrice,
+            bonusForOrder: bonusForOrderRef.current,
+            items: currentUser.cart,
+          };
           currentUser.cart = [];
+          currentUser.orders.push(userOrder);
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
           localStorage.removeItem("bonus");
           const userEmail = currentUser.email;
+
           const users = JSON.parse(localStorage.getItem("users"));
           const updatedUsers = users.map((user: userSliceState) => {
             if (user.email === userEmail) {
               user.bonus = currentUser.bonus;
               dispatch(setBonus(currentUser.bonus));
               user.cart = [];
+              user.orders.push(userOrder);
             }
             return user;
           });
           localStorage.setItem("users", JSON.stringify(updatedUsers));
         }
+
         didMountRef.current = true;
         localStorage.setItem("didMount", "true");
       }
@@ -74,7 +94,7 @@ const SuccessPaymentBlock: React.FC = () => {
       </div>
       <div>Ура! Оплата прошла успешно!</div>
       <div>
-        Номер вашего заказа <span>#{randomOrder}</span>
+        Номер вашего заказа: <span>{numberOfOrderRef.current}</span>
       </div>
       {isAuth && (
         <div>

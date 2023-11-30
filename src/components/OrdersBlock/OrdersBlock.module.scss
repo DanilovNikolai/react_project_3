@@ -1,0 +1,140 @@
+@import "../../scss/variables";
+@import "../../scss/libs/normalize";
+
+.root {
+  padding: 20px 30px;
+  @media (max-width: 700px) {
+    padding: 10px 15px;
+  }
+
+  h2 {
+    padding: 10px 0px 10px 0px;
+    @media (max-width: 700px) {
+      text-align: center;
+    }
+  }
+
+  .list {
+    margin-top: 30px;
+    max-width: 700px;
+    @media (max-width: 700px) {
+      font-size: 14px;
+    }
+    @media (max-width: 500px) {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .order {
+      cursor: pointer;
+      background-color: $gray-line;
+      padding: 15px 20px;
+      margin: 10px 0px;
+      border-radius: 5px;
+      border: 1px solid darken($color: $gray-line, $amount: 10);
+
+      b {
+        color: $orange;
+      }
+
+      span {
+        margin-right: 20px;
+      }
+
+      .orderStatus {
+        span {
+          color: green;
+          font-weight: 700;
+        }
+      }
+
+      .items {
+        margin: 20px 0px;
+      }
+
+      .item {
+        background-color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid darken($color: $gray-line, $amount: 10);
+        margin: 5px 0px;
+        @media (max-width: 800px) {
+          font-size: 14px;
+          flex-direction: column;
+          align-items: start;
+        }
+        @media (max-width: 600px) {
+          padding: 10px 10px;
+          font-size: 12px;
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .itemMain_1 {
+          display: flex;
+          justify-content: start;
+          flex: 70%;
+          @media (max-width: 700px) {
+            flex: 100%;
+          }
+
+          .itemInfo {
+            padding: 0px 20px;
+            @media (max-width: 400px) {
+              padding: 0px 7px;
+            }
+          }
+        }
+
+        .itemMain_2 {
+          display: flex;
+          justify-content: center;
+          flex: 30%;
+          @media (max-width: 800px) {
+            margin-top: 5px;
+            align-self: end;
+          }
+          @media (max-width: 500px) {
+            margin-top: 0px;
+            align-self: end;
+          }
+
+          .itemPrice {
+            text-wrap: nowrap;
+            flex: 50%;
+            padding: 0px 10px;
+          }
+
+          .itemCount {
+            text-wrap: nowrap;
+            flex: 50%;
+            padding: 0px 10px;
+          }
+        }
+
+        b {
+          color: $black;
+        }
+
+        img {
+          max-width: 50px;
+          max-height: 50px;
+          @media (max-width: 700px) {
+            max-width: 40px;
+            max-height: 40px;
+          }
+        }
+
+        div {
+          @media (max-width: 800px) {
+            margin: 0px;
+          }
+        }
+      }
+
+    }
+  }
+}

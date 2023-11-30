@@ -20,6 +20,9 @@ const About = lazy(
 const SuccessPayment = lazy(
   () => import(/*webpackChunkName: "SuccessPayment" */ "./pages/SuccessPayment")
 );
+const Orders = lazy(
+  () => import(/*webpackChunkName: "Orders" */ "./pages/Orders")
+);
 
 function App() {
   return (
@@ -55,6 +58,14 @@ function App() {
           element={
             <Suspense fallback={<Loader />}>
               <SuccessPayment />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <Suspense fallback={<Loader />}>
+              <Orders />
             </Suspense>
           }
         />

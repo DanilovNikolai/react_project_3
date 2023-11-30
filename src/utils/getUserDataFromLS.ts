@@ -12,6 +12,7 @@ export const getUserDataFromLS = (): userSliceState => {
       id: user.id || "",
       cart: user.cart || [],
       bonus: user.bonus || 0,
+      orders: user.orders || [],
     };
   }
 
@@ -22,5 +23,6 @@ export const getUserDataFromLS = (): userSliceState => {
     id: "",
     cart: [],
     bonus: 0,
+    orders: [],
   };
 };

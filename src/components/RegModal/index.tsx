@@ -51,6 +51,7 @@ const RegModal: React.FC<RegModalProps> = ({
             id: user.uid,
             cart: cart,
             bonus: 0,
+            orders: [],
           };
 
           const users = JSON.parse(localStorage.getItem("users") || "[]");

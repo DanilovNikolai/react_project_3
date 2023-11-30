@@ -29,7 +29,10 @@ const Header: React.FC = () => {
         }
       >
         <Link to="/">
-          <div className={styles.logo}>
+          <div
+            className={styles.logo}
+            onClick={() => localStorage.removeItem("didMount")}
+          >
             <img width="50" src={pizzaLogoHeader} alt="Pizza_logo" />
             <div>
               <h1>Dudu Pizza</h1>

@@ -51,6 +51,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             id: userData.uid,
             cart: userData.cart,
             bonus: userData.bonus,
+            orders: userData.orders,
           };
 
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -63,6 +64,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
               id: user.uid,
               cart: currentUser.cart,
               bonus: currentUser.bonus,
+              orders: currentUser.orders,
             })
           );
           dispatch(setCart(currentUser.cart));
