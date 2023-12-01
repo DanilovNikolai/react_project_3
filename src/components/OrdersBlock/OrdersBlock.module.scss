@@ -134,7 +134,24 @@
           }
         }
       }
+    }
+  }
 
+  .noOrders {
+    text-align: center;
+
+    h1 {
+      @media (max-width: 500px) {
+        font-size: 25px;
+      }
+    }
+
+    div {
+      font-size: 20px;
+      font-weight: 700;
+      @media (max-width: 500px) {
+        font-size: 14px;
+      }
     }
   }
 }

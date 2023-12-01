@@ -12,7 +12,7 @@ import BackButton from "components/UI/BackButton";
 import { useDispatch, useSelector } from "react-redux";
 import { clearItems } from "../../redux/cart/slice";
 import { selectCart } from "redux/cart/selectors";
-import { setBonus } from "redux/user/slice";
+import { addOrder, setBonus } from "redux/user/slice";
 // types
 import { userSliceState } from "redux/user/types";
 // hooks
@@ -56,11 +56,12 @@ const SuccessPaymentBlock: React.FC = () => {
             totalPrice: totalPrice,
             bonusForOrder: bonusForOrderRef.current,
             items: currentUser.cart,
+            status: "Оплачен",
           };
           currentUser.cart = [];
           currentUser.orders.push(userOrder);
           localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
+          dispatch(addOrder(userOrder));
           localStorage.removeItem("bonus");
           const userEmail = currentUser.email;
 

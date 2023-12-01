@@ -25,27 +25,11 @@ export const userSlice = createSlice({
     setBonus(state, action) {
       state.bonus = action.payload;
     },
-    // addOrder(state, action) {
-    //   const now = new Date();
-    //   const date = now.toLocaleDateString("en-GB");
-    //   const time = now.toLocaleTimeString([], {
-    //     hour: "2-digit",
-    //     minute: "2-digit",
-    //   });
-
-    //   const userOrder = {
-    //     date,
-    //     time,
-    //     number: "",
-    //     totalPrice: calcTotalPrice(action.payload),
-    //     order: action.payload,
-    //   };
-
-    //   state.orders.push(userOrder);
-    //   localStorage.setItem("currentUser", JSON.stringify(state));
-    // },
+    addOrder(state, action) {
+      state.orders.push(action.payload);
+    },
   },
 });
 
-export const { setUser, removeUser, setBonus } = userSlice.actions;
+export const { setUser, removeUser, setBonus, addOrder } = userSlice.actions;
 export default userSlice.reducer;

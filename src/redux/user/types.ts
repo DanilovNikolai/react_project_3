@@ -7,6 +7,7 @@ export type userOrder = {
   totalPrice: number;
   bonusForOrder: number;
   items: CartItemProps[];
+  status: string;
 };
 
 export interface userSliceState {
