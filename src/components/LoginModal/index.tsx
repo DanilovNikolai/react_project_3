@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // styles
 import styles from "./LoginModal.module.scss";
 // redux toolkit
@@ -28,6 +28,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const [passwordInput, setPasswordInput] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const dispatch = useDispatch();
+  const inputLoginRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputLoginRef.current.focus();
+  }, [])
 
   const handleLoginForm = (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,6 +104,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
               placeholder="example@mail.ru"
               value={emailInput}
               onChange={(e) => setEmailInput(e.target.value)}
+              ref={inputLoginRef}
               id="email"
             />
           </div>

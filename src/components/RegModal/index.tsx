@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // styles
 import styles from "./RegModal.module.scss";
 // redux toolkit
@@ -33,10 +33,14 @@ const RegModal: React.FC<RegModalProps> = ({
   const [passwordValid, setPasswordValid] = useState<boolean>(false);
   const [nameValid, setNameValid] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<string>("");
-  const [isMessageVisible, setMessageVisible] = useState(false);
+  const [isMessageVisible, setMessageVisible] = useState<boolean>(false);
   const { items } = useSelector(selectCart);
-
   const dispatch = useDispatch();
+  const inputRegRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRegRef.current.focus();
+  }, []);
 
   const handleUserCreate = (cart) => {
     const auth = getAuth();
@@ -125,6 +129,7 @@ const RegModal: React.FC<RegModalProps> = ({
                   <label htmlFor="name">Имя:</label>
                   <input
                     type="text"
+                    ref={inputRegRef}
                     value={nameInput}
                     onChange={handleNameChange}
                     id="name"
