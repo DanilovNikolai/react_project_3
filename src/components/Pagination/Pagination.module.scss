@@ -1,49 +1,64 @@
 .root {
-  li {
-    display: inline-flex;
-    a {
-      font-size: 20px;
-      font-weight: 900;
-      margin: 10px;
-      padding: 25px;
-      border: 2px solid #fe5f1e;
-      color: #fe5f1e;
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #fe5f1e;
-        color: #fff;
-      }
-      @media (max-width: 1000px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .pagination {
+    li {
+      display: inline-flex;
+      a {
         font-size: 18px;
-        font-weight: 900;
+        font-weight: 700;
+        margin: 10px;
         padding: 20px;
-        height: 30px;
-        width: 30px;
+        border: 2px solid #fe5f1e;
+        color: #fe5f1e;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.2);
+        }
+
+        @media (max-width: 1000px) {
+          font-size: 18px;
+          font-weight: 900;
+          padding: 20px;
+          height: 30px;
+          width: 30px;
+        }
+        @media (max-width: 600px) {
+          margin: 5px;
+          font-size: 14px;
+          font-weight: 900;
+          padding: 15px;
+          height: 30px;
+          width: 30px;
+        }
       }
-      @media (max-width: 600px) {
-        margin: 5px;
-        font-size: 14px;
-        font-weight: 900;
-        padding: 15px;
-        height: 30px;
-        width: 30px;
+
+      &:first-child a, &:last-child a {
+        border: none;
+        scale: 1.5;
+        margin: 10px;
       }
     }
-  }
-
-  :global {
-    .selected {
-      a {
-        background-color: #fe5f1e;
-        color: #fff;
+  
+    :global {
+      .selected {
+        a {
+          background-color: #fe5f1e;
+          color: #fff;
+        }
       }
     }
   }
 }
+
+
