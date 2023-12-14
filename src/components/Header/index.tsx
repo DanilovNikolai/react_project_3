@@ -1,6 +1,6 @@
 import { useState } from "react";
 // icons
-import pizzaLogoHeader from "../../assets/img/pizza-logo3.svg";
+import pizzaLogoHeader from "../../assets/img/pizza-logo.svg";
 // react-router-dom
 import { Link, useLocation } from "react-router-dom";
 // components
@@ -35,7 +35,9 @@ const Header: React.FC = () => {
           >
             <img width="50" src={pizzaLogoHeader} alt="Pizza_logo" />
             <div>
-              <h1>Dudu Pizza</h1>
+              <h1>
+                Подкре<span>Pizza</span>
+              </h1>
               <p>
                 Всегда великолепно,
                 <br />

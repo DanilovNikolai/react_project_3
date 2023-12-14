@@ -106,9 +106,11 @@ const SuccessPaymentBlock: React.FC = () => {
       <div>
         <span>Приятного аппетита!</span>
       </div>
-      <Link to="/">
-        <BackButton onRemoveDidMount={handleRemoveDidMount} />
-      </Link>
+      <div className={styles.button}>
+        <Link to="/">
+          <BackButton onRemoveDidMount={handleRemoveDidMount} />
+        </Link>
+      </div>
     </h2>
   );
 };

@@ -1,11 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 
 import "./scss/app.scss";
 
 import Home from "./pages/Home";
 import Loader from "./components/UI/Loader";
 import MainLayout from "./layouts/MainLayout";
+import Contacts from "./pages/Contacts";
+import AboutUs from "pages/AboutUs";
+import AboutCompany from "pages/AboutCompany";
 
 const Cart = lazy(() => import(/*webpackChunkName: "Cart" */ "./pages/Cart"));
 const ProductCard = lazy(
@@ -13,9 +16,6 @@ const ProductCard = lazy(
 );
 const NotFound = lazy(
   () => import(/*webpackChunkName: "NotFound" */ "./pages/NotFound")
-);
-const About = lazy(
-  () => import(/*webpackChunkName: "About" */ "./pages/About")
 );
 const SuccessPayment = lazy(
   () => import(/*webpackChunkName: "SuccessPayment" */ "./pages/SuccessPayment")
@@ -28,6 +28,10 @@ const Orders = lazy(
 );
 
 function App() {
+  useEffect(() => {
+    document.title = "ПодкреPIZZA";
+  }, []);
+
   return (
     <Routes>
       <Route path="" element={<MainLayout />}>
@@ -48,14 +52,10 @@ function App() {
             </Suspense>
           }
         />
-        <Route
-          path="/about"
-          element={
-            <Suspense fallback={<Loader />}>
-              <About />
-            </Suspense>
-          }
-        />
+        <Route path="/about/" element={<AboutCompany />}>
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="about_us" element={<AboutUs />} />
+        </Route>
         <Route
           path="/success_payment"
           element={

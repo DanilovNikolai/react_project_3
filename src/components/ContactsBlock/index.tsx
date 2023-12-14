@@ -1,6 +1,6 @@
 import { useState } from "react";
 // components
-import BackButton from "../../components/UI/BackButton";
+import BackButton from "../UI/BackButton";
 // Mapbox
 import Map, { Marker, NavigationControl, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -12,7 +12,7 @@ import instagramLogoFooter from "../../assets/img/footer_instagram.svg";
 import telegramLogoFooter from "../../assets/img/footer_telegram.svg";
 import markerImage from "../../assets/img/pizza-marker.png";
 // styles
-import styles from "./AboutBlock.module.scss";
+import styles from "./ContactsBlock.module.scss";
 // react-router
 import { Link } from "react-router-dom";
 
@@ -54,7 +54,7 @@ const markersData = [
   },
 ];
 
-const AboutBlock: React.FC = () => {
+const ContactsBlock: React.FC = () => {
   const [selectedMarkers, setSelectedMarkers] = useState<boolean[]>(
     new Array(markersData.length).fill(true)
   );
@@ -119,7 +119,7 @@ const AboutBlock: React.FC = () => {
           </div>
           <div className={styles.logo}>
             <img width="25" src={emailLogoFooter} alt="Email logo" />
-            <p>dudu_pizza@mail.ru</p>
+            <p>podkrepizza@mail.ru</p>
           </div>
           <div className={styles.logo}>
             <img width="25" src={locationLogoFooter} alt="Location logo" />
@@ -127,19 +127,21 @@ const AboutBlock: React.FC = () => {
           </div>
           <div className={styles.logo}>
             <img width="25" src={instagramLogoFooter} alt="Instagram logo" />
-            <p>@dudu.pizzagram</p>
+            <p>@podkre_pizza</p>
           </div>
           <div className={styles.logo}>
             <img width="25" src={telegramLogoFooter} alt="Telegram logo" />
-            <p>@dudu.pizza</p>
+            <p>@podkre.pizza</p>
           </div>
         </div>
       </div>
-      <Link to="/">
-        <BackButton />
-      </Link>
+      <div className={styles.button}>
+        <Link to="/">
+          <BackButton />
+        </Link>
+      </div>
     </>
   );
 };
 
-export default AboutBlock;
+export default ContactsBlock;

@@ -15,6 +15,9 @@
   @media (max-width: 750px) {
     margin-bottom: 35px;
   }
+  @media (max-width: 500px) {
+    margin-bottom: 15px;
+  }
 
   .image {
     cursor: pointer;
@@ -67,7 +70,7 @@
     letter-spacing: 1%;
     margin-bottom: 20px;
     @media (max-width: 500px) {
-      font-size: 16px;
+      font-size: 18px;
       margin-bottom: 10px;
       font-weight: 700;
     }
@@ -76,8 +79,11 @@
   .bottom {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
+    @media (max-width: 500px) {
+      margin-top: 10px;
+    }
   }
 
   .price {
@@ -85,5 +91,9 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
+    @media (max-width: 500px) {
+      font-size: 20px;
+      line-height: 20px;
+    }
   }
 }

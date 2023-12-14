@@ -8,41 +8,59 @@
   border-top: 1px solid $gray-line;
   @media (max-width: 750px) {
     flex-direction: column;
+    padding: 15px 15px;
   }
-}
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  margin: 5px 0px;
-}
+  .container {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+    @media (max-width: 600px) {
+      width: 90%;
+    }
 
-.logo {
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  cursor: pointer;
-  img {
-    width: 50px;
-    margin-right: 10px;
-  }
-  h1 {
-    @media (max-width: 750px){
-        font-size: 30px;
+    .phone {
+      display: flex;
+      align-items: center;
+      margin: 5px;
+      cursor: pointer;
+
+      img {
+        width: 40px;
+        margin-right: 10px;
+        @media (max-width: 700px) {
+          width: 30px;
+        }
+      }
+
+      a {
+        h2 {
+          color: #a3a3a3;
+          @media (max-width: 700px) {
+            font-size: 20px;
+          }
+          @media (max-width: 500px) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .menuList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      a {
+        font-size: 20px;
+        // margin: 5px;
+        color: $orange;
+        font-weight: 700;
+        @media (max-width: 700px) {
+          font-size: 15px;
+        }
+      }
     }
   }
-}
-
-.menuList {
-  display: flex;
-  flex-direction: column;
-  a {
-    font-size: 18px;
-    margin: 5px;
-    color: $orange;
-    font-weight: 700;
-  }
-
 }

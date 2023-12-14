@@ -70,9 +70,11 @@ const ProductCardBlock: React.FC = () => {
           </div>
         </div>
       </div>
-      <Link to="/">
-        <BackButton />
-      </Link>
+      <div className={styles.button}>
+        <Link to="/">
+          <BackButton />
+        </Link>
+      </div>
     </div>
   );
 };

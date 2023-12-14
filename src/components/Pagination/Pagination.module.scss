@@ -28,18 +28,18 @@
 
         @media (max-width: 1000px) {
           font-size: 18px;
-          font-weight: 900;
+          font-weight: 700;
           padding: 20px;
           height: 30px;
           width: 30px;
         }
-        @media (max-width: 600px) {
-          margin: 5px;
+        @media (max-width: 700px) {
+          margin: 7px;
           font-size: 14px;
-          font-weight: 900;
           padding: 15px;
-          height: 30px;
-          width: 30px;
+        }
+        @media (max-width: 500px){
+            padding: 10px;
         }
       }
 
@@ -55,6 +55,7 @@
         a {
           background-color: #fe5f1e;
           color: #fff;
+          scale: 1.2;
         }
       }
     }
