@@ -36,7 +36,6 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const isSearch = useRef(false);
   const isMounted = useRef(false);
-  // const [fetching, setFetching] = useState(true);
 
   // Redux Toolkit
   const { items, status } = useSelector(selectItems);
@@ -86,26 +85,6 @@ const Home: React.FC = () => {
     isSearch.current = false;
   }, [categoryId, sortId, searchValue, currentPage]);
 
-  // useEffect(() => {
-  //   if (fetching) {
-  //     handleFetchItems();
-  //     dispatch(setItems(items));
-  //     dispatch(setCurrentPage(currentPage + 1));
-  //     console.log(items);
-  //     console.log(currentPage);
-
-  //     setFetching(false);
-  //   }
-  // }, [fetching]);
-
-  // Динамический скролл
-  // useEffect(() => {
-  //   document.addEventListener("scroll", scrollHandler);
-  //   return () => {
-  //     document.removeEventListener("scroll", scrollHandler);
-  //   };
-  // }, []);
-
   // Фнукция с запросом items с бэк-энда
   async function handleFetchItems() {
     const category = categoryId ? `category=${categoryId}` : "";
@@ -126,18 +105,6 @@ const Home: React.FC = () => {
 
     window.scrollTo(0, 0);
   }
-
-  // const scrollHandler = (e: any): void => {
-  //   if (
-  //     e.target.documentElement.scrollHeight -
-  //       (e.target.documentElement.scrollTop + window.innerHeight) <
-  //       100 &&
-  //     items.length < totalCount
-  //   ) {
-  //     console.log("scroll");
-  //     setFetching(true);
-  //   }
-  // };
 
   return (
     <>

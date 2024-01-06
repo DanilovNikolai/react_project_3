@@ -2,44 +2,52 @@
 @import "../../scss/libs/normalize";
 
 .root {
-  padding: 20px 100px;
+  margin-top: 40px;
+  padding: 0px 100px;
   @media (max-width: 1000px) {
-    padding: 20px 40px;
+    padding: 0px 40px;
   }
   @media (max-width: 700px) {
-    padding: 20px 20px;
+    padding: 0px 20px;
   }
   @media (max-width: 500px) {
-    padding: 20px 15px;
+    padding: 0px 15px;
     font-size: 14px;
   }
 
   p {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     @media (max-width: 500px) {
-      margin-bottom: 40px;
+      margin-bottom: 15px;
+      margin-top: 15px;
     }
+
+    &:last-child {
+      margin-bottom: 10px;
+    }
+
     span {
       color: $orange;
       font-weight: 700;
     }
 
-    &:not(:last-child) {
-      position: relative;
+    // &:not(:last-child) {
+    //   position: relative;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 1px;
-        width: 30%;
-        background-color: lighten($color: $orange, $amount: 30);
-        @media (max-width: 500px) {
-          bottom: -20px;
-        }
-      }
-    }
+    //   &::after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: -30px;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     height: 1px;
+    //     width: 30%;
+    //     background-color: lighten($color: $orange, $amount: 30);
+    //     @media (max-width: 500px) {
+    //       bottom: -20px;
+    //     }
+    //   }
+    // }
   }
 }

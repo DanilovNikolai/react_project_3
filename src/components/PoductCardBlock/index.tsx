@@ -26,7 +26,7 @@ const ProductCardBlock: React.FC = () => {
     async function fetchPizza() {
       try {
         const { data } = await axios.get(
-          `https://64f8cba7824680fd21800fd6.mockapi.io/pizzas/${id}`
+          `https://65997b43a20d3dc41cefcf05.mockapi.io/pizzas/${id}`
         );
         setPizza(data);
       } catch (error) {
