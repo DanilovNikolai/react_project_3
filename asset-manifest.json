@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/pizza_project/static/css/main.adff2171.css",
-    "main.js": "/pizza_project/static/js/main.785d375e.js",
+    "main.css": "/pizza_project/static/css/main.4f4766a2.css",
+    "main.js": "/pizza_project/static/js/main.68500966.js",
     "Cart.css": "/pizza_project/static/css/Cart.81694fca.chunk.css",
     "Cart.js": "/pizza_project/static/js/Cart.473fd25f.chunk.js",
     "ProductCard.css": "/pizza_project/static/css/ProductCard.2741757d.chunk.css",
-    "ProductCard.js": "/pizza_project/static/js/ProductCard.81caece4.chunk.js",
+    "ProductCard.js": "/pizza_project/static/js/ProductCard.ae8767c8.chunk.js",
     "NotFound.js": "/pizza_project/static/js/NotFound.c2e80c06.chunk.js",
     "SuccessPayment.css": "/pizza_project/static/css/SuccessPayment.40745e9a.chunk.css",
     "SuccessPayment.js": "/pizza_project/static/js/SuccessPayment.74767835.chunk.js",
@@ -23,12 +23,12 @@
     "static/media/footer_phone.svg": "/pizza_project/static/media/footer_phone.cb383c8f6e51fe5ca1ba29c8b06280b2.svg",
     "static/media/footer_telegram.svg": "/pizza_project/static/media/footer_telegram.0f8cee7faffb943b3bf8dfd7d15dc2fc.svg",
     "static/media/footer_location.svg": "/pizza_project/static/media/footer_location.dcf92fb4c5648c82ef28c5b2a8c648c8.svg",
-    "main.adff2171.css.map": "/pizza_project/static/css/main.adff2171.css.map",
-    "main.785d375e.js.map": "/pizza_project/static/js/main.785d375e.js.map",
+    "main.4f4766a2.css.map": "/pizza_project/static/css/main.4f4766a2.css.map",
+    "main.68500966.js.map": "/pizza_project/static/js/main.68500966.js.map",
     "Cart.81694fca.chunk.css.map": "/pizza_project/static/css/Cart.81694fca.chunk.css.map",
     "Cart.473fd25f.chunk.js.map": "/pizza_project/static/js/Cart.473fd25f.chunk.js.map",
     "ProductCard.2741757d.chunk.css.map": "/pizza_project/static/css/ProductCard.2741757d.chunk.css.map",
-    "ProductCard.81caece4.chunk.js.map": "/pizza_project/static/js/ProductCard.81caece4.chunk.js.map",
+    "ProductCard.ae8767c8.chunk.js.map": "/pizza_project/static/js/ProductCard.ae8767c8.chunk.js.map",
     "NotFound.c2e80c06.chunk.js.map": "/pizza_project/static/js/NotFound.c2e80c06.chunk.js.map",
     "SuccessPayment.40745e9a.chunk.css.map": "/pizza_project/static/css/SuccessPayment.40745e9a.chunk.css.map",
     "SuccessPayment.74767835.chunk.js.map": "/pizza_project/static/js/SuccessPayment.74767835.chunk.js.map",
@@ -39,7 +39,7 @@
     "483.80980bc3.chunk.js.map": "/pizza_project/static/js/483.80980bc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.adff2171.css",
-    "static/js/main.785d375e.js"
+    "static/css/main.4f4766a2.css",
+    "static/js/main.68500966.js"
   ]
 }
