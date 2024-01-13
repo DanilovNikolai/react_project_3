@@ -7,6 +7,7 @@ It is an online pizza shop.
 
 ### **main page**
 
+![Screenshot of a main page](/assets/main.svg)
 There is a pizza catalog on the main page, where they can be sorted by category, in ascending / descending order of characteristics and searched by name and description.
 All product data is stored on the resource **_mockapi.io_**.
 The catalog has a numeral pagination.
@@ -15,23 +16,30 @@ The price of the chosen product depends on the selected characteristics.
 
 ### **product card**
 
+![Screenshot of a main page](/assets/product_card.svg)
 Each pizza has a product card with its own endpoint, where you can find a description and can select parameters and add an item to the cart.
 
 ### **cart and payment**
 
+![Screenshot of a main page](/assets/cart.svg)
 The selected items are added to the shopping cart, where you can also decrease / increase the number of specific pizzas, remove it from the cart, and completely empty the cart.
+Before payment you can apply bonuses that are deducted from the order amount (bonuses are available only to authorized users).
+![Screenshot of a main page](/assets/payment.svg)
 I used a **_stripe.com_** service for fake payments of chosen goods.
-Before paying you can apply bonuses that are deducted from the order amount (bonuses are available only to authorized users).
+![Screenshot of a main page](/assets/success.svg)
 After a successful purchase, you are redirected to a page with a random order number, and you also receive bonus points for the purchase (if the you were logged in).
+![Screenshot of a main page](/assets/orders.svg)
 Then the current order is included in the **_list of completed orders_** in the user's menu.
 
 ### **login and auth**
 
+![Screenshot of a main page](/assets/login.svg) ![Screenshot of a main page](/assets/reg.svg)
 Authorization and registration works using **_Firebase Auth_** service via login and password. These input fields are checked for **_validity_**.
 All users, their carts, bonus points and completed orders are still saved in localStorage.
 
 ### **misc**
 
+![Screenshot of a main page](/assets/contacts.svg)
 Also in the footer of the site there is a link "about the company" with contacts and an online map of offices locations (made by using **_mapbox.com_**).
 
 ## **The following basic skills have been worked out:**
