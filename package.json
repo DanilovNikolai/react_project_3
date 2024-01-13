@@ -1,6 +1,6 @@
 {
-  "homepage": "http://danilovnikolai.github.io/pizza_project",
-  "name": "pizza_project",
+  "homepage": "http://danilovnikolai.github.io/react_pizza-shop",
+  "name": "react_pizza-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

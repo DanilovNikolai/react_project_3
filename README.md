@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# **Pizza-shop App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **App description:**
 
-## Available Scripts
+The application is based on **_Reactjs_** with **_TypeScript_** + **_Redux Toolkit_**.
+It is an online pizza shop.
 
-In the project directory, you can run:
+### **main page**
 
-### `npm start`
+There is a pizza catalog on the main page, where they can be sorted by category, in ascending / descending order of characteristics and searched by name and description.
+All product data is stored on the resource **_mockapi.io_**.
+The catalog has a numeral pagination.
+For each pizza you can choose the parameters - the thickness of the dough and its diameter.
+The price of the chosen product depends on the selected characteristics.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **product card**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Each pizza has a product card with its own endpoint, where you can find a description and can select parameters and add an item to the cart.
 
-### `npm test`
+### **cart and payment**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The selected items are added to the shopping cart, where you can also decrease / increase the number of specific pizzas, remove it from the cart, and completely empty the cart.
+I used a **_stripe.com_** service for fake payments of chosen goods.
+Before paying you can apply bonuses that are deducted from the order amount (bonuses are available only to authorized users).
+After a successful purchase, you are redirected to a page with a random order number, and you also receive bonus points for the purchase (if the you were logged in).
 
-### `npm run build`
+### **login and auth**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Authorization and registration works using **_Firebase Auth_** service via login and password. These input fields are checked for **_validity_**.
+All users, their carts and bonus points are still saved in localStorage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **misc**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Also in the footer of the site there is a link "about the company" with contacts and an online map of offices locations (made by using **_mapbox.com_**).
 
-### `npm run eject`
+## **The following basic skills have been worked out:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Using the useState, useEffect, useRef and other hooks;
+2. Using onClick and onSubmit events on elements;
+3. Import icons, libraries, hooks and components;
+4. Using conditional rendering with the ternary operator;
+5. Working with props and context;
+6. Using data fetching;
+7. Using Redux Toolkit for for storing site data;
+8. Using a TypeScript;
+9. Using Firebase auth for login and registration and Firestore database - for storing its data;
+10. Using a page routing with endpoints;
+11. Making adaptations for different screens;
+12. Using a <Skeleton/> components as a content loader;
+13. Creating and using a custom hooks;
+14. Sorting and searching for items using query params of URL.
+15. Storing and processing data from localStorage;
+16. Creating a shopping cart and its management;
+17. Using a payment system to pay for goods;
+18. Using layouts of Components;
+19. Making of adaptation to any screen size;
