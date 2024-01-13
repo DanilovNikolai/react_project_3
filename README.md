@@ -23,11 +23,12 @@ The selected items are added to the shopping cart, where you can also decrease /
 I used a **_stripe.com_** service for fake payments of chosen goods.
 Before paying you can apply bonuses that are deducted from the order amount (bonuses are available only to authorized users).
 After a successful purchase, you are redirected to a page with a random order number, and you also receive bonus points for the purchase (if the you were logged in).
+Then the current order is included in the **_list of completed orders_** in the user's menu.
 
 ### **login and auth**
 
 Authorization and registration works using **_Firebase Auth_** service via login and password. These input fields are checked for **_validity_**.
-All users, their carts and bonus points are still saved in localStorage.
+All users, their carts, bonus points and completed orders are still saved in localStorage.
 
 ### **misc**
 

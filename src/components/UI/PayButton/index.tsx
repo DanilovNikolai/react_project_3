@@ -32,9 +32,9 @@ const PayButton: React.FC<CartSliceState> = ({ items }) => {
         lineItems: lineItems,
         mode: "payment",
         successUrl:
-          "https://danilovnikolai.github.io/pizza_project#/success_payment",
+          "https://danilovnikolai.github.io/react_pizza-shop#/success_payment",
         cancelUrl:
-          "https://danilovnikolai.github.io/pizza_project#/cancel_payment",
+          "https://danilovnikolai.github.io/react_pizza-shop#/cancel_payment",
       });
 
       console.log(response);
