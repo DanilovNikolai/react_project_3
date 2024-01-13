@@ -7,7 +7,7 @@ It is an online pizza shop.
 
 ### **main page**
 
-![Screenshot of the main page](src/assets/main.png)
+![Screenshot of the main page](/assets/screenshots/main.png)
 There is a pizza catalog on the main page, where they can be sorted by category, in ascending / descending order of characteristics and searched by name and description.
 All product data is stored on the resource **_mockapi.io_**.
 The catalog has a numeral pagination.
@@ -16,30 +16,30 @@ The price of the chosen product depends on the selected characteristics.
 
 ### **product card**
 
-![Screenshot of the product card page](src/assets/product_card.png)
+![Screenshot of the product card page](/assets/screenshots/product_card.png)
 Each pizza has a product card with its own endpoint, where you can find a description and can select parameters and add an item to the cart.
 
 ### **cart and payment**
 
-![Screenshot of the cart page](src/assets/cart.png)
+![Screenshot of the cart page](/assets/screenshots/cart.png)
 The selected items are added to the shopping cart, where you can also decrease / increase the number of specific pizzas, remove it from the cart, and completely empty the cart.
 Before payment you can apply bonuses that are deducted from the order amount (bonuses are available only to authorized users).
-![Screenshot of the payment page](src/assets/payment.png)
+![Screenshot of the payment page](/assets/screenshots/payment.png)
 I used a **_stripe.com_** service for fake payments of chosen goods.
-![Screenshot of the success_payment page](src/assets/success.png)
+![Screenshot of the success_payment page](/assets/screenshots/success.png)
 After a successful purchase, you are redirected to a page with a random order number, and you also receive bonus points for the purchase (if the you were logged in).
-![Screenshot of the orders page](src/assets/orders.png)
+![Screenshot of the orders page](/assets/screenshots/orders.png)
 Then the current order is included in the **_list of completed orders_** in the user's menu.
 
 ### **login and auth**
 
-![Screenshot of the login modal](src/assets/login.png) ![Screenshot of the registration modal](src/assets/reg.png)
+![Screenshot of the login modal](/assets/screenshots/login.png) ![Screenshot of the registration modal](/assets/screenshots/reg.png)
 Authorization and registration works using **_Firebase Auth_** service via login and password. These input fields are checked for **_validity_**.
 All users, their carts, bonus points and completed orders are still saved in localStorage.
 
 ### **misc**
 
-![Screenshot of the contacts page](src/assets/contacts.png)
+![Screenshot of the contacts page](/assets/screenshots/contacts.png)
 Also in the footer of the site there is a link "about the company" with contacts and an online map of offices locations (made by using **_mapbox.com_**).
 
 ## **The following basic skills have been worked out:**
